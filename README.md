@@ -7,4 +7,4 @@ This sdk allows you to create blueprint mods referencing the reflected headers, 
 ### For now please take a look at how Palworld installs the SDK [here](https://pwmodding.wiki)
 
 # Usage
-Follow this guide about Blueprint Modding [here]( https://github.com/Dmgvol/UE_Modding)
+Follow this guide about Blueprint Modding [here](https://github.com/Dmgvol/UE_Modding?tab=readme-ov-file#advanced-modding)
