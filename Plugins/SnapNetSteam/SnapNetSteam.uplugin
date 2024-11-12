@@ -1,0 +1,35 @@
+{
+	"FileVersion": 3,
+	"Version": 1,
+	"VersionName": "1.0",
+	"FriendlyName": "SnapNet Steam",
+	"Description": "Plugin to integrate peer to peer communication via Steam with SnapNet",
+	"Category": "Networking",
+	"CreatedBy": "High Horse Entertainment",
+	"CreatedByURL": "https://www.highhorseentertainment.com",
+	"DocsURL": "",
+	"MarketplaceURL": "",
+	"SupportURL": "",
+	"CanContainContent": true,
+	"IsBetaVersion": false,
+	"IsExperimentalVersion": false,
+	"Installed": false,
+	"Modules": [
+		{
+			"Name": "SnapNetSteam",
+			"Type": "Runtime",
+			"LoadingPhase": "Default",
+			"PlatformAllowList": [
+				"Win64",
+				"Mac",
+				"Linux"
+			]
+		}
+	],
+	"Plugins": [
+		{
+			"Name": "SnapNet",
+			"Enabled": true
+		}
+	]
+}

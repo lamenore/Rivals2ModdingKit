@@ -1,0 +1,48 @@
+{
+	"FileVersion": 3,
+	"Version": 0,
+	"VersionName": "2.3.3",
+	"FriendlyName": "Online Subsystem PlayFab Party & Multiplayer",
+	"Description": "Support for the PlayFab Party and Multiplayer platform",
+	"Category": "Networking",
+	"CreatedBy": "Microsoft Corporation",
+	"CreatedByURL": "https://www.playfab.com",
+	"DocsURL": "",
+	"MarketplaceURL": "",
+	"SupportURL": "",
+	"EnabledByDefault": false,
+	"CanContainContent": false,
+	"IsBetaVersion": false,
+	"IsExperimentalVersion": false,
+	"Installed": false,
+	"SupportedTargetPlatforms": [
+		"Win64"
+	],
+	"Modules": [
+		{
+			"Name": "OnlineSubsystemPlayFab",
+			"Type": "Runtime",
+			"LoadingPhase": "Default",
+			"PlatformAllowList": [
+				"Win64"
+			]
+		}
+	],
+	"LocalizationTargets": [
+		{
+			"Name": "OnlineSubsystemPlayFab",
+			"LoadingPolicy": "Always",
+			"ConfigGenerationPolicy": "Never"
+		}
+	],
+	"Plugins": [
+		{
+			"Name": "OnlineSubsystem",
+			"Enabled": true
+		},
+		{
+			"Name": "OnlineSubsystemUtils",
+			"Enabled": true
+		}
+	]
+}

@@ -1,0 +1,13 @@
+{
+	"RemapUnityFiles": 
+	{
+		"Module.OnlineSubsystemPlayFab.cpp.obj": [
+			"OnlineSubsystemPlayFab.init.gen.cpp.obj",
+			"PlayFabNetConnection.gen.cpp.obj",
+			"PlayFabNetDriver.gen.cpp.obj",
+			"OnlineSubsystemPlayFabModule.cpp.obj",
+			"PlayFabNetConnection.cpp.obj",
+			"PlayFabNetDriver.cpp.obj"
+		]
+	}
+}

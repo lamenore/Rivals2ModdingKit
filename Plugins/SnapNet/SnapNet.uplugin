@@ -1,0 +1,24 @@
+{
+	"FileVersion": 3,
+	"Version": 0,
+	"VersionName": "8.6.1",
+	"FriendlyName": "SnapNet",
+	"Description": "Plugin to integrate High Horse Entertainment's SnapNet library into Unreal Engine",
+	"Category": "Networking",
+	"CreatedBy": "High Horse Entertainment",
+	"CreatedByURL": "https://www.highhorseentertainment.com",
+	"DocsURL": "https://www.snapnet.dev",
+	"MarketplaceURL": "",
+	"SupportURL": "https://www.snapnet.dev",
+	"CanContainContent": true,
+	"IsBetaVersion": false,
+	"IsExperimentalVersion": false,
+	"Installed": false,
+	"Modules": [
+		{
+			"Name": "SnapNet",
+			"Type": "Runtime",
+			"LoadingPhase": "Default"
+		}
+	]
+}

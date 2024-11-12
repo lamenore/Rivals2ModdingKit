@@ -1,0 +1,5 @@
+#include "EconomyRedeemAppleAppStoreInventoryItemsResponse.h"
+
+FEconomyRedeemAppleAppStoreInventoryItemsResponse::FEconomyRedeemAppleAppStoreInventoryItemsResponse() {
+}
+

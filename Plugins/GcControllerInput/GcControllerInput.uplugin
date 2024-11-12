@@ -1,0 +1,21 @@
+{
+	"FileVersion": 3,
+	"Version": 1,
+	"VersionName": "1.0",
+	"FriendlyName": "GameCube Controller Input",
+	"Description": "GameCube Controller Input provides an interface to receive input from the official GameCube Controller Adapter on Windows when WinUSB drivers are installed. It should also work for third-party adapters that emulate the official adapter's functionality.",
+	"Category": "Input Devices",
+	"CreatedBy": "Jay Mattis",
+	"CreatedByURL": "https://www.highhorseentertainment.com",
+	"DocsURL": "",
+	"MarketplaceURL": "",
+	"SupportURL": "",
+	"EnabledByDefault": true,
+	"CanContainContent": false,
+	"IsBetaVersion": false,
+	"IsExperimentalVersion": false,
+	"Installed": false,
+	"SupportedTargetPlatforms": [
+		"Win64"
+	]
+}

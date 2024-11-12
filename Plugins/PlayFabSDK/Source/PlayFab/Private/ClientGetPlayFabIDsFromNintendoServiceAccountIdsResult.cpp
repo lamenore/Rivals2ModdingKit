@@ -1,0 +1,5 @@
+#include "ClientGetPlayFabIDsFromNintendoServiceAccountIdsResult.h"
+
+FClientGetPlayFabIDsFromNintendoServiceAccountIdsResult::FClientGetPlayFabIDsFromNintendoServiceAccountIdsResult() {
+}
+

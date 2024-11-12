@@ -1,0 +1,13 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "c:\\modding\\unreal projects\\rivals2\\plugins\\online\\onlinesubsystemplayfab\\intermediate\\build\\win64\\unrealgame\\inc\\onlinesubsystemplayfab\\uht\\onlinesubsystemplayfab.init.gen.cpp",
+        "ProvidedModule": "",
+        "PCH": "c:\\modding\\unreal projects\\rivals2\\intermediate\\build\\win64\\x64\\rivals2game\\shipping\\engine\\sharedpch.engine.project.valapi.cpp20.inclorderoldest.h.pch",
+        "Includes": [
+            "c:\\modding\\unreal projects\\rivals2\\plugins\\online\\onlinesubsystemplayfab\\intermediate\\build\\win64\\x64\\unrealgame\\shipping\\onlinesubsystemplayfab\\definitions.onlinesubsystemplayfab.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

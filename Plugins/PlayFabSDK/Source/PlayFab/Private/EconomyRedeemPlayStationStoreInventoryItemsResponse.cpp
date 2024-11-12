@@ -1,0 +1,5 @@
+#include "EconomyRedeemPlayStationStoreInventoryItemsResponse.h"
+
+FEconomyRedeemPlayStationStoreInventoryItemsResponse::FEconomyRedeemPlayStationStoreInventoryItemsResponse() {
+}
+

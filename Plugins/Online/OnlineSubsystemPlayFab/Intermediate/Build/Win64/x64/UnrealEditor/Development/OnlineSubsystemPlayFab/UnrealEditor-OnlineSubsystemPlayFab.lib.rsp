@@ -1,0 +1,12 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UnrealEditor-OnlineSubsystemPlayFab.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"C:\Users\Danilo\Documents\Unreal Projects\Rivals2\Intermediate\Build\Win64\x64\Rivals2Editor\Development\UnrealEd\SharedPCH.UnrealEd.Project.ValApi.Cpp20.InclOrderOldest.h.obj"
+"C:\Users\Danilo\Documents\Unreal Projects\Rivals2\Plugins\Online\OnlineSubsystemPlayFab\Intermediate\Build\Win64\x64\UnrealEditor\Development\OnlineSubsystemPlayFab\Module.OnlineSubsystemPlayFab.cpp.obj"
+"C:\Users\Danilo\Documents\Unreal Projects\Rivals2\Plugins\Online\OnlineSubsystemPlayFab\Intermediate\Build\Win64\x64\UnrealEditor\Development\OnlineSubsystemPlayFab\Default.rc2.res"
+/OUT:"C:\Users\Danilo\Documents\Unreal Projects\Rivals2\Plugins\Online\OnlineSubsystemPlayFab\Intermediate\Build\Win64\x64\UnrealEditor\Development\OnlineSubsystemPlayFab\UnrealEditor-OnlineSubsystemPlayFab.lib"
