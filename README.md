@@ -1,5 +1,5 @@
 # Rivals2ModdingKit
-This sdk allows you to create blueprint mods referencing the reflected headers, currently it has the release build of the 
+This sdk allows you to create blueprint mods referencing the reflected headers, currently it has the release build of the game, it will be updated as the game evolves
 
 
 # Installing the SDK 
