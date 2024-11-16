@@ -3,6 +3,7 @@
 UPlayerSlotOptionsButtonWidget::UPlayerSlotOptionsButtonWidget() {
     this->UseNavigationDelegate = false;
     this->ButtonLabel = TEXT("Default Button Label");
+    this->bMultilineTooltip = false;
     this->SliderValue = 100;
     this->DisplayAreaType = EPlayerSlotOptionButtonDisplayAreaType::Any;
     this->DisplayType = EPlayerSlotOptionButtonDisplayType::Any;
@@ -11,6 +12,7 @@ UPlayerSlotOptionsButtonWidget::UPlayerSlotOptionsButtonWidget() {
     this->BP_Highlight1 = NULL;
     this->BP_Highlight2 = NULL;
     this->bBackArrowActive = false;
+    this->bOpenURL = false;
     this->BP_BackArrow = NULL;
     this->BP_Check = NULL;
     this->BP_ButtonLabelTextBlock = NULL;
@@ -20,6 +22,7 @@ UPlayerSlotOptionsButtonWidget::UPlayerSlotOptionsButtonWidget() {
     this->BP_ButtonLabelContainer = NULL;
     this->BP_BindingDisplayerContainer = NULL;
     this->BP_SliderValueContainer = NULL;
+    this->BP_IconContainer = NULL;
     this->BP_MappingDisplayer0 = NULL;
     this->BP_MappingDisplayer1 = NULL;
     this->BP_MappingDisplayer2 = NULL;

@@ -14,7 +14,10 @@
 
 class APlayerController;
 class ARivalsPlayerEntity;
+class UCanvasPanel;
+class UMenuButtonWidget;
 class UOnlineTimerWidget;
+class UTwoButtonPopupWidget;
 class UWidgetAnimation;
 
 UCLASS(Blueprintable, EditInlineNew)
@@ -27,6 +30,9 @@ protected:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FResultsPlayerInfo> PlayerInfo;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FResultsXpUpdateInfo EventXpUpdate;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TMap<int32, FResultsXpUpdateInfo> PlayerXpInfoMap;
@@ -52,12 +58,31 @@ protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UOnlineTimerWidget* BP_OnlineStateTimer;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    UCanvasPanel* BP_SaveReplayButtonContainer;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    UMenuButtonWidget* BP_SaveReplayButton;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    UWidgetAnimation* BP_ReplaySaved;
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bCanShowOnlineTimer;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool bRequestedManualReplaySave;
+    
+private:
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    UTwoButtonPopupWidget* ForfeitPopup;
     
 public:
     UResultsScreenWidget();
 
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    bool WillSaveReplay() const;
+    
     UFUNCTION(BlueprintCallable)
     void StartCoinSFX();
     
@@ -71,7 +96,13 @@ public:
     bool ShouldDisplayRankUpdate();
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
+    bool ShouldDisplayEventLevelUp();
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool ShouldAutoShowStats();
+    
+    UFUNCTION(BlueprintCallable)
+    void RequestSaveReplay(const int32& PlayerSlot);
     
     UFUNCTION(BlueprintCallable)
     void QueueRewardForDisplay(const FResultsRewardInfo RewardInfo);
@@ -84,6 +115,9 @@ public:
     
     UFUNCTION(BlueprintCallable)
     void ProcessNextReward();
+    
+    UFUNCTION(BlueprintCallable)
+    void ProcessEventXpUpdate(const FResultsXpUpdateInfo XpUpdate);
     
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void PlayerClickedNextRound(const int32& PlayerSlot);
@@ -179,7 +213,13 @@ public:
     void BP_ProcessedPlayerXpUpdate(const int32& PlayerSlot);
     
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
-    void BP_DisplayXpCoinReward(ERivalsCurrencyType CurrencyType, int32 DeltaCoins, int32 NewTotal);
+    void BP_ProcessedEventXpUpdate();
+    
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
+    void BP_OnFocusDefaultWidget(const int32& PlayerSlot);
+    
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
+    void BP_DisplayXpCoinReward(ERivalsCurrencyType CurrencyType, int32 DeltaCoins, int32 NewTotal, int32 BonusCoins);
     
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BP_CurrencyRewardProcessed(const ERivalsCurrencyType& CurrencyType, const int32& DeltaCurrency, const int32& NewCurrencyTotal);

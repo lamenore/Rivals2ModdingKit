@@ -58,6 +58,9 @@ public:
     int32 XpCoins;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    int32 BonusCoins;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FString CharacterShortName;
     
     RIVALS2_API FResultsXpUpdateInfo();

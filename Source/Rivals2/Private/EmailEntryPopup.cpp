@@ -14,6 +14,7 @@ UEmailEntryPopup::UEmailEntryPopup() {
     this->BP_LinkBackButton = NULL;
     this->BP_CreateUsernameField = NULL;
     this->BP_CreateEmailField = NULL;
+    this->BP_CreateConfirmEmailField = NULL;
     this->BP_CreatePasswordField = NULL;
     this->BP_CreateConfirmPasswordField = NULL;
     this->BP_CreateCreateButton = NULL;

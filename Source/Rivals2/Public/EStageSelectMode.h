@@ -4,6 +4,7 @@
 
 UENUM(BlueprintType)
 enum class EStageSelectMode : uint8 {
+    None,
     Choosing,
     Striking,
     Banning,

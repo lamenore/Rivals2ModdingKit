@@ -37,7 +37,10 @@ public:
     UMatchHUDWidget();
 
     UFUNCTION(BlueprintCallable)
-    void ShowLetterbox(TEnumAsByte<ELetterboxTransition> TransitionType);
+    void ShowLetterbox(ELetterboxTransition TransitionType);
+    
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
+    void OnShowingLetterbox(const TArray<FLetterboxSlotInfo>& LetterboxSlots, bool bIsArcadeMode, ELetterboxTransition TransitionType);
     
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnMatchStart();

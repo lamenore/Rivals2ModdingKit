@@ -16,7 +16,7 @@ UCharacterSelectScreenWidget::UCharacterSelectScreenWidget() {
     this->BP_BackProgressBar = NULL;
     this->BP_OnlineStateTimer = NULL;
     this->MaxBackPressTime = 0.75f;
-    this->MinBackPressTime = 0.25f;
+    this->MinBackPressTime = 0.16f;
 }
 
 void UCharacterSelectScreenWidget::UnhoverCharacterBox(const int32& PlayerSlot, TSoftClassPtr<URivalsCharacterDefinition> InCharacterDefinition) {

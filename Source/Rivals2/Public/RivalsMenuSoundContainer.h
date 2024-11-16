@@ -11,7 +11,7 @@ class RIVALS2_API URivalsMenuSoundContainer : public UDataAsset {
 public:
 protected:
     UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
-    UFMODEvent* MenuSounds[73];
+    UFMODEvent* MenuSounds[74];
     
 public:
     URivalsMenuSoundContainer();

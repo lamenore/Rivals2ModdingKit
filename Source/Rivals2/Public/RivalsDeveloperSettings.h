@@ -29,6 +29,9 @@ public:
     TArray<TSubclassOf<UDeathEffectData>> DeathEffects;
     
     UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool MuteBgmInEditor;
+    
+    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool DebugMenuAudio;
     
     URivalsDeveloperSettings();

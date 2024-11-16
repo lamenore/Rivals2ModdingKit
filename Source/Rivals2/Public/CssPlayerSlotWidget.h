@@ -21,6 +21,9 @@ protected:
     UScaleBox* BP_ChangeTypeScaleBox;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    UScaleBox* BP_AddCPUScaleBox;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UScaleBox* BP_PlayerRankScaleBox;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
@@ -48,10 +51,10 @@ public:
     bool IsEditingOptions() const;
     
     UFUNCTION(BlueprintCallable)
-    void HandlePlayerAdded();
+    void HandleSetPlayerCPU();
     
     UFUNCTION(BlueprintCallable)
-    void HandelSetPlayerCPU();
+    void HandlePlayerAdded();
     
 };
 

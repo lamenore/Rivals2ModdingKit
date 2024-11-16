@@ -9,6 +9,7 @@ UTopBarPlayerSlotWidget::UTopBarPlayerSlotWidget() {
     this->BP_PlayerNameText = NULL;
     this->BP_PlayerNameBG = NULL;
     this->BP_PlayerRankDisplay = NULL;
+    this->BP_CharacterLevelDisplay = NULL;
     this->BP_ScaleBox_SetCount = NULL;
     this->BP_FirstMatchPip = NULL;
     this->BP_SecondMatchPip = NULL;

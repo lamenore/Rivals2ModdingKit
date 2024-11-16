@@ -16,8 +16,6 @@ UMenuButtonWidget::UMenuButtonWidget() : UUserWidget(FObjectInitializer::Get()) 
     this->BP_ScaleBox = NULL;
     this->BP_SizeBox = NULL;
     this->BP_ButtonTextSizeBox = NULL;
-    this->BP_BGImage = NULL;
-    this->BP_BGImage_1 = NULL;
     this->BP_IconScaleBox = NULL;
     this->BP_IconImage = NULL;
     this->BP_ButtonTextTextBlock = NULL;

@@ -58,6 +58,9 @@ protected:
     UGenericInputFieldWidget* BP_CreateEmailField;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    UGenericInputFieldWidget* BP_CreateConfirmEmailField;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UGenericInputFieldWidget* BP_CreatePasswordField;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))

@@ -68,6 +68,10 @@ bool URivalsMatchmakingSubsystem::HasValidRegionsSelected() {
     return false;
 }
 
+bool URivalsMatchmakingSubsystem::HasActiveMatchmakingTickets() {
+    return false;
+}
+
 FString URivalsMatchmakingSubsystem::GetUserPublicIp() {
     return TEXT("");
 }

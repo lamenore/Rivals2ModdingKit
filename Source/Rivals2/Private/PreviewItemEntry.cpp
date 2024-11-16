@@ -2,7 +2,6 @@
 
 UPreviewItemEntry::UPreviewItemEntry() : UUserWidget(FObjectInitializer::Get()) {
     this->BP_ButtonInteract = NULL;
-    this->BP_BGBorder = NULL;
     this->BP_ItemImage = NULL;
     this->BP_ItemNameTextBlock = NULL;
     this->BP_OnHoverAnim = NULL;

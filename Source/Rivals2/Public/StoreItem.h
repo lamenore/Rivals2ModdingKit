@@ -12,6 +12,7 @@ class UEquipmentItemAsset;
 class UHorizontalBox;
 class UImage;
 class UMaterialInstance;
+class URetainerBox;
 class URivalsButtonWidget;
 class UScaleBox;
 class USizeBox;
@@ -72,6 +73,9 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     USizeBox* BP_ItemIconBox;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    URetainerBox* BP_LoadingImage;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UBetterImage* BP_ItemIcon;
@@ -155,6 +159,9 @@ public:
     
     UFUNCTION(BlueprintCallable)
     void OnHoverByPlayer(const int32 UserIndex);
+    
+    UFUNCTION(BlueprintCallable)
+    void BP_OnHoverAnimFinished();
     
 };
 

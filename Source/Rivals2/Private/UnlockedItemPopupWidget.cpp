@@ -9,6 +9,8 @@ UUnlockedItemPopupWidget::UUnlockedItemPopupWidget() {
     this->BP_ItemTotalCountText = NULL;
     this->BP_ItemImage = NULL;
     this->BP_RewardEntryAnim = NULL;
+    this->BP_BonusCoinPanel = NULL;
+    this->BP_BonusCoinAmountText = NULL;
 }
 
 void UUnlockedItemPopupWidget::OnNextButtonPressed() {

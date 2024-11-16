@@ -20,6 +20,7 @@ enum class ERivalsColorSlot : uint8 {
     DontPark,
     Platfight,
     LACS,
+    Abyssal,
     Extra1,
     Extra2,
     Extra3,

@@ -32,6 +32,9 @@ public:
     void StopBgm();
     
     UFUNCTION(BlueprintCallable)
+    void RandomizeMenuMusic();
+    
+    UFUNCTION(BlueprintCallable)
     void PlayBgmNoParams(TSoftObjectPtr<UFMODEvent> BgmToPlay);
     
     UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext="WorldContextObject"))

@@ -10,6 +10,9 @@ public:
     int32 lvl;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool had_starterpack;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FString> transaction_ids;
     
     RIVALS2_API FRivalsPlayerLevelClaimHistory();

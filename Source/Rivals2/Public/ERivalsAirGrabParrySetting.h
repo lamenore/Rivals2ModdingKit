@@ -10,6 +10,7 @@ enum class ERivalsAirGrabParrySetting : uint8 {
     Attack,
     Strong,
     Special,
+    None,
     Count,
 };
 

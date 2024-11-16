@@ -5,7 +5,9 @@
 
 class ARivalsPlayerController;
 class UBorder;
+class UCanvasPanel;
 class UPlayerSlotAccountDetailsTab;
+class UPlayerSlotAdvancedControlsTab;
 class UPlayerSlotAirGrabTab;
 class UPlayerSlotAirParryTab;
 class UPlayerSlotCustomControlsTab;
@@ -25,7 +27,9 @@ class UPlayerSlotPlatformsTab;
 class UPlayerSlotRightStickTab;
 class UPlayerSlotStickSensitivityTab;
 class UTagPlayerSlotOptionsTab;
+class UTextBlock;
 class UTopBarPlayerSlotPopup;
+class UWidgetAnimation;
 class UWidgetSwitcher;
 
 UCLASS(Blueprintable, EditInlineNew)
@@ -37,6 +41,9 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UTopBarPlayerSlotPopup* ParentPopup;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    UTextBlock* BP_TooltipTextBlock;
     
 protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
@@ -53,6 +60,9 @@ protected:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UPlayerSlotCustomControlsTab* BP_ControlsTab;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    UPlayerSlotAdvancedControlsTab* BP_AdvancedControlsTab;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UPlayerSlotOptionsBindingsTab* BP_BindingsTab;
@@ -107,6 +117,15 @@ protected:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UBorder* BP_OuterBorderBottom;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    UCanvasPanel* BP_TooltipContainer;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    UWidgetAnimation* BP_ShowTooltipAnim;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    UWidgetAnimation* BP_ShowTooltipMultilineAnim;
     
 private:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))

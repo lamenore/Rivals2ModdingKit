@@ -23,22 +23,22 @@ void ULobbyPopupWidget::SyncLobbyUIStateWithInfo(const FRivalsPlayFabLobbyInfo L
 void ULobbyPopupWidget::SyncLobbyUIState() {
 }
 
-void ULobbyPopupWidget::OnToggleSpectatingPressed() {
+void ULobbyPopupWidget::OnToggleSpectatingPressed(const int32 UserIndex) {
 }
 
-void ULobbyPopupWidget::OnRegionChangePressed() {
+void ULobbyPopupWidget::OnRegionChangePressed(const int32 UserIndex) {
 }
 
-void ULobbyPopupWidget::OnQueueLobbyPressed() {
+void ULobbyPopupWidget::OnQueueLobbyPressed(const int32 UserIndex) {
 }
 
-void ULobbyPopupWidget::OnQueueLobbyDoublesPressed() {
+void ULobbyPopupWidget::OnQueueLobbyDoublesPressed(const int32 UserIndex) {
 }
 
-void ULobbyPopupWidget::OnLobbyCodeCopyPressed() {
+void ULobbyPopupWidget::OnLobbyCodeCopyPressed(const int32 UserIndex) {
 }
 
-void ULobbyPopupWidget::OnLeaveLobbyPressed() {
+void ULobbyPopupWidget::OnLeaveLobbyPressed(const int32 UserIndex) {
 }
 
 void ULobbyPopupWidget::OnJoinMatchSuccess() {
@@ -47,7 +47,7 @@ void ULobbyPopupWidget::OnJoinMatchSuccess() {
 void ULobbyPopupWidget::OnJoinMatchFail() {
 }
 
-void ULobbyPopupWidget::OnInviteFriendsPressed() {
+void ULobbyPopupWidget::OnInviteFriendsPressed(const int32 UserIndex) {
 }
 
 void ULobbyPopupWidget::HandleUpdateLobbyFailure(TEnumAsByte<RivalsLobbyErrorType> ErrorType) {

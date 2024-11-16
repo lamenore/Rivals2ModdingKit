@@ -3,6 +3,9 @@
 #include "PlayerSlotOptionsTabInterface.h"
 #include "PlayerSlotOptionsRebindingTab.generated.h"
 
+class UBetterButtonDisplayer;
+class UHorizontalBox;
+class UProgressBar;
 class URivalsWidget;
 class UTextBlock;
 class UUIButtonDisplayer;
@@ -25,10 +28,25 @@ protected:
     UTextBlock* BP_TitleText;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
-    UUIButtonDisplayer* BP_ConfirmDisplayer;
+    UHorizontalBox* BP_HoldToCancelBox;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
-    UUIButtonDisplayer* BP_CancelDisplayer;
+    UHorizontalBox* BP_CancelBarBox;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    UBetterButtonDisplayer* BP_ConfirmDisplayer;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    UBetterButtonDisplayer* BP_CancelDisplayer;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    UProgressBar* BP_CancelProgressBar;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    float MaxBackPressTime;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    float MinBackPressTime;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UUIButtonDisplayer* BP_OldBindingDisplayer0;

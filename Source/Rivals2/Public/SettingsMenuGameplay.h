@@ -22,6 +22,9 @@ protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     USettingsMenuRow* BP_SettingsMenuRow_TeamOutlines;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    USettingsMenuRow* BP_SettingsMenuRow_ReplayAutoSave;
+    
 public:
     USettingsMenuGameplay();
 

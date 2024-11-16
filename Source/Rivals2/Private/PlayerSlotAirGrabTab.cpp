@@ -7,6 +7,7 @@ UPlayerSlotAirGrabTab::UPlayerSlotAirGrabTab() {
     this->BP_AttackButton = NULL;
     this->BP_StrongButton = NULL;
     this->BP_SpecialButton = NULL;
+    this->BP_NoneButton = NULL;
     this->BP_BackButton = NULL;
 }
 

@@ -65,15 +65,6 @@ protected:
     UPlayerSlotOptionsButtonWidget* BP_RightStickDownButton;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
-    UPlayerSlotOptionsButtonWidget* BP_RightStickButton;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
-    UPlayerSlotOptionsButtonWidget* BP_AirParryButton;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
-    UPlayerSlotOptionsButtonWidget* BP_AirGrabButton;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UPlayerSlotOptionsButtonWidget* BP_BackButton;
     
 public:

@@ -8,7 +8,7 @@ public class FMODStudioNiagara : ModuleRules
     public FMODStudioNiagara(ReadOnlyTargetRules Target) : base(Target)
     {
         PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
-        
+
         PublicDependencyModuleNames.AddRange(
             new[]
             {

@@ -147,6 +147,9 @@ protected:
     FName CurrentStageSkinName;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TArray<FFMODEventInstance> MvpVictorySoundInstances;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     URivalsVictorySequenceData* MvpVictorySequenceData;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -238,6 +241,15 @@ public:
     UMaterialParameterCollection* PostProcessMaterialParameterCollection;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FString LastWrittenReplayFullPath;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FString LastWrittenReplayName;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TArray<FString> LastWrittenReplayParticipantIds;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     URivalsMenuSoundContainer* MenuSoundContainer;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -272,9 +284,6 @@ public:
     
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FSessionStateChanged OnStateLoaded;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    bool bMuteBgmInEditor;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bSimulateLastStock;
@@ -471,6 +480,9 @@ public:
     
     UFUNCTION(BlueprintCallable)
     void OnResultsAnimationFinished();
+    
+    UFUNCTION(BlueprintCallable)
+    void OnLeaveCSSToMainMenu();
     
 protected:
     UFUNCTION(BlueprintCallable)

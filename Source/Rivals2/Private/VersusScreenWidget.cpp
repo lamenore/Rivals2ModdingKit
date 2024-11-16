@@ -1,6 +1,7 @@
 #include "VersusScreenWidget.h"
 
 UVersusScreenWidget::UVersusScreenWidget() {
+    this->CurrentStageSkin = NULL;
     this->bIsInitialized = false;
 }
 

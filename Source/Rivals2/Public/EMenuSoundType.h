@@ -77,6 +77,7 @@ enum class EMenuSoundType : uint8 {
     ArcadeGameOverHover,
     ArcadeGameOverContinue,
     ArcadeGameOverGiveUp,
+    MatchmakingMatchFound,
     Count,
     None,
 };

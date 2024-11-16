@@ -25,7 +25,7 @@ public:
     TMap<FName, TSoftObjectPtr<UAnimSequence>> SkinAnimationOverrides;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    TArray<TSoftObjectPtr<UFMODEvent>> FmodEventsToLoad;
+    TArray<TSoftObjectPtr<UFMODEvent>> SoundEvents;
     
     URivalsVictorySequenceData();
 

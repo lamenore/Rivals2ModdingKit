@@ -74,6 +74,7 @@ URivalsMenuSoundContainer::URivalsMenuSoundContainer() {
     this->MenuSounds[70] = NULL;
     this->MenuSounds[71] = NULL;
     this->MenuSounds[72] = NULL;
+    this->MenuSounds[73] = NULL;
 }
 
 

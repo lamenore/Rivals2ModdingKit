@@ -9,13 +9,8 @@ UMatchHUDWidget::UMatchHUDWidget() {
     this->bHasProcessedMatchStart = false;
 }
 
-void UMatchHUDWidget::ShowLetterbox(TEnumAsByte<ELetterboxTransition> TransitionType) {
+void UMatchHUDWidget::ShowLetterbox(ELetterboxTransition TransitionType) {
 }
-
-
-
-
-
 
 FRivalsServerMatchInfo UMatchHUDWidget::GetServerMatchInfo() {
     return FRivalsServerMatchInfo{};

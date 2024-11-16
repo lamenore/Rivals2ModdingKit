@@ -6,7 +6,7 @@
 
 class UHorizontalBox;
 class UMaterialInstance;
-class URivalsMenuButtonWidget;
+class UMenuButtonWidget;
 class URivalsSettingsSaveGame;
 class USettingsMenuAudio;
 class USettingsMenuGameplay;
@@ -51,10 +51,10 @@ public:
     UMaterialInstance* DefaultThumbnailMat;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
-    URivalsMenuButtonWidget* BP_ApplyButton;
+    UMenuButtonWidget* BP_ApplyButton;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
-    URivalsMenuButtonWidget* BP_CloseButton;
+    UMenuButtonWidget* BP_CloseButton;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     URivalsSettingsSaveGame* CurrentState;
@@ -86,13 +86,13 @@ private:
     void OnGameplayTabPressed(const int32 UserIndex);
     
     UFUNCTION(BlueprintCallable)
-    void OnClosePressed();
+    void OnClosePressed(const int32 UserIndex);
     
     UFUNCTION(BlueprintCallable)
     void OnAudioTabPressed(const int32 UserIndex);
     
     UFUNCTION(BlueprintCallable)
-    void OnApplyPressed();
+    void OnApplyPressed(const int32 UserIndex);
     
 public:
     UFUNCTION(BlueprintCallable)

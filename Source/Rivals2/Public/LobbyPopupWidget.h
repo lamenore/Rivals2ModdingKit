@@ -8,7 +8,7 @@
 
 class UImage;
 class ULobbyPlayerEntryWidget;
-class URivalsMenuButtonWidget;
+class UMenuButtonWidget;
 class UScaleBox;
 class UTextBlock;
 class UVerticalBox;
@@ -20,19 +20,19 @@ class RIVALS2_API ULobbyPopupWidget : public UBasePopupWidget {
 public:
 protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
-    URivalsMenuButtonWidget* BP_QueueLobbyButton;
+    UMenuButtonWidget* BP_QueueLobbyButton;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
-    URivalsMenuButtonWidget* BP_ChangeRegionButton;
+    UMenuButtonWidget* BP_ChangeRegionButton;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
-    URivalsMenuButtonWidget* BP_ToggleSpectatingButton;
+    UMenuButtonWidget* BP_ToggleSpectatingButton;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
-    URivalsMenuButtonWidget* BP_LeaveLobbyButton;
+    UMenuButtonWidget* BP_LeaveLobbyButton;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
-    URivalsMenuButtonWidget* BP_CopyCodeButton;
+    UMenuButtonWidget* BP_CopyCodeButton;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UImage* BP_LoadingImage;
@@ -71,22 +71,22 @@ public:
     void SyncLobbyUIState();
     
     UFUNCTION(BlueprintCallable)
-    void OnToggleSpectatingPressed();
+    void OnToggleSpectatingPressed(const int32 UserIndex);
     
     UFUNCTION(BlueprintCallable)
-    void OnRegionChangePressed();
+    void OnRegionChangePressed(const int32 UserIndex);
     
     UFUNCTION(BlueprintCallable)
-    void OnQueueLobbyPressed();
+    void OnQueueLobbyPressed(const int32 UserIndex);
     
     UFUNCTION(BlueprintCallable)
-    void OnQueueLobbyDoublesPressed();
+    void OnQueueLobbyDoublesPressed(const int32 UserIndex);
     
     UFUNCTION(BlueprintCallable)
-    void OnLobbyCodeCopyPressed();
+    void OnLobbyCodeCopyPressed(const int32 UserIndex);
     
     UFUNCTION(BlueprintCallable)
-    void OnLeaveLobbyPressed();
+    void OnLeaveLobbyPressed(const int32 UserIndex);
     
     UFUNCTION(BlueprintCallable)
     void OnJoinMatchSuccess();
@@ -95,7 +95,7 @@ public:
     void OnJoinMatchFail();
     
     UFUNCTION(BlueprintCallable)
-    void OnInviteFriendsPressed();
+    void OnInviteFriendsPressed(const int32 UserIndex);
     
     UFUNCTION(BlueprintCallable)
     void HandleUpdateLobbyFailure(TEnumAsByte<RivalsLobbyErrorType> ErrorType);

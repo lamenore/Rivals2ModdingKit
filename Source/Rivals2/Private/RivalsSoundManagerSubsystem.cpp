@@ -7,6 +7,9 @@ URivalsSoundManagerSubsystem::URivalsSoundManagerSubsystem() {
 void URivalsSoundManagerSubsystem::StopBgm() {
 }
 
+void URivalsSoundManagerSubsystem::RandomizeMenuMusic() {
+}
+
 void URivalsSoundManagerSubsystem::PlayBgmNoParams(TSoftObjectPtr<UFMODEvent> BgmToPlay) {
 }
 

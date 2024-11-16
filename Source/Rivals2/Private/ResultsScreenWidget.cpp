@@ -6,7 +6,16 @@ UResultsScreenWidget::UResultsScreenWidget() {
     this->BP_LetterBoxTop_Hide = NULL;
     this->BP_LetterBoxBottom_Hide = NULL;
     this->BP_OnlineStateTimer = NULL;
+    this->BP_SaveReplayButtonContainer = NULL;
+    this->BP_SaveReplayButton = NULL;
+    this->BP_ReplaySaved = NULL;
     this->bCanShowOnlineTimer = false;
+    this->bRequestedManualReplaySave = false;
+    this->ForfeitPopup = NULL;
+}
+
+bool UResultsScreenWidget::WillSaveReplay() const {
+    return false;
 }
 
 void UResultsScreenWidget::StartCoinSFX() {
@@ -23,8 +32,15 @@ bool UResultsScreenWidget::ShouldDisplayRankUpdate() {
     return false;
 }
 
+bool UResultsScreenWidget::ShouldDisplayEventLevelUp() {
+    return false;
+}
+
 bool UResultsScreenWidget::ShouldAutoShowStats() {
     return false;
+}
+
+void UResultsScreenWidget::RequestSaveReplay(const int32& PlayerSlot) {
 }
 
 void UResultsScreenWidget::QueueRewardForDisplay(const FResultsRewardInfo RewardInfo) {
@@ -37,6 +53,9 @@ void UResultsScreenWidget::ProcessRankUpdate(const FResultsRankUpdateInfo RankUp
 }
 
 void UResultsScreenWidget::ProcessNextReward() {
+}
+
+void UResultsScreenWidget::ProcessEventXpUpdate(const FResultsXpUpdateInfo XpUpdate) {
 }
 
 
@@ -135,6 +154,8 @@ void UResultsScreenWidget::ClickedNextRound(const int32& PlayerSlot) {
 
 void UResultsScreenWidget::ClickedBackToMatchmaking(const int32& PlayerSlot) {
 }
+
+
 
 
 

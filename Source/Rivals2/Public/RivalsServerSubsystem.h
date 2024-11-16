@@ -23,6 +23,9 @@ public:
     URivalsServerSubsystem();
 
     UFUNCTION(BlueprintCallable)
+    void UnregisterConnectedPlayer(const FString& PlayerPlayFabTitleId);
+    
+    UFUNCTION(BlueprintCallable)
     void RegisterConnectedPlayer(const FString& PlayerPlayFabTitleId);
     
     UFUNCTION(BlueprintCallable)

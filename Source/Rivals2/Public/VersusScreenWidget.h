@@ -15,6 +15,9 @@ UCLASS(Blueprintable, EditInlineNew)
 class RIVALS2_API UVersusScreenWidget : public UBaseScreenWidget {
     GENERATED_BODY()
 public:
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    URivalsStageSkinData* CurrentStageSkin;
+    
 protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<ARivalsPlayerEntity*> PlayerEntities;

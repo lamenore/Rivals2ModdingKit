@@ -18,5 +18,6 @@ FResultsXpUpdateInfo::FResultsXpUpdateInfo() {
     this->KoCount = 0;
     this->KoCountXp = 0;
     this->XpCoins = 0;
+    this->BonusCoins = 0;
 }
 

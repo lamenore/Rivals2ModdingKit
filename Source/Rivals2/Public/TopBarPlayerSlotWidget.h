@@ -5,6 +5,7 @@
 
 class UBetterImage;
 class UBorder;
+class UCharacterLevelWidget;
 class UImage;
 class UPlayerRankWidget;
 class UScaleBox;
@@ -39,6 +40,9 @@ protected:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UPlayerRankWidget* BP_PlayerRankDisplay;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    UCharacterLevelWidget* BP_CharacterLevelDisplay;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UScaleBox* BP_ScaleBox_SetCount;

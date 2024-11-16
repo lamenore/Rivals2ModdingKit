@@ -3,11 +3,13 @@
 UPlayerSlotOptionsMenuWidget::UPlayerSlotOptionsMenuWidget() {
     this->PlayerSlot = 0;
     this->ParentPopup = NULL;
+    this->BP_TooltipTextBlock = NULL;
     this->BP_TabSwitcher = NULL;
     this->BP_HomeTab = NULL;
     this->BP_TagsTab = NULL;
     this->BP_TagEntryTab = NULL;
     this->BP_ControlsTab = NULL;
+    this->BP_AdvancedControlsTab = NULL;
     this->BP_BindingsTab = NULL;
     this->BP_RightStickTab = NULL;
     this->BP_AirParryTab = NULL;
@@ -26,6 +28,9 @@ UPlayerSlotOptionsMenuWidget::UPlayerSlotOptionsMenuWidget() {
     this->BP_ConfirmTab = NULL;
     this->BP_OuterBorderTop = NULL;
     this->BP_OuterBorderBottom = NULL;
+    this->BP_TooltipContainer = NULL;
+    this->BP_ShowTooltipAnim = NULL;
+    this->BP_ShowTooltipMultilineAnim = NULL;
 }
 
 void UPlayerSlotOptionsMenuWidget::OpenMenu(bool OpenToTags, ARivalsPlayerController* InPlayerController, bool IsTopBar) {

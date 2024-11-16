@@ -1,5 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "UObject/NoExportTypes.h"
 #include "StoreTabInterface.h"
 #include "Templates/SubclassOf.h"
 #include "EventsStoreTab.generated.h"
@@ -7,8 +8,10 @@
 class UEventTrackStoreItem;
 class UHorizontalBox;
 class UImage;
+class UProgressBar;
 class UScrollBox;
 class UStoreItem;
+class UTextBlock;
 class UUniformGridPanel;
 
 UCLASS(Blueprintable, EditInlineNew)
@@ -19,6 +22,9 @@ public:
     int32 MaxItemsPerRow;
     
 protected:
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    UProgressBar* BP_TrackProgressBar;
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UImage* BP_EventBannerImage;
     
@@ -36,6 +42,18 @@ protected:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSubclassOf<UEventTrackStoreItem> BP_EventTrackItemInstance;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    UTextBlock* BP_EventSkinBonusText;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    UTextBlock* BP_EventSkinBonusText1;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    UTextBlock* BP_TimerText;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FDateTime expirationDateTime;
     
 public:
     UEventsStoreTab();

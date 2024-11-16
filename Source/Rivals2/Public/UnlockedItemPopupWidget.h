@@ -4,6 +4,7 @@
 #include "UnlockedItemPopupWidget.generated.h"
 
 class UBetterImage;
+class UCanvasPanel;
 class UEquipmentItemAsset;
 class URivalsMenuButtonWidget;
 class UTextBlock;
@@ -41,6 +42,12 @@ protected:
 private:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<UEquipmentItemAsset*> ItemAssets;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    UCanvasPanel* BP_BonusCoinPanel;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    UTextBlock* BP_BonusCoinAmountText;
     
 public:
     UUnlockedItemPopupWidget();

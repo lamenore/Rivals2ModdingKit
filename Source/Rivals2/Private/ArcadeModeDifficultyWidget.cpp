@@ -15,6 +15,9 @@ UArcadeModeDifficultyWidget::UArcadeModeDifficultyWidget() : UUserWidget(FObject
 void UArcadeModeDifficultyWidget::UpdateState(const URivalsCharacterDefinition* CharacterDefinition) {
 }
 
+void UArcadeModeDifficultyWidget::ShowDifficultyButtons() {
+}
+
 void UArcadeModeDifficultyWidget::SetDifficultyText(ERivalsArcadeModeDifficultySetting Difficulty) {
 }
 
@@ -22,6 +25,9 @@ void UArcadeModeDifficultyWidget::OnRightReleased() {
 }
 
 void UArcadeModeDifficultyWidget::OnLeftReleased() {
+}
+
+void UArcadeModeDifficultyWidget::HideDifficultyButton(URivalsButtonWidget* Button) {
 }
 
 

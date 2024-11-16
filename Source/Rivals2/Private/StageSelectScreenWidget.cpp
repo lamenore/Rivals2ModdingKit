@@ -1,7 +1,6 @@
 #include "StageSelectScreenWidget.h"
 
 UStageSelectScreenWidget::UStageSelectScreenWidget() {
-    this->bIsStageSelected = false;
     this->RPSWidgetInstance = NULL;
     this->StageButtonInstance = NULL;
     this->bIsInitialized = false;
@@ -60,6 +59,10 @@ bool UStageSelectScreenWidget::IsRPSOpen() const {
     return false;
 }
 
+
+FStageSelectPlayerInfo UStageSelectScreenWidget::GetPlayerInfo(const int32& PlayerSlot) {
+    return FStageSelectPlayerInfo{};
+}
 
 void UStageSelectScreenWidget::EnableStageStriking(const TArray<int32>& InPlayerSlots) {
 }

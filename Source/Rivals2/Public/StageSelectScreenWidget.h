@@ -3,6 +3,7 @@
 #include "BaseScreenWidget.h"
 #include "ERivalsSessionState.h"
 #include "StageBanInfo.h"
+#include "StageSelectPlayerInfo.h"
 #include "Templates/SubclassOf.h"
 #include "StageSelectScreenWidget.generated.h"
 
@@ -30,9 +31,6 @@ protected:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     TArray<UStageButtonWidget*> StageButtons;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    bool bIsStageSelected;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSubclassOf<URockPaperScissorsWidget> RPSWidgetInstance;
@@ -144,6 +142,9 @@ public:
     
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void InitStageSelectWidget();
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    FStageSelectPlayerInfo GetPlayerInfo(const int32& PlayerSlot);
     
     UFUNCTION(BlueprintCallable)
     void EnableStageStriking(const TArray<int32>& InPlayerSlots);

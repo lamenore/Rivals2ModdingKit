@@ -4,6 +4,9 @@ URivalsServerSubsystem::URivalsServerSubsystem() {
     this->ServerState = ERivalsServerState::None;
 }
 
+void URivalsServerSubsystem::UnregisterConnectedPlayer(const FString& PlayerPlayFabTitleId) {
+}
+
 void URivalsServerSubsystem::RegisterConnectedPlayer(const FString& PlayerPlayFabTitleId) {
 }
 

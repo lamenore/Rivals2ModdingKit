@@ -3,6 +3,7 @@
 UCssPlayerSlotWidget::UCssPlayerSlotWidget() : UUserWidget(FObjectInitializer::Get()) {
     this->PlayerSlotIndex = 0;
     this->BP_ChangeTypeScaleBox = NULL;
+    this->BP_AddCPUScaleBox = NULL;
     this->BP_PlayerRankScaleBox = NULL;
     this->BP_PlayerRankDisplay = NULL;
     this->BP_PlayerSlotOptionsMenu = NULL;
@@ -20,10 +21,10 @@ bool UCssPlayerSlotWidget::IsEditingOptions() const {
     return false;
 }
 
-void UCssPlayerSlotWidget::HandlePlayerAdded() {
+void UCssPlayerSlotWidget::HandleSetPlayerCPU() {
 }
 
-void UCssPlayerSlotWidget::HandelSetPlayerCPU() {
+void UCssPlayerSlotWidget::HandlePlayerAdded() {
 }
 
 

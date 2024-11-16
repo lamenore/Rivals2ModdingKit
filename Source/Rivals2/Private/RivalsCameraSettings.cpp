@@ -1,5 +1,4 @@
 #include "RivalsCameraSettings.h"
-#include "Rivals2_CameraGradient.h"
 
 FRivalsCameraSettings::FRivalsCameraSettings() {
     this->CameraBoundsMultiplierSide = 0.00f;
@@ -7,7 +6,7 @@ FRivalsCameraSettings::FRivalsCameraSettings() {
     this->CameraBoundsMultiplierBottom = 0.00f;
     this->ZoomDistanceMin = 0.00f;
     this->ZoomDistanceMax = 0.00f;
-    this->BoundingBox = nullptr;
+    this->BoundingBox = NULL;
     this->CameraType = NoOverride;
     this->bKeepRivalsInView = false;
     this->TransitionLerpAlpha = 0.00f;

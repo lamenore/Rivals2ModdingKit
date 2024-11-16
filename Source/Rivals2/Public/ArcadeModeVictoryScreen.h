@@ -99,7 +99,7 @@ public:
     void BP_ProcessedPlayerXpUpdate(const int32& PlayerSlot);
     
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
-    void BP_DisplayXpCoinReward(ERivalsCurrencyType CurrencyType, int32 DeltaCoins, int32 NewTotal);
+    void BP_DisplayXpCoinReward(ERivalsCurrencyType CurrencyType, int32 DeltaCoins, int32 NewTotal, int32 BonusCoins);
     
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BP_CurrencyRewardProcessed(const ERivalsCurrencyType& CurrencyType, const int32& DeltaCurrency, const int32& NewCurrencyTotal);

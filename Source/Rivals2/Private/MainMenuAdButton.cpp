@@ -3,6 +3,7 @@
 UMainMenuAdButton::UMainMenuAdButton() : UUserWidget(FObjectInitializer::Get()) {
     this->bUseURL = false;
     this->bHasPopout = false;
+    this->bHasExtraPopout = false;
     this->bHasTop = false;
     this->bToggleGlowAspectRatio = false;
     this->AdTexture = NULL;
@@ -13,6 +14,7 @@ UMainMenuAdButton::UMainMenuAdButton() : UUserWidget(FObjectInitializer::Get()) 
     this->BP_PopoutImage = NULL;
     this->BP_TopImage = NULL;
     this->BP_PopoutContainer = NULL;
+    this->BP_PopoutExtraContainer = NULL;
     this->BP_TopContainer = NULL;
     this->BP_GlowImage = NULL;
     this->BP_GlowSizeBox = NULL;

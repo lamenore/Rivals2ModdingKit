@@ -9,7 +9,6 @@ UCLASS(Blueprintable, EditInlineNew)
 class RIVALS2_API UMainMenuLocalTab : public UMainMenuTabInterface {
     GENERATED_BODY()
 public:
-protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     URivalsMenuButtonWidget* BP_LocalButton;
     
@@ -22,7 +21,6 @@ protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     URivalsMenuButtonWidget* BP_BackButton;
     
-public:
     UMainMenuLocalTab();
 
     UFUNCTION(BlueprintCallable)

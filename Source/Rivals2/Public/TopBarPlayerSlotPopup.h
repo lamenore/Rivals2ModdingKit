@@ -9,6 +9,9 @@ UCLASS(Blueprintable, EditInlineNew)
 class RIVALS2_API UTopBarPlayerSlotPopup : public UBasePopupWidget {
     GENERATED_BODY()
 public:
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FString UrlToOpen;
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UPlayerSlotOptionsMenuWidget* BP_PlayerSlotOptionsMenu;
     

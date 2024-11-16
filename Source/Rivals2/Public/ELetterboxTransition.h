@@ -3,7 +3,7 @@
 #include "ELetterboxTransition.generated.h"
 
 UENUM(BlueprintType)
-enum ELetterboxTransition {
+enum class ELetterboxTransition : uint8 {
     Open,
     Close,
     FocusOpen,

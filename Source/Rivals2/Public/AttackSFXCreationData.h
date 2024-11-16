@@ -27,6 +27,9 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TMap<FString, float> SoundParameters;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool bMuteSoundInMenuCapture;
+    
     RIVALS2_API FAttackSFXCreationData();
 };
 

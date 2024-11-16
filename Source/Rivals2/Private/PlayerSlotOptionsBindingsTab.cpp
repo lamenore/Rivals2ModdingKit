@@ -19,9 +19,6 @@ UPlayerSlotOptionsBindingsTab::UPlayerSlotOptionsBindingsTab() {
     this->BP_RightStickLeftButton = NULL;
     this->BP_RightStickUpButton = NULL;
     this->BP_RightStickDownButton = NULL;
-    this->BP_RightStickButton = NULL;
-    this->BP_AirParryButton = NULL;
-    this->BP_AirGrabButton = NULL;
     this->BP_BackButton = NULL;
 }
 

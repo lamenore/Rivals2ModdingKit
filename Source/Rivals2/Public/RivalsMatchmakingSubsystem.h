@@ -125,6 +125,9 @@ public:
     bool HasValidRegionsSelected();
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
+    bool HasActiveMatchmakingTickets();
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FString GetUserPublicIp();
     
     UFUNCTION(BlueprintCallable, BlueprintPure)

@@ -45,6 +45,11 @@ public:
     UFUNCTION(BlueprintCallable)
     void UpdateState(const URivalsCharacterDefinition* CharacterDefinition);
     
+private:
+    UFUNCTION(BlueprintCallable)
+    void ShowDifficultyButtons();
+    
+public:
     UFUNCTION(BlueprintCallable)
     void SetDifficultyText(ERivalsArcadeModeDifficultySetting Difficulty);
     
@@ -53,6 +58,10 @@ public:
     
     UFUNCTION(BlueprintCallable)
     void OnLeftReleased();
+    
+private:
+    UFUNCTION(BlueprintCallable)
+    void HideDifficultyButton(URivalsButtonWidget* Button);
     
 };
 

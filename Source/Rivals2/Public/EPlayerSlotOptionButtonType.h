@@ -10,5 +10,6 @@ enum class EPlayerSlotOptionButtonType : uint8 {
     Tag,
     Toggle,
     MultiToggle,
+    Icon,
 };
 

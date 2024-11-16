@@ -4,6 +4,7 @@
 #include "EDisplayedCurrencyType.h"
 #include "TopBarCurrencyDisplayer.generated.h"
 
+class UCanvasPanel;
 class URivalsButtonWidget;
 class UTextBlock;
 class UWidgetSwitcher;
@@ -26,6 +27,9 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     URivalsButtonWidget* BP_ButtonInteract;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    UCanvasPanel* BP_BonusCoinPanel;
     
     UTopBarCurrencyDisplayer();
 

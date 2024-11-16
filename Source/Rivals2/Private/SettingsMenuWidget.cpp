@@ -31,13 +31,13 @@ void USettingsMenuWidget::OnGraphicsTabPressed(const int32 UserIndex) {
 void USettingsMenuWidget::OnGameplayTabPressed(const int32 UserIndex) {
 }
 
-void USettingsMenuWidget::OnClosePressed() {
+void USettingsMenuWidget::OnClosePressed(const int32 UserIndex) {
 }
 
 void USettingsMenuWidget::OnAudioTabPressed(const int32 UserIndex) {
 }
 
-void USettingsMenuWidget::OnApplyPressed() {
+void USettingsMenuWidget::OnApplyPressed(const int32 UserIndex) {
 }
 
 void USettingsMenuWidget::CloseSettings() {

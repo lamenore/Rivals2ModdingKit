@@ -6,6 +6,7 @@ UTopBarCurrencyDisplayer::UTopBarCurrencyDisplayer() : UUserWidget(FObjectInitia
     this->BP_CurrencyAmount = NULL;
     this->BP_IconSwitcher = NULL;
     this->BP_ButtonInteract = NULL;
+    this->BP_BonusCoinPanel = NULL;
 }
 
 

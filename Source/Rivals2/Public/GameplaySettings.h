@@ -1,6 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "ERivalsCameraShakeStrength.h"
+#include "ERivalsReplayAutoSaveSetting.h"
 #include "GameplaySettings.generated.h"
 
 USTRUCT(BlueprintType)
@@ -15,6 +16,9 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool TeamOutlines;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    ERivalsReplayAutoSaveSetting ReplayAutoSave;
     
     RIVALS2_API FGameplaySettings();
 };

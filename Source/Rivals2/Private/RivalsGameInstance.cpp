@@ -47,7 +47,6 @@ URivalsGameInstance::URivalsGameInstance() {
     this->UniversalVfxContainer = NULL;
     this->bInStoryMode = false;
     this->bFinishedLoadingGameplayAssets = false;
-    this->bMuteBgmInEditor = true;
     this->bSimulateLastStock = false;
     this->bHasViewedStartupSequence = false;
     this->TapJumpDefault = false;
@@ -201,6 +200,9 @@ void URivalsGameInstance::PlayCharSfx(const FName& SoundName, const URivalsChara
 }
 
 void URivalsGameInstance::OnResultsAnimationFinished() {
+}
+
+void URivalsGameInstance::OnLeaveCSSToMainMenu() {
 }
 
 void URivalsGameInstance::OnAcceptedInvite() {

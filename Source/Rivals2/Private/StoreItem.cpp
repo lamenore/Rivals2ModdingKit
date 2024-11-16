@@ -11,6 +11,7 @@ UStoreItem::UStoreItem() : UUserWidget(FObjectInitializer::Get()) {
     this->BP_BorderBorder = NULL;
     this->BP_InnerBorder = NULL;
     this->BP_ItemIconBox = NULL;
+    this->BP_LoadingImage = NULL;
     this->BP_ItemIcon = NULL;
     this->BP_ItemTypeBorder = NULL;
     this->BP_ItemTypeImage = NULL;
@@ -47,6 +48,9 @@ UWidget* UStoreItem::OnNavigateButtons(EUINavigation InNavigation) {
 }
 
 void UStoreItem::OnHoverByPlayer(const int32 UserIndex) {
+}
+
+void UStoreItem::BP_OnHoverAnimFinished() {
 }
 
 

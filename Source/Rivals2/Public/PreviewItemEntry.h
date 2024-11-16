@@ -6,7 +6,6 @@
 
 class UBetterImage;
 class UEquipmentItemAsset;
-class UImage;
 class URivalsButtonWidget;
 class UTextBlock;
 class UWidget;
@@ -19,9 +18,6 @@ public:
 protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     URivalsButtonWidget* BP_ButtonInteract;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
-    UImage* BP_BGBorder;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UBetterImage* BP_ItemImage;

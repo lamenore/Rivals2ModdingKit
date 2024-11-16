@@ -1,5 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "SnapNetPropertyEnum.h"
 #include "SnapNetPropertyString.h"
 #include "SnapNetReliableMessage.h"
 #include "RivalsServerConnectionMessage.generated.h"
@@ -13,6 +14,9 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FSnapNetPropertyString PlayerMatchId;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FSnapNetPropertyEnum ReplayAutoSaveSetting;
     
     URivalsServerConnectionMessage();
 

@@ -5,6 +5,7 @@
 #include "ReplayScreenWidget.generated.h"
 
 class UReplayMenuRow;
+class USpinnerPopupWidget;
 class UVerticalBox;
 
 UCLASS(Blueprintable, EditInlineNew)
@@ -24,6 +25,9 @@ protected:
 private:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     TArray<UReplayMenuRow*> ReplayRowEntries;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    USpinnerPopupWidget* SpinnerPopupWidget;
     
 public:
     UReplayScreenWidget();

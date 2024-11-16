@@ -7,6 +7,10 @@ ULargeItemPurchasePreview::ULargeItemPurchasePreview() : UUserWidget(FObjectInit
     this->BP_CurrencyBox = NULL;
     this->BP_CurrencyImage = NULL;
     this->BP_ItemPriceText = NULL;
+    this->BP_ItemTypeBox = NULL;
+    this->BP_ItemTypeImageRight = NULL;
+    this->BP_ItemTypeImageLeft = NULL;
+    this->BP_ItemTypeText = NULL;
     this->BP_ConfirmButtonBox = NULL;
     this->BP_ConfirmButton = NULL;
     this->BP_CloseButtonBox = NULL;
