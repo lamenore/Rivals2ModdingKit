@@ -199,16 +199,13 @@
 !/Binaries/DotNET/GitDependencies.runtimeconfig.json
 
 # Add exceptions for quick clone of binaries
-!/Binaries/Win64/SparkingZEROEditor.target
+!/Binaries/Win64/Rivals2Editor.target
 !/Binaries/Win64/UnrealEditor.modules
-!/Binaries/Win64/UnrealEditor-SS.dll
-!/Binaries/Win64/UnrealEditor-SSKeyInput.dll
+!/Binaries/Win64/UnrealEditor-Rivals2.dll
 !/Plugins/*/Binaries/Win64/*
 !/Plugins/*/*/Binaries/Win64/*
 !/Plugins/*/*/*/Binaries/Win64/*
 !/Plugins/*/*/*/*/Binaries/Win64/*
-!/Plugins/EnginePlugins/Marketplace/ACLPlugin/Content/*
-!/Content/SS/Core/*
 
 # avoid PDBs
 /Plugins/**/*.pdb
