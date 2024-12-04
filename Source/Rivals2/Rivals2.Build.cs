@@ -25,6 +25,7 @@ public class Rivals2 : ModuleRules {
             "NiagaraUIRenderer",
             "Paper2D",
             "PingQoS",
+			"PlayFabGSDK",
             "PlayFab",
             "Slate",
             "SlateCore",
