@@ -1,0 +1,5 @@
+#include "NexusReferralGetPlayerCurrentReferral404Response.h"
+
+FNexusReferralGetPlayerCurrentReferral404Response::FNexusReferralGetPlayerCurrentReferral404Response() {
+}
+

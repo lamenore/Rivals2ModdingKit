@@ -1,0 +1,5 @@
+#include "NexusAttributionGetMemberByCodeOrUuidRequestParams.h"
+
+FNexusAttributionGetMemberByCodeOrUuidRequestParams::FNexusAttributionGetMemberByCodeOrUuidRequestParams() {
+}
+
