@@ -1,38 +1,124 @@
+//////////////////////////////////////////////////////
+// Copyright (C) Microsoft. 2018. All rights reserved.
+//////////////////////////////////////////////////////
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////
+// Automatically generated cpp file for the play fab models
+//
+// API: Profiles
+//////////////////////////////////////////////////////////////////////////////////////////////
+
 #include "PlayFabProfilesModelDecoder.h"
+#include "PlayFabPrivate.h"
 
-UPlayFabProfilesModelDecoder::UPlayFabProfilesModelDecoder() {
+//////////////////////////////////////////////////////////////////////////
+// Generated PlayFab Profiles API Functions
+//////////////////////////////////////////////////////////////////////////
+
+
+///////////////////////////////////////////////////////
+// Account Management
+//////////////////////////////////////////////////////
+
+FProfilesGetGlobalPolicyResponse UPlayFabProfilesModelDecoder::decodeGetGlobalPolicyResponseResponse(UPlayFabJsonObject* response)
+{
+    // Temp ustruct
+    FProfilesGetGlobalPolicyResponse tempStruct;
+    UPlayFabJsonObject* dataObj = !(response->HasField("data")) ? nullptr : response->GetObjectField("data");
+
+    tempStruct.Permissions = !(dataObj->HasField("Permissions")) ? TArray<UPlayFabJsonObject*>() : dataObj->GetObjectArrayField("Permissions");
+
+    return tempStruct;
 }
 
-FProfilesSetProfileLanguageResponse UPlayFabProfilesModelDecoder::decodeSetProfileLanguageResponseResponse(UPlayFabJsonObject* Response) {
-    return FProfilesSetProfileLanguageResponse{};
+FProfilesGetEntityProfileResponse UPlayFabProfilesModelDecoder::decodeGetEntityProfileResponseResponse(UPlayFabJsonObject* response)
+{
+    // Temp ustruct
+    FProfilesGetEntityProfileResponse tempStruct;
+    UPlayFabJsonObject* dataObj = !(response->HasField("data")) ? nullptr : response->GetObjectField("data");
+
+    tempStruct.Profile = !(dataObj->HasField("Profile")) ? nullptr : dataObj->GetObjectField("Profile");
+
+    return tempStruct;
 }
 
-FProfilesSetGlobalPolicyResponse UPlayFabProfilesModelDecoder::decodeSetGlobalPolicyResponseResponse(UPlayFabJsonObject* Response) {
-    return FProfilesSetGlobalPolicyResponse{};
+FProfilesGetEntityProfilesResponse UPlayFabProfilesModelDecoder::decodeGetEntityProfilesResponseResponse(UPlayFabJsonObject* response)
+{
+    // Temp ustruct
+    FProfilesGetEntityProfilesResponse tempStruct;
+    UPlayFabJsonObject* dataObj = !(response->HasField("data")) ? nullptr : response->GetObjectField("data");
+
+    tempStruct.Profiles = !(dataObj->HasField("Profiles")) ? TArray<UPlayFabJsonObject*>() : dataObj->GetObjectArrayField("Profiles");
+
+    return tempStruct;
 }
 
-FProfilesSetEntityProfilePolicyResponse UPlayFabProfilesModelDecoder::decodeSetEntityProfilePolicyResponseResponse(UPlayFabJsonObject* Response) {
-    return FProfilesSetEntityProfilePolicyResponse{};
+FProfilesGetTitlePlayersFromMasterPlayerAccountIdsResponse UPlayFabProfilesModelDecoder::decodeGetTitlePlayersFromMasterPlayerAccountIdsResponseResponse(UPlayFabJsonObject* response)
+{
+    // Temp ustruct
+    FProfilesGetTitlePlayersFromMasterPlayerAccountIdsResponse tempStruct;
+    UPlayFabJsonObject* dataObj = !(response->HasField("data")) ? nullptr : response->GetObjectField("data");
+
+    tempStruct.TitleId = !(dataObj->HasField("TitleId")) ? TEXT("") : dataObj->GetStringField("TitleId");
+    tempStruct.TitlePlayerAccounts = !(dataObj->HasField("TitlePlayerAccounts")) ? nullptr : dataObj->GetObjectField("TitlePlayerAccounts");
+
+    return tempStruct;
 }
 
-FProfilesGetTitlePlayersFromProviderIDsResponse UPlayFabProfilesModelDecoder::decodeGetTitlePlayersFromProviderIDsResponseResponse(UPlayFabJsonObject* Response) {
-    return FProfilesGetTitlePlayersFromProviderIDsResponse{};
+FProfilesGetTitlePlayersFromProviderIDsResponse UPlayFabProfilesModelDecoder::decodeGetTitlePlayersFromProviderIDsResponseResponse(UPlayFabJsonObject* response)
+{
+    // Temp ustruct
+    FProfilesGetTitlePlayersFromProviderIDsResponse tempStruct;
+    UPlayFabJsonObject* dataObj = !(response->HasField("data")) ? nullptr : response->GetObjectField("data");
+
+    tempStruct.TitlePlayerAccounts = !(dataObj->HasField("TitlePlayerAccounts")) ? nullptr : dataObj->GetObjectField("TitlePlayerAccounts");
+
+    return tempStruct;
 }
 
-FProfilesGetTitlePlayersFromMasterPlayerAccountIdsResponse UPlayFabProfilesModelDecoder::decodeGetTitlePlayersFromMasterPlayerAccountIdsResponseResponse(UPlayFabJsonObject* Response) {
-    return FProfilesGetTitlePlayersFromMasterPlayerAccountIdsResponse{};
+FProfilesSetDisplayNameResponse UPlayFabProfilesModelDecoder::decodeSetDisplayNameResponseResponse(UPlayFabJsonObject* response)
+{
+    // Temp ustruct
+    FProfilesSetDisplayNameResponse tempStruct;
+    UPlayFabJsonObject* dataObj = !(response->HasField("data")) ? nullptr : response->GetObjectField("data");
+
+    GetEnumValueFromString<EOperationTypes>(TEXT("EOperationTypes"), dataObj->GetStringField("OperationResult"), tempStruct.OperationResult);
+    tempStruct.VersionNumber = !(dataObj->HasField("VersionNumber")) ? 0 : int(dataObj->GetNumberField("VersionNumber"));
+
+    return tempStruct;
 }
 
-FProfilesGetGlobalPolicyResponse UPlayFabProfilesModelDecoder::decodeGetGlobalPolicyResponseResponse(UPlayFabJsonObject* Response) {
-    return FProfilesGetGlobalPolicyResponse{};
+FProfilesSetGlobalPolicyResponse UPlayFabProfilesModelDecoder::decodeSetGlobalPolicyResponseResponse(UPlayFabJsonObject* response)
+{
+    // Temp ustruct
+    FProfilesSetGlobalPolicyResponse tempStruct;
+
+
+    return tempStruct;
 }
 
-FProfilesGetEntityProfilesResponse UPlayFabProfilesModelDecoder::decodeGetEntityProfilesResponseResponse(UPlayFabJsonObject* Response) {
-    return FProfilesGetEntityProfilesResponse{};
+FProfilesSetProfileLanguageResponse UPlayFabProfilesModelDecoder::decodeSetProfileLanguageResponseResponse(UPlayFabJsonObject* response)
+{
+    // Temp ustruct
+    FProfilesSetProfileLanguageResponse tempStruct;
+    UPlayFabJsonObject* dataObj = !(response->HasField("data")) ? nullptr : response->GetObjectField("data");
+
+    GetEnumValueFromString<EOperationTypes>(TEXT("EOperationTypes"), dataObj->GetStringField("OperationResult"), tempStruct.OperationResult);
+    tempStruct.VersionNumber = !(dataObj->HasField("VersionNumber")) ? 0 : int(dataObj->GetNumberField("VersionNumber"));
+
+    return tempStruct;
 }
 
-FProfilesGetEntityProfileResponse UPlayFabProfilesModelDecoder::decodeGetEntityProfileResponseResponse(UPlayFabJsonObject* Response) {
-    return FProfilesGetEntityProfileResponse{};
+FProfilesSetEntityProfilePolicyResponse UPlayFabProfilesModelDecoder::decodeSetEntityProfilePolicyResponseResponse(UPlayFabJsonObject* response)
+{
+    // Temp ustruct
+    FProfilesSetEntityProfilePolicyResponse tempStruct;
+    UPlayFabJsonObject* dataObj = !(response->HasField("data")) ? nullptr : response->GetObjectField("data");
+
+    tempStruct.Permissions = !(dataObj->HasField("Permissions")) ? TArray<UPlayFabJsonObject*>() : dataObj->GetObjectArrayField("Permissions");
+
+    return tempStruct;
 }
 
 

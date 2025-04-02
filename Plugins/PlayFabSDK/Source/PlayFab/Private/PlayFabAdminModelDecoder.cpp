@@ -1,362 +1,1058 @@
+//////////////////////////////////////////////////////
+// Copyright (C) Microsoft. 2018. All rights reserved.
+//////////////////////////////////////////////////////
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////
+// Automatically generated cpp file for the play fab models
+//
+// API: Admin
+//////////////////////////////////////////////////////////////////////////////////////////////
+
 #include "PlayFabAdminModelDecoder.h"
+#include "PlayFabPrivate.h"
 
-UPlayFabAdminModelDecoder::UPlayFabAdminModelDecoder() {
-}
+//////////////////////////////////////////////////////////////////////////
+// Generated PlayFab Admin API Functions
+//////////////////////////////////////////////////////////////////////////
+
+
+///////////////////////////////////////////////////////
+// Account Management
+//////////////////////////////////////////////////////
 
-FAdminUpdateUserTitleDisplayNameResult UPlayFabAdminModelDecoder::decodeUpdateUserTitleDisplayNameResultResponse(UPlayFabJsonObject* Response) {
-    return FAdminUpdateUserTitleDisplayNameResult{};
+FAdminBanUsersResult UPlayFabAdminModelDecoder::decodeBanUsersResultResponse(UPlayFabJsonObject* response)
+{
+    // Temp ustruct
+    FAdminBanUsersResult tempStruct;
+    UPlayFabJsonObject* dataObj = !(response->HasField("data")) ? nullptr : response->GetObjectField("data");
+
+    tempStruct.BanData = !(dataObj->HasField("BanData")) ? TArray<UPlayFabJsonObject*>() : dataObj->GetObjectArrayField("BanData");
+
+    return tempStruct;
 }
+
+FAdminDeleteMasterPlayerAccountResult UPlayFabAdminModelDecoder::decodeDeleteMasterPlayerAccountResultResponse(UPlayFabJsonObject* response)
+{
+    // Temp ustruct
+    FAdminDeleteMasterPlayerAccountResult tempStruct;
+    UPlayFabJsonObject* dataObj = !(response->HasField("data")) ? nullptr : response->GetObjectField("data");
 
-FAdminUpdateUserDataResult UPlayFabAdminModelDecoder::decodeUpdateUserDataResultResponse(UPlayFabJsonObject* Response) {
-    return FAdminUpdateUserDataResult{};
+    tempStruct.JobReceiptId = !(dataObj->HasField("JobReceiptId")) ? TEXT("") : dataObj->GetStringField("JobReceiptId");
+    tempStruct.TitleIds = !(dataObj->HasField("TitleIds")) ? TEXT("") : FString::Join(dataObj->GetStringArrayField("TitleIds"), TEXT(","));
+
+    return tempStruct;
 }
+
+FAdminDeleteMasterPlayerEventDataResult UPlayFabAdminModelDecoder::decodeDeleteMasterPlayerEventDataResultResponse(UPlayFabJsonObject* response)
+{
+    // Temp ustruct
+    FAdminDeleteMasterPlayerEventDataResult tempStruct;
+
 
-FAdminUpdateStoreItemsResult UPlayFabAdminModelDecoder::decodeUpdateStoreItemsResultResponse(UPlayFabJsonObject* Response) {
-    return FAdminUpdateStoreItemsResult{};
+    return tempStruct;
 }
 
-FAdminUpdateSegmentResponse UPlayFabAdminModelDecoder::decodeUpdateSegmentResponseResponse(UPlayFabJsonObject* Response) {
-    return FAdminUpdateSegmentResponse{};
+FAdminDeleteMembershipSubscriptionResult UPlayFabAdminModelDecoder::decodeDeleteMembershipSubscriptionResultResponse(UPlayFabJsonObject* response)
+{
+    // Temp ustruct
+    FAdminDeleteMembershipSubscriptionResult tempStruct;
+
+
+    return tempStruct;
 }
+
+FAdminDeletePlayerResult UPlayFabAdminModelDecoder::decodeDeletePlayerResultResponse(UPlayFabJsonObject* response)
+{
+    // Temp ustruct
+    FAdminDeletePlayerResult tempStruct;
+
 
-FAdminUpdateRandomResultTablesResult UPlayFabAdminModelDecoder::decodeUpdateRandomResultTablesResultResponse(UPlayFabJsonObject* Response) {
-    return FAdminUpdateRandomResultTablesResult{};
+    return tempStruct;
 }
 
-FAdminUpdatePolicyResponse UPlayFabAdminModelDecoder::decodeUpdatePolicyResponseResponse(UPlayFabJsonObject* Response) {
-    return FAdminUpdatePolicyResponse{};
+FAdminDeleteTitleResult UPlayFabAdminModelDecoder::decodeDeleteTitleResultResponse(UPlayFabJsonObject* response)
+{
+    // Temp ustruct
+    FAdminDeleteTitleResult tempStruct;
+
+
+    return tempStruct;
 }
+
+FAdminExportMasterPlayerDataResult UPlayFabAdminModelDecoder::decodeExportMasterPlayerDataResultResponse(UPlayFabJsonObject* response)
+{
+    // Temp ustruct
+    FAdminExportMasterPlayerDataResult tempStruct;
+    UPlayFabJsonObject* dataObj = !(response->HasField("data")) ? nullptr : response->GetObjectField("data");
 
-FAdminUpdatePlayerStatisticDefinitionResult UPlayFabAdminModelDecoder::decodeUpdatePlayerStatisticDefinitionResultResponse(UPlayFabJsonObject* Response) {
-    return FAdminUpdatePlayerStatisticDefinitionResult{};
+    tempStruct.JobReceiptId = !(dataObj->HasField("JobReceiptId")) ? TEXT("") : dataObj->GetStringField("JobReceiptId");
+
+    return tempStruct;
 }
+
+FAdminGetPlayedTitleListResult UPlayFabAdminModelDecoder::decodeGetPlayedTitleListResultResponse(UPlayFabJsonObject* response)
+{
+    // Temp ustruct
+    FAdminGetPlayedTitleListResult tempStruct;
+    UPlayFabJsonObject* dataObj = !(response->HasField("data")) ? nullptr : response->GetObjectField("data");
 
-FAdminUpdatePlayerSharedSecretResult UPlayFabAdminModelDecoder::decodeUpdatePlayerSharedSecretResultResponse(UPlayFabJsonObject* Response) {
-    return FAdminUpdatePlayerSharedSecretResult{};
+    tempStruct.TitleIds = !(dataObj->HasField("TitleIds")) ? TEXT("") : FString::Join(dataObj->GetStringArrayField("TitleIds"), TEXT(","));
+
+    return tempStruct;
 }
+
+FAdminGetPlayerIdFromAuthTokenResult UPlayFabAdminModelDecoder::decodeGetPlayerIdFromAuthTokenResultResponse(UPlayFabJsonObject* response)
+{
+    // Temp ustruct
+    FAdminGetPlayerIdFromAuthTokenResult tempStruct;
+    UPlayFabJsonObject* dataObj = !(response->HasField("data")) ? nullptr : response->GetObjectField("data");
 
-FAdminUpdateCloudScriptResult UPlayFabAdminModelDecoder::decodeUpdateCloudScriptResultResponse(UPlayFabJsonObject* Response) {
-    return FAdminUpdateCloudScriptResult{};
+    tempStruct.PlayFabId = !(dataObj->HasField("PlayFabId")) ? TEXT("") : dataObj->GetStringField("PlayFabId");
+
+    return tempStruct;
 }
+
+FAdminGetPlayerProfileResult UPlayFabAdminModelDecoder::decodeGetPlayerProfileResultResponse(UPlayFabJsonObject* response)
+{
+    // Temp ustruct
+    FAdminGetPlayerProfileResult tempStruct;
+    UPlayFabJsonObject* dataObj = !(response->HasField("data")) ? nullptr : response->GetObjectField("data");
+
+    tempStruct.PlayerProfile = !(dataObj->HasField("PlayerProfile")) ? nullptr : dataObj->GetObjectField("PlayerProfile");
 
-FAdminUpdateCatalogItemsResult UPlayFabAdminModelDecoder::decodeUpdateCatalogItemsResultResponse(UPlayFabJsonObject* Response) {
-    return FAdminUpdateCatalogItemsResult{};
+    return tempStruct;
 }
 
-FAdminUpdateBansResult UPlayFabAdminModelDecoder::decodeUpdateBansResultResponse(UPlayFabJsonObject* Response) {
-    return FAdminUpdateBansResult{};
+FAdminLookupUserAccountInfoResult UPlayFabAdminModelDecoder::decodeLookupUserAccountInfoResultResponse(UPlayFabJsonObject* response)
+{
+    // Temp ustruct
+    FAdminLookupUserAccountInfoResult tempStruct;
+    UPlayFabJsonObject* dataObj = !(response->HasField("data")) ? nullptr : response->GetObjectField("data");
+
+    tempStruct.UserInfo = !(dataObj->HasField("UserInfo")) ? nullptr : dataObj->GetObjectField("UserInfo");
+
+    return tempStruct;
 }
+
+FAdminGetUserBansResult UPlayFabAdminModelDecoder::decodeGetUserBansResultResponse(UPlayFabJsonObject* response)
+{
+    // Temp ustruct
+    FAdminGetUserBansResult tempStruct;
+    UPlayFabJsonObject* dataObj = !(response->HasField("data")) ? nullptr : response->GetObjectField("data");
+
+    tempStruct.BanData = !(dataObj->HasField("BanData")) ? TArray<UPlayFabJsonObject*>() : dataObj->GetObjectArrayField("BanData");
 
-FAdminSetupPushNotificationResult UPlayFabAdminModelDecoder::decodeSetupPushNotificationResultResponse(UPlayFabJsonObject* Response) {
-    return FAdminSetupPushNotificationResult{};
+    return tempStruct;
 }
 
-FAdminSetTitleDataResult UPlayFabAdminModelDecoder::decodeSetTitleDataResultResponse(UPlayFabJsonObject* Response) {
-    return FAdminSetTitleDataResult{};
+FAdminResetPasswordResult UPlayFabAdminModelDecoder::decodeResetPasswordResultResponse(UPlayFabJsonObject* response)
+{
+    // Temp ustruct
+    FAdminResetPasswordResult tempStruct;
+
+
+    return tempStruct;
 }
+
+FAdminRevokeAllBansForUserResult UPlayFabAdminModelDecoder::decodeRevokeAllBansForUserResultResponse(UPlayFabJsonObject* response)
+{
+    // Temp ustruct
+    FAdminRevokeAllBansForUserResult tempStruct;
+    UPlayFabJsonObject* dataObj = !(response->HasField("data")) ? nullptr : response->GetObjectField("data");
 
-FAdminSetTitleDataAndOverridesResult UPlayFabAdminModelDecoder::decodeSetTitleDataAndOverridesResultResponse(UPlayFabJsonObject* Response) {
-    return FAdminSetTitleDataAndOverridesResult{};
+    tempStruct.BanData = !(dataObj->HasField("BanData")) ? TArray<UPlayFabJsonObject*>() : dataObj->GetObjectArrayField("BanData");
+
+    return tempStruct;
 }
+
+FAdminRevokeBansResult UPlayFabAdminModelDecoder::decodeRevokeBansResultResponse(UPlayFabJsonObject* response)
+{
+    // Temp ustruct
+    FAdminRevokeBansResult tempStruct;
+    UPlayFabJsonObject* dataObj = !(response->HasField("data")) ? nullptr : response->GetObjectField("data");
 
-FAdminSetPublisherDataResult UPlayFabAdminModelDecoder::decodeSetPublisherDataResultResponse(UPlayFabJsonObject* Response) {
-    return FAdminSetPublisherDataResult{};
+    tempStruct.BanData = !(dataObj->HasField("BanData")) ? TArray<UPlayFabJsonObject*>() : dataObj->GetObjectArrayField("BanData");
+
+    return tempStruct;
 }
+
+FAdminSendAccountRecoveryEmailResult UPlayFabAdminModelDecoder::decodeSendAccountRecoveryEmailResultResponse(UPlayFabJsonObject* response)
+{
+    // Temp ustruct
+    FAdminSendAccountRecoveryEmailResult tempStruct;
 
-FAdminSetPublishedRevisionResult UPlayFabAdminModelDecoder::decodeSetPublishedRevisionResultResponse(UPlayFabJsonObject* Response) {
-    return FAdminSetPublishedRevisionResult{};
+
+    return tempStruct;
 }
+
+FAdminSetMembershipOverrideResult UPlayFabAdminModelDecoder::decodeSetMembershipOverrideResultResponse(UPlayFabJsonObject* response)
+{
+    // Temp ustruct
+    FAdminSetMembershipOverrideResult tempStruct;
+
 
-FAdminSetPlayerSecretResult UPlayFabAdminModelDecoder::decodeSetPlayerSecretResultResponse(UPlayFabJsonObject* Response) {
-    return FAdminSetPlayerSecretResult{};
+    return tempStruct;
 }
 
-FAdminSetMembershipOverrideResult UPlayFabAdminModelDecoder::decodeSetMembershipOverrideResultResponse(UPlayFabJsonObject* Response) {
-    return FAdminSetMembershipOverrideResult{};
+FAdminUpdateBansResult UPlayFabAdminModelDecoder::decodeUpdateBansResultResponse(UPlayFabJsonObject* response)
+{
+    // Temp ustruct
+    FAdminUpdateBansResult tempStruct;
+    UPlayFabJsonObject* dataObj = !(response->HasField("data")) ? nullptr : response->GetObjectField("data");
+
+    tempStruct.BanData = !(dataObj->HasField("BanData")) ? TArray<UPlayFabJsonObject*>() : dataObj->GetObjectArrayField("BanData");
+
+    return tempStruct;
 }
+
+FAdminUpdateUserTitleDisplayNameResult UPlayFabAdminModelDecoder::decodeUpdateUserTitleDisplayNameResultResponse(UPlayFabJsonObject* response)
+{
+    // Temp ustruct
+    FAdminUpdateUserTitleDisplayNameResult tempStruct;
+    UPlayFabJsonObject* dataObj = !(response->HasField("data")) ? nullptr : response->GetObjectField("data");
+
+    tempStruct.DisplayName = !(dataObj->HasField("DisplayName")) ? TEXT("") : dataObj->GetStringField("DisplayName");
 
-FAdminSendAccountRecoveryEmailResult UPlayFabAdminModelDecoder::decodeSendAccountRecoveryEmailResultResponse(UPlayFabJsonObject* Response) {
-    return FAdminSendAccountRecoveryEmailResult{};
+    return tempStruct;
 }
 
-FAdminRunTaskResult UPlayFabAdminModelDecoder::decodeRunTaskResultResponse(UPlayFabJsonObject* Response) {
-    return FAdminRunTaskResult{};
+
+
+///////////////////////////////////////////////////////
+// Authentication
+//////////////////////////////////////////////////////
+
+FAdminEmptyResponse UPlayFabAdminModelDecoder::decodeEmptyResponseResponse(UPlayFabJsonObject* response)
+{
+    // Temp ustruct
+    FAdminEmptyResponse tempStruct;
+
+
+    return tempStruct;
 }
+
+FAdminCreatePlayerSharedSecretResult UPlayFabAdminModelDecoder::decodeCreatePlayerSharedSecretResultResponse(UPlayFabJsonObject* response)
+{
+    // Temp ustruct
+    FAdminCreatePlayerSharedSecretResult tempStruct;
+    UPlayFabJsonObject* dataObj = !(response->HasField("data")) ? nullptr : response->GetObjectField("data");
+
+    tempStruct.SecretKey = !(dataObj->HasField("SecretKey")) ? TEXT("") : dataObj->GetStringField("SecretKey");
 
-FAdminRevokeInventoryResult UPlayFabAdminModelDecoder::decodeRevokeInventoryResultResponse(UPlayFabJsonObject* Response) {
-    return FAdminRevokeInventoryResult{};
+    return tempStruct;
 }
 
-FAdminRevokeInventoryItemsResult UPlayFabAdminModelDecoder::decodeRevokeInventoryItemsResultResponse(UPlayFabJsonObject* Response) {
-    return FAdminRevokeInventoryItemsResult{};
+FAdminDeletePlayerSharedSecretResult UPlayFabAdminModelDecoder::decodeDeletePlayerSharedSecretResultResponse(UPlayFabJsonObject* response)
+{
+    // Temp ustruct
+    FAdminDeletePlayerSharedSecretResult tempStruct;
+
+
+    return tempStruct;
 }
+
+FAdminGetPlayerSharedSecretsResult UPlayFabAdminModelDecoder::decodeGetPlayerSharedSecretsResultResponse(UPlayFabJsonObject* response)
+{
+    // Temp ustruct
+    FAdminGetPlayerSharedSecretsResult tempStruct;
+    UPlayFabJsonObject* dataObj = !(response->HasField("data")) ? nullptr : response->GetObjectField("data");
 
-FAdminRevokeBansResult UPlayFabAdminModelDecoder::decodeRevokeBansResultResponse(UPlayFabJsonObject* Response) {
-    return FAdminRevokeBansResult{};
+    tempStruct.SharedSecrets = !(dataObj->HasField("SharedSecrets")) ? TArray<UPlayFabJsonObject*>() : dataObj->GetObjectArrayField("SharedSecrets");
+
+    return tempStruct;
 }
+
+FAdminGetPolicyResponse UPlayFabAdminModelDecoder::decodeGetPolicyResponseResponse(UPlayFabJsonObject* response)
+{
+    // Temp ustruct
+    FAdminGetPolicyResponse tempStruct;
+    UPlayFabJsonObject* dataObj = !(response->HasField("data")) ? nullptr : response->GetObjectField("data");
 
-FAdminRevokeAllBansForUserResult UPlayFabAdminModelDecoder::decodeRevokeAllBansForUserResultResponse(UPlayFabJsonObject* Response) {
-    return FAdminRevokeAllBansForUserResult{};
+    tempStruct.PolicyName = !(dataObj->HasField("PolicyName")) ? TEXT("") : dataObj->GetStringField("PolicyName");
+    tempStruct.PolicyVersion = !(dataObj->HasField("PolicyVersion")) ? 0 : int(dataObj->GetNumberField("PolicyVersion"));
+    tempStruct.Statements = !(dataObj->HasField("Statements")) ? TArray<UPlayFabJsonObject*>() : dataObj->GetObjectArrayField("Statements");
+
+    return tempStruct;
 }
+
+FAdminListOpenIdConnectionResponse UPlayFabAdminModelDecoder::decodeListOpenIdConnectionResponseResponse(UPlayFabJsonObject* response)
+{
+    // Temp ustruct
+    FAdminListOpenIdConnectionResponse tempStruct;
+    UPlayFabJsonObject* dataObj = !(response->HasField("data")) ? nullptr : response->GetObjectField("data");
 
-FAdminResolvePurchaseDisputeResponse UPlayFabAdminModelDecoder::decodeResolvePurchaseDisputeResponseResponse(UPlayFabJsonObject* Response) {
-    return FAdminResolvePurchaseDisputeResponse{};
+    tempStruct.Connections = !(dataObj->HasField("Connections")) ? TArray<UPlayFabJsonObject*>() : dataObj->GetObjectArrayField("Connections");
+
+    return tempStruct;
 }
+
+FAdminSetPlayerSecretResult UPlayFabAdminModelDecoder::decodeSetPlayerSecretResultResponse(UPlayFabJsonObject* response)
+{
+    // Temp ustruct
+    FAdminSetPlayerSecretResult tempStruct;
+
 
-FAdminResetUserStatisticsResult UPlayFabAdminModelDecoder::decodeResetUserStatisticsResultResponse(UPlayFabJsonObject* Response) {
-    return FAdminResetUserStatisticsResult{};
+    return tempStruct;
 }
 
-FAdminResetPasswordResult UPlayFabAdminModelDecoder::decodeResetPasswordResultResponse(UPlayFabJsonObject* Response) {
-    return FAdminResetPasswordResult{};
+FAdminUpdatePlayerSharedSecretResult UPlayFabAdminModelDecoder::decodeUpdatePlayerSharedSecretResultResponse(UPlayFabJsonObject* response)
+{
+    // Temp ustruct
+    FAdminUpdatePlayerSharedSecretResult tempStruct;
+
+
+    return tempStruct;
 }
+
+FAdminUpdatePolicyResponse UPlayFabAdminModelDecoder::decodeUpdatePolicyResponseResponse(UPlayFabJsonObject* response)
+{
+    // Temp ustruct
+    FAdminUpdatePolicyResponse tempStruct;
+    UPlayFabJsonObject* dataObj = !(response->HasField("data")) ? nullptr : response->GetObjectField("data");
 
-FAdminResetCharacterStatisticsResult UPlayFabAdminModelDecoder::decodeResetCharacterStatisticsResultResponse(UPlayFabJsonObject* Response) {
-    return FAdminResetCharacterStatisticsResult{};
+    tempStruct.PolicyName = !(dataObj->HasField("PolicyName")) ? TEXT("") : dataObj->GetStringField("PolicyName");
+    tempStruct.Statements = !(dataObj->HasField("Statements")) ? TArray<UPlayFabJsonObject*>() : dataObj->GetObjectArrayField("Statements");
+
+    return tempStruct;
 }
+
+
 
-FAdminRemovePlayerTagResult UPlayFabAdminModelDecoder::decodeRemovePlayerTagResultResponse(UPlayFabJsonObject* Response) {
-    return FAdminRemovePlayerTagResult{};
+///////////////////////////////////////////////////////
+// Characters
+//////////////////////////////////////////////////////
+
+FAdminResetCharacterStatisticsResult UPlayFabAdminModelDecoder::decodeResetCharacterStatisticsResultResponse(UPlayFabJsonObject* response)
+{
+    // Temp ustruct
+    FAdminResetCharacterStatisticsResult tempStruct;
+
+
+    return tempStruct;
 }
+
 
-FAdminRefundPurchaseResponse UPlayFabAdminModelDecoder::decodeRefundPurchaseResponseResponse(UPlayFabJsonObject* Response) {
-    return FAdminRefundPurchaseResponse{};
+
+///////////////////////////////////////////////////////
+// Content
+//////////////////////////////////////////////////////
+
+FAdminBlankResult UPlayFabAdminModelDecoder::decodeBlankResultResponse(UPlayFabJsonObject* response)
+{
+    // Temp ustruct
+    FAdminBlankResult tempStruct;
+
+
+    return tempStruct;
 }
+
+FAdminGetContentListResult UPlayFabAdminModelDecoder::decodeGetContentListResultResponse(UPlayFabJsonObject* response)
+{
+    // Temp ustruct
+    FAdminGetContentListResult tempStruct;
+    UPlayFabJsonObject* dataObj = !(response->HasField("data")) ? nullptr : response->GetObjectField("data");
 
-FAdminModifyUserVirtualCurrencyResult UPlayFabAdminModelDecoder::decodeModifyUserVirtualCurrencyResultResponse(UPlayFabJsonObject* Response) {
-    return FAdminModifyUserVirtualCurrencyResult{};
+    tempStruct.Contents = !(dataObj->HasField("Contents")) ? TArray<UPlayFabJsonObject*>() : dataObj->GetObjectArrayField("Contents");
+    tempStruct.ItemCount = !(dataObj->HasField("ItemCount")) ? 0 : int(dataObj->GetNumberField("ItemCount"));
+    tempStruct.TotalSize = !(dataObj->HasField("TotalSize")) ? 0 : int(dataObj->GetNumberField("TotalSize"));
+
+    return tempStruct;
 }
+
+FAdminGetContentUploadUrlResult UPlayFabAdminModelDecoder::decodeGetContentUploadUrlResultResponse(UPlayFabJsonObject* response)
+{
+    // Temp ustruct
+    FAdminGetContentUploadUrlResult tempStruct;
+    UPlayFabJsonObject* dataObj = !(response->HasField("data")) ? nullptr : response->GetObjectField("data");
 
-FAdminLookupUserAccountInfoResult UPlayFabAdminModelDecoder::decodeLookupUserAccountInfoResultResponse(UPlayFabJsonObject* Response) {
-    return FAdminLookupUserAccountInfoResult{};
+    tempStruct.URL = !(dataObj->HasField("URL")) ? TEXT("") : dataObj->GetStringField("URL");
+
+    return tempStruct;
 }
+
+
+
+///////////////////////////////////////////////////////
+// Custom Server Management
+//////////////////////////////////////////////////////
+
+
+
+///////////////////////////////////////////////////////
+// Matchmaking
+//////////////////////////////////////////////////////
 
-FAdminListVirtualCurrencyTypesResult UPlayFabAdminModelDecoder::decodeListVirtualCurrencyTypesResultResponse(UPlayFabJsonObject* Response) {
-    return FAdminListVirtualCurrencyTypesResult{};
+
+
+///////////////////////////////////////////////////////
+// Player Data Management
+//////////////////////////////////////////////////////
+
+FAdminCreatePlayerStatisticDefinitionResult UPlayFabAdminModelDecoder::decodeCreatePlayerStatisticDefinitionResultResponse(UPlayFabJsonObject* response)
+{
+    // Temp ustruct
+    FAdminCreatePlayerStatisticDefinitionResult tempStruct;
+    UPlayFabJsonObject* dataObj = !(response->HasField("data")) ? nullptr : response->GetObjectField("data");
+
+    tempStruct.Statistic = !(dataObj->HasField("Statistic")) ? nullptr : dataObj->GetObjectField("Statistic");
+
+    return tempStruct;
 }
+
+FAdminGetDataReportResult UPlayFabAdminModelDecoder::decodeGetDataReportResultResponse(UPlayFabJsonObject* response)
+{
+    // Temp ustruct
+    FAdminGetDataReportResult tempStruct;
+    UPlayFabJsonObject* dataObj = !(response->HasField("data")) ? nullptr : response->GetObjectField("data");
+
+    tempStruct.DownloadUrl = !(dataObj->HasField("DownloadUrl")) ? TEXT("") : dataObj->GetStringField("DownloadUrl");
 
-FAdminListOpenIdConnectionResponse UPlayFabAdminModelDecoder::decodeListOpenIdConnectionResponseResponse(UPlayFabJsonObject* Response) {
-    return FAdminListOpenIdConnectionResponse{};
+    return tempStruct;
 }
 
-FAdminIncrementPlayerStatisticVersionResult UPlayFabAdminModelDecoder::decodeIncrementPlayerStatisticVersionResultResponse(UPlayFabJsonObject* Response) {
-    return FAdminIncrementPlayerStatisticVersionResult{};
+FAdminGetPlayerStatisticDefinitionsResult UPlayFabAdminModelDecoder::decodeGetPlayerStatisticDefinitionsResultResponse(UPlayFabJsonObject* response)
+{
+    // Temp ustruct
+    FAdminGetPlayerStatisticDefinitionsResult tempStruct;
+    UPlayFabJsonObject* dataObj = !(response->HasField("data")) ? nullptr : response->GetObjectField("data");
+
+    tempStruct.Statistics = !(dataObj->HasField("Statistics")) ? TArray<UPlayFabJsonObject*>() : dataObj->GetObjectArrayField("Statistics");
+
+    return tempStruct;
 }
+
+FAdminGetPlayerStatisticVersionsResult UPlayFabAdminModelDecoder::decodeGetPlayerStatisticVersionsResultResponse(UPlayFabJsonObject* response)
+{
+    // Temp ustruct
+    FAdminGetPlayerStatisticVersionsResult tempStruct;
+    UPlayFabJsonObject* dataObj = !(response->HasField("data")) ? nullptr : response->GetObjectField("data");
 
-FAdminIncrementLimitedEditionItemAvailabilityResult UPlayFabAdminModelDecoder::decodeIncrementLimitedEditionItemAvailabilityResultResponse(UPlayFabJsonObject* Response) {
-    return FAdminIncrementLimitedEditionItemAvailabilityResult{};
+    tempStruct.StatisticVersions = !(dataObj->HasField("StatisticVersions")) ? TArray<UPlayFabJsonObject*>() : dataObj->GetObjectArrayField("StatisticVersions");
+
+    return tempStruct;
 }
+
+FAdminGetUserDataResult UPlayFabAdminModelDecoder::decodeGetUserDataResultResponse(UPlayFabJsonObject* response)
+{
+    // Temp ustruct
+    FAdminGetUserDataResult tempStruct;
+    UPlayFabJsonObject* dataObj = !(response->HasField("data")) ? nullptr : response->GetObjectField("data");
 
-FAdminGrantItemsToUsersResult UPlayFabAdminModelDecoder::decodeGrantItemsToUsersResultResponse(UPlayFabJsonObject* Response) {
-    return FAdminGrantItemsToUsersResult{};
+    tempStruct.Data = !(dataObj->HasField("Data")) ? nullptr : dataObj->GetObjectField("Data");
+    tempStruct.DataVersion = !(dataObj->HasField("DataVersion")) ? 0 : int(dataObj->GetNumberField("DataVersion"));
+    tempStruct.PlayFabId = !(dataObj->HasField("PlayFabId")) ? TEXT("") : dataObj->GetStringField("PlayFabId");
+
+    return tempStruct;
 }
+
+FAdminIncrementPlayerStatisticVersionResult UPlayFabAdminModelDecoder::decodeIncrementPlayerStatisticVersionResultResponse(UPlayFabJsonObject* response)
+{
+    // Temp ustruct
+    FAdminIncrementPlayerStatisticVersionResult tempStruct;
+    UPlayFabJsonObject* dataObj = !(response->HasField("data")) ? nullptr : response->GetObjectField("data");
 
-FAdminGetUserInventoryResult UPlayFabAdminModelDecoder::decodeGetUserInventoryResultResponse(UPlayFabJsonObject* Response) {
-    return FAdminGetUserInventoryResult{};
+    tempStruct.StatisticVersion = !(dataObj->HasField("StatisticVersion")) ? nullptr : dataObj->GetObjectField("StatisticVersion");
+
+    return tempStruct;
 }
+
+FAdminRefundPurchaseResponse UPlayFabAdminModelDecoder::decodeRefundPurchaseResponseResponse(UPlayFabJsonObject* response)
+{
+    // Temp ustruct
+    FAdminRefundPurchaseResponse tempStruct;
+    UPlayFabJsonObject* dataObj = !(response->HasField("data")) ? nullptr : response->GetObjectField("data");
+
+    tempStruct.PurchaseStatus = !(dataObj->HasField("PurchaseStatus")) ? TEXT("") : dataObj->GetStringField("PurchaseStatus");
 
-FAdminGetUserDataResult UPlayFabAdminModelDecoder::decodeGetUserDataResultResponse(UPlayFabJsonObject* Response) {
-    return FAdminGetUserDataResult{};
+    return tempStruct;
 }
 
-FAdminGetUserBansResult UPlayFabAdminModelDecoder::decodeGetUserBansResultResponse(UPlayFabJsonObject* Response) {
-    return FAdminGetUserBansResult{};
+FAdminResetUserStatisticsResult UPlayFabAdminModelDecoder::decodeResetUserStatisticsResultResponse(UPlayFabJsonObject* response)
+{
+    // Temp ustruct
+    FAdminResetUserStatisticsResult tempStruct;
+
+
+    return tempStruct;
 }
+
+FAdminResolvePurchaseDisputeResponse UPlayFabAdminModelDecoder::decodeResolvePurchaseDisputeResponseResponse(UPlayFabJsonObject* response)
+{
+    // Temp ustruct
+    FAdminResolvePurchaseDisputeResponse tempStruct;
+    UPlayFabJsonObject* dataObj = !(response->HasField("data")) ? nullptr : response->GetObjectField("data");
+
+    tempStruct.PurchaseStatus = !(dataObj->HasField("PurchaseStatus")) ? TEXT("") : dataObj->GetStringField("PurchaseStatus");
 
-FAdminGetTitleDataResult UPlayFabAdminModelDecoder::decodeGetTitleDataResultResponse(UPlayFabJsonObject* Response) {
-    return FAdminGetTitleDataResult{};
+    return tempStruct;
 }
 
-FAdminGetTasksResult UPlayFabAdminModelDecoder::decodeGetTasksResultResponse(UPlayFabJsonObject* Response) {
-    return FAdminGetTasksResult{};
+FAdminUpdatePlayerStatisticDefinitionResult UPlayFabAdminModelDecoder::decodeUpdatePlayerStatisticDefinitionResultResponse(UPlayFabJsonObject* response)
+{
+    // Temp ustruct
+    FAdminUpdatePlayerStatisticDefinitionResult tempStruct;
+    UPlayFabJsonObject* dataObj = !(response->HasField("data")) ? nullptr : response->GetObjectField("data");
+
+    tempStruct.Statistic = !(dataObj->HasField("Statistic")) ? nullptr : dataObj->GetObjectField("Statistic");
+
+    return tempStruct;
 }
+
+FAdminUpdateUserDataResult UPlayFabAdminModelDecoder::decodeUpdateUserDataResultResponse(UPlayFabJsonObject* response)
+{
+    // Temp ustruct
+    FAdminUpdateUserDataResult tempStruct;
+    UPlayFabJsonObject* dataObj = !(response->HasField("data")) ? nullptr : response->GetObjectField("data");
 
-FAdminGetTaskInstancesResult UPlayFabAdminModelDecoder::decodeGetTaskInstancesResultResponse(UPlayFabJsonObject* Response) {
-    return FAdminGetTaskInstancesResult{};
+    tempStruct.DataVersion = !(dataObj->HasField("DataVersion")) ? 0 : int(dataObj->GetNumberField("DataVersion"));
+
+    return tempStruct;
 }
+
+
+
+///////////////////////////////////////////////////////
+// Player Item Management
+//////////////////////////////////////////////////////
 
-FAdminGetStoreItemsResult UPlayFabAdminModelDecoder::decodeGetStoreItemsResultResponse(UPlayFabJsonObject* Response) {
-    return FAdminGetStoreItemsResult{};
+FAdminModifyUserVirtualCurrencyResult UPlayFabAdminModelDecoder::decodeModifyUserVirtualCurrencyResultResponse(UPlayFabJsonObject* response)
+{
+    // Temp ustruct
+    FAdminModifyUserVirtualCurrencyResult tempStruct;
+    UPlayFabJsonObject* dataObj = !(response->HasField("data")) ? nullptr : response->GetObjectField("data");
+
+    tempStruct.Balance = !(dataObj->HasField("Balance")) ? 0 : int(dataObj->GetNumberField("Balance"));
+    tempStruct.BalanceChange = !(dataObj->HasField("BalanceChange")) ? 0 : int(dataObj->GetNumberField("BalanceChange"));
+    tempStruct.PlayFabId = !(dataObj->HasField("PlayFabId")) ? TEXT("") : dataObj->GetStringField("PlayFabId");
+    tempStruct.VirtualCurrency = !(dataObj->HasField("VirtualCurrency")) ? TEXT("") : dataObj->GetStringField("VirtualCurrency");
+
+    return tempStruct;
 }
+
+FAdminCheckLimitedEditionItemAvailabilityResult UPlayFabAdminModelDecoder::decodeCheckLimitedEditionItemAvailabilityResultResponse(UPlayFabJsonObject* response)
+{
+    // Temp ustruct
+    FAdminCheckLimitedEditionItemAvailabilityResult tempStruct;
+    UPlayFabJsonObject* dataObj = !(response->HasField("data")) ? nullptr : response->GetObjectField("data");
 
-FAdminGetSegmentsResponse UPlayFabAdminModelDecoder::decodeGetSegmentsResponseResponse(UPlayFabJsonObject* Response) {
-    return FAdminGetSegmentsResponse{};
+    tempStruct.Amount = !(dataObj->HasField("Amount")) ? 0 : int(dataObj->GetNumberField("Amount"));
+
+    return tempStruct;
 }
+
+FAdminGetUserInventoryResult UPlayFabAdminModelDecoder::decodeGetUserInventoryResultResponse(UPlayFabJsonObject* response)
+{
+    // Temp ustruct
+    FAdminGetUserInventoryResult tempStruct;
+    UPlayFabJsonObject* dataObj = !(response->HasField("data")) ? nullptr : response->GetObjectField("data");
+
+    tempStruct.Inventory = !(dataObj->HasField("Inventory")) ? TArray<UPlayFabJsonObject*>() : dataObj->GetObjectArrayField("Inventory");
+    tempStruct.PlayFabId = !(dataObj->HasField("PlayFabId")) ? TEXT("") : dataObj->GetStringField("PlayFabId");
+    tempStruct.VirtualCurrency = !(dataObj->HasField("VirtualCurrency")) ? nullptr : dataObj->GetObjectField("VirtualCurrency");
+    tempStruct.VirtualCurrencyRechargeTimes = !(dataObj->HasField("VirtualCurrencyRechargeTimes")) ? nullptr : dataObj->GetObjectField("VirtualCurrencyRechargeTimes");
 
-FAdminGetRandomResultTablesResult UPlayFabAdminModelDecoder::decodeGetRandomResultTablesResultResponse(UPlayFabJsonObject* Response) {
-    return FAdminGetRandomResultTablesResult{};
+    return tempStruct;
 }
 
-FAdminGetPublisherDataResult UPlayFabAdminModelDecoder::decodeGetPublisherDataResultResponse(UPlayFabJsonObject* Response) {
-    return FAdminGetPublisherDataResult{};
+FAdminGrantItemsToUsersResult UPlayFabAdminModelDecoder::decodeGrantItemsToUsersResultResponse(UPlayFabJsonObject* response)
+{
+    // Temp ustruct
+    FAdminGrantItemsToUsersResult tempStruct;
+    UPlayFabJsonObject* dataObj = !(response->HasField("data")) ? nullptr : response->GetObjectField("data");
+
+    tempStruct.ItemGrantResults = !(dataObj->HasField("ItemGrantResults")) ? TArray<UPlayFabJsonObject*>() : dataObj->GetObjectArrayField("ItemGrantResults");
+
+    return tempStruct;
 }
+
+FAdminIncrementLimitedEditionItemAvailabilityResult UPlayFabAdminModelDecoder::decodeIncrementLimitedEditionItemAvailabilityResultResponse(UPlayFabJsonObject* response)
+{
+    // Temp ustruct
+    FAdminIncrementLimitedEditionItemAvailabilityResult tempStruct;
 
-FAdminGetPolicyResponse UPlayFabAdminModelDecoder::decodeGetPolicyResponseResponse(UPlayFabJsonObject* Response) {
-    return FAdminGetPolicyResponse{};
+
+    return tempStruct;
 }
+
+FAdminRevokeInventoryResult UPlayFabAdminModelDecoder::decodeRevokeInventoryResultResponse(UPlayFabJsonObject* response)
+{
+    // Temp ustruct
+    FAdminRevokeInventoryResult tempStruct;
 
-FAdminGetPlayerTagsResult UPlayFabAdminModelDecoder::decodeGetPlayerTagsResultResponse(UPlayFabJsonObject* Response) {
-    return FAdminGetPlayerTagsResult{};
+
+    return tempStruct;
 }
+
+FAdminRevokeInventoryItemsResult UPlayFabAdminModelDecoder::decodeRevokeInventoryItemsResultResponse(UPlayFabJsonObject* response)
+{
+    // Temp ustruct
+    FAdminRevokeInventoryItemsResult tempStruct;
+    UPlayFabJsonObject* dataObj = !(response->HasField("data")) ? nullptr : response->GetObjectField("data");
 
-FAdminGetPlayerStatisticVersionsResult UPlayFabAdminModelDecoder::decodeGetPlayerStatisticVersionsResultResponse(UPlayFabJsonObject* Response) {
-    return FAdminGetPlayerStatisticVersionsResult{};
+    tempStruct.Errors = !(dataObj->HasField("Errors")) ? TArray<UPlayFabJsonObject*>() : dataObj->GetObjectArrayField("Errors");
+
+    return tempStruct;
 }
+
+
 
-FAdminGetPlayerStatisticDefinitionsResult UPlayFabAdminModelDecoder::decodeGetPlayerStatisticDefinitionsResultResponse(UPlayFabJsonObject* Response) {
-    return FAdminGetPlayerStatisticDefinitionsResult{};
+///////////////////////////////////////////////////////
+// PlayStream
+//////////////////////////////////////////////////////
+
+FAdminAddPlayerTagResult UPlayFabAdminModelDecoder::decodeAddPlayerTagResultResponse(UPlayFabJsonObject* response)
+{
+    // Temp ustruct
+    FAdminAddPlayerTagResult tempStruct;
+
+
+    return tempStruct;
 }
+
+FAdminExportPlayersInSegmentResult UPlayFabAdminModelDecoder::decodeExportPlayersInSegmentResultResponse(UPlayFabJsonObject* response)
+{
+    // Temp ustruct
+    FAdminExportPlayersInSegmentResult tempStruct;
+    UPlayFabJsonObject* dataObj = !(response->HasField("data")) ? nullptr : response->GetObjectField("data");
 
-FAdminGetPlayersInSegmentResult UPlayFabAdminModelDecoder::decodeGetPlayersInSegmentResultResponse(UPlayFabJsonObject* Response) {
-    return FAdminGetPlayersInSegmentResult{};
+    tempStruct.ExportId = !(dataObj->HasField("ExportId")) ? TEXT("") : dataObj->GetStringField("ExportId");
+    tempStruct.SegmentId = !(dataObj->HasField("SegmentId")) ? TEXT("") : dataObj->GetStringField("SegmentId");
+
+    return tempStruct;
 }
+
+FAdminGetAllSegmentsResult UPlayFabAdminModelDecoder::decodeGetAllSegmentsResultResponse(UPlayFabJsonObject* response)
+{
+    // Temp ustruct
+    FAdminGetAllSegmentsResult tempStruct;
+    UPlayFabJsonObject* dataObj = !(response->HasField("data")) ? nullptr : response->GetObjectField("data");
+
+    tempStruct.Segments = !(dataObj->HasField("Segments")) ? TArray<UPlayFabJsonObject*>() : dataObj->GetObjectArrayField("Segments");
 
-FAdminGetPlayersInSegmentExportResponse UPlayFabAdminModelDecoder::decodeGetPlayersInSegmentExportResponseResponse(UPlayFabJsonObject* Response) {
-    return FAdminGetPlayersInSegmentExportResponse{};
+    return tempStruct;
 }
 
-FAdminGetPlayerSharedSecretsResult UPlayFabAdminModelDecoder::decodeGetPlayerSharedSecretsResultResponse(UPlayFabJsonObject* Response) {
-    return FAdminGetPlayerSharedSecretsResult{};
+FAdminGetPlayerSegmentsResult UPlayFabAdminModelDecoder::decodeGetPlayerSegmentsResultResponse(UPlayFabJsonObject* response)
+{
+    // Temp ustruct
+    FAdminGetPlayerSegmentsResult tempStruct;
+    UPlayFabJsonObject* dataObj = !(response->HasField("data")) ? nullptr : response->GetObjectField("data");
+
+    tempStruct.Segments = !(dataObj->HasField("Segments")) ? TArray<UPlayFabJsonObject*>() : dataObj->GetObjectArrayField("Segments");
+
+    return tempStruct;
 }
+
+FAdminGetPlayersInSegmentResult UPlayFabAdminModelDecoder::decodeGetPlayersInSegmentResultResponse(UPlayFabJsonObject* response)
+{
+    // Temp ustruct
+    FAdminGetPlayersInSegmentResult tempStruct;
+    UPlayFabJsonObject* dataObj = !(response->HasField("data")) ? nullptr : response->GetObjectField("data");
+
+    tempStruct.ContinuationToken = !(dataObj->HasField("ContinuationToken")) ? TEXT("") : dataObj->GetStringField("ContinuationToken");
+    tempStruct.PlayerProfiles = !(dataObj->HasField("PlayerProfiles")) ? TArray<UPlayFabJsonObject*>() : dataObj->GetObjectArrayField("PlayerProfiles");
+    tempStruct.ProfilesInSegment = !(dataObj->HasField("ProfilesInSegment")) ? 0 : int(dataObj->GetNumberField("ProfilesInSegment"));
 
-FAdminGetPlayerSegmentsResult UPlayFabAdminModelDecoder::decodeGetPlayerSegmentsResultResponse(UPlayFabJsonObject* Response) {
-    return FAdminGetPlayerSegmentsResult{};
+    return tempStruct;
 }
 
-FAdminGetPlayerProfileResult UPlayFabAdminModelDecoder::decodeGetPlayerProfileResultResponse(UPlayFabJsonObject* Response) {
-    return FAdminGetPlayerProfileResult{};
+FAdminGetPlayerTagsResult UPlayFabAdminModelDecoder::decodeGetPlayerTagsResultResponse(UPlayFabJsonObject* response)
+{
+    // Temp ustruct
+    FAdminGetPlayerTagsResult tempStruct;
+    UPlayFabJsonObject* dataObj = !(response->HasField("data")) ? nullptr : response->GetObjectField("data");
+
+    tempStruct.PlayFabId = !(dataObj->HasField("PlayFabId")) ? TEXT("") : dataObj->GetStringField("PlayFabId");
+    tempStruct.Tags = !(dataObj->HasField("Tags")) ? TEXT("") : FString::Join(dataObj->GetStringArrayField("Tags"), TEXT(","));
+
+    return tempStruct;
 }
+
+FAdminGetPlayersInSegmentExportResponse UPlayFabAdminModelDecoder::decodeGetPlayersInSegmentExportResponseResponse(UPlayFabJsonObject* response)
+{
+    // Temp ustruct
+    FAdminGetPlayersInSegmentExportResponse tempStruct;
+    UPlayFabJsonObject* dataObj = !(response->HasField("data")) ? nullptr : response->GetObjectField("data");
 
-FAdminGetPlayerIdFromAuthTokenResult UPlayFabAdminModelDecoder::decodeGetPlayerIdFromAuthTokenResultResponse(UPlayFabJsonObject* Response) {
-    return FAdminGetPlayerIdFromAuthTokenResult{};
+    tempStruct.IndexUrl = !(dataObj->HasField("IndexUrl")) ? TEXT("") : dataObj->GetStringField("IndexUrl");
+    tempStruct.State = !(dataObj->HasField("State")) ? TEXT("") : dataObj->GetStringField("State");
+
+    return tempStruct;
 }
+
+FAdminRemovePlayerTagResult UPlayFabAdminModelDecoder::decodeRemovePlayerTagResultResponse(UPlayFabJsonObject* response)
+{
+    // Temp ustruct
+    FAdminRemovePlayerTagResult tempStruct;
 
-FAdminGetPlayedTitleListResult UPlayFabAdminModelDecoder::decodeGetPlayedTitleListResultResponse(UPlayFabJsonObject* Response) {
-    return FAdminGetPlayedTitleListResult{};
+
+    return tempStruct;
 }
+
 
-FAdminGetDataReportResult UPlayFabAdminModelDecoder::decodeGetDataReportResultResponse(UPlayFabJsonObject* Response) {
-    return FAdminGetDataReportResult{};
+
+///////////////////////////////////////////////////////
+// ScheduledTask
+//////////////////////////////////////////////////////
+
+FAdminCreateTaskResult UPlayFabAdminModelDecoder::decodeCreateTaskResultResponse(UPlayFabJsonObject* response)
+{
+    // Temp ustruct
+    FAdminCreateTaskResult tempStruct;
+    UPlayFabJsonObject* dataObj = !(response->HasField("data")) ? nullptr : response->GetObjectField("data");
+
+    tempStruct.TaskId = !(dataObj->HasField("TaskId")) ? TEXT("") : dataObj->GetStringField("TaskId");
+
+    return tempStruct;
 }
+
+FAdminGetActionsOnPlayersInSegmentTaskInstanceResult UPlayFabAdminModelDecoder::decodeGetActionsOnPlayersInSegmentTaskInstanceResultResponse(UPlayFabJsonObject* response)
+{
+    // Temp ustruct
+    FAdminGetActionsOnPlayersInSegmentTaskInstanceResult tempStruct;
+    UPlayFabJsonObject* dataObj = !(response->HasField("data")) ? nullptr : response->GetObjectField("data");
 
-FAdminGetContentUploadUrlResult UPlayFabAdminModelDecoder::decodeGetContentUploadUrlResultResponse(UPlayFabJsonObject* Response) {
-    return FAdminGetContentUploadUrlResult{};
+    tempStruct.Parameter = !(dataObj->HasField("Parameter")) ? nullptr : dataObj->GetObjectField("Parameter");
+    tempStruct.Summary = !(dataObj->HasField("Summary")) ? nullptr : dataObj->GetObjectField("Summary");
+
+    return tempStruct;
 }
+
+FAdminGetCloudScriptTaskInstanceResult UPlayFabAdminModelDecoder::decodeGetCloudScriptTaskInstanceResultResponse(UPlayFabJsonObject* response)
+{
+    // Temp ustruct
+    FAdminGetCloudScriptTaskInstanceResult tempStruct;
+    UPlayFabJsonObject* dataObj = !(response->HasField("data")) ? nullptr : response->GetObjectField("data");
 
-FAdminGetContentListResult UPlayFabAdminModelDecoder::decodeGetContentListResultResponse(UPlayFabJsonObject* Response) {
-    return FAdminGetContentListResult{};
+    tempStruct.Parameter = !(dataObj->HasField("Parameter")) ? nullptr : dataObj->GetObjectField("Parameter");
+    tempStruct.Summary = !(dataObj->HasField("Summary")) ? nullptr : dataObj->GetObjectField("Summary");
+
+    return tempStruct;
 }
+
+FAdminGetTaskInstancesResult UPlayFabAdminModelDecoder::decodeGetTaskInstancesResultResponse(UPlayFabJsonObject* response)
+{
+    // Temp ustruct
+    FAdminGetTaskInstancesResult tempStruct;
+    UPlayFabJsonObject* dataObj = !(response->HasField("data")) ? nullptr : response->GetObjectField("data");
+
+    tempStruct.Summaries = !(dataObj->HasField("Summaries")) ? TArray<UPlayFabJsonObject*>() : dataObj->GetObjectArrayField("Summaries");
 
-FAdminGetCloudScriptVersionsResult UPlayFabAdminModelDecoder::decodeGetCloudScriptVersionsResultResponse(UPlayFabJsonObject* Response) {
-    return FAdminGetCloudScriptVersionsResult{};
+    return tempStruct;
 }
 
-FAdminGetCloudScriptTaskInstanceResult UPlayFabAdminModelDecoder::decodeGetCloudScriptTaskInstanceResultResponse(UPlayFabJsonObject* Response) {
-    return FAdminGetCloudScriptTaskInstanceResult{};
+FAdminGetTasksResult UPlayFabAdminModelDecoder::decodeGetTasksResultResponse(UPlayFabJsonObject* response)
+{
+    // Temp ustruct
+    FAdminGetTasksResult tempStruct;
+    UPlayFabJsonObject* dataObj = !(response->HasField("data")) ? nullptr : response->GetObjectField("data");
+
+    tempStruct.Tasks = !(dataObj->HasField("Tasks")) ? TArray<UPlayFabJsonObject*>() : dataObj->GetObjectArrayField("Tasks");
+
+    return tempStruct;
 }
+
+FAdminRunTaskResult UPlayFabAdminModelDecoder::decodeRunTaskResultResponse(UPlayFabJsonObject* response)
+{
+    // Temp ustruct
+    FAdminRunTaskResult tempStruct;
+    UPlayFabJsonObject* dataObj = !(response->HasField("data")) ? nullptr : response->GetObjectField("data");
+
+    tempStruct.TaskInstanceId = !(dataObj->HasField("TaskInstanceId")) ? TEXT("") : dataObj->GetStringField("TaskInstanceId");
 
-FAdminGetCloudScriptRevisionResult UPlayFabAdminModelDecoder::decodeGetCloudScriptRevisionResultResponse(UPlayFabJsonObject* Response) {
-    return FAdminGetCloudScriptRevisionResult{};
+    return tempStruct;
 }
 
-FAdminGetCatalogItemsResult UPlayFabAdminModelDecoder::decodeGetCatalogItemsResultResponse(UPlayFabJsonObject* Response) {
-    return FAdminGetCatalogItemsResult{};
+
+
+///////////////////////////////////////////////////////
+// Segments
+//////////////////////////////////////////////////////
+
+FAdminCreateSegmentResponse UPlayFabAdminModelDecoder::decodeCreateSegmentResponseResponse(UPlayFabJsonObject* response)
+{
+    // Temp ustruct
+    FAdminCreateSegmentResponse tempStruct;
+    UPlayFabJsonObject* dataObj = !(response->HasField("data")) ? nullptr : response->GetObjectField("data");
+
+    tempStruct.ErrorMessage = !(dataObj->HasField("ErrorMessage")) ? TEXT("") : dataObj->GetStringField("ErrorMessage");
+    tempStruct.SegmentId = !(dataObj->HasField("SegmentId")) ? TEXT("") : dataObj->GetStringField("SegmentId");
+
+    return tempStruct;
 }
+
+FAdminDeleteSegmentsResponse UPlayFabAdminModelDecoder::decodeDeleteSegmentsResponseResponse(UPlayFabJsonObject* response)
+{
+    // Temp ustruct
+    FAdminDeleteSegmentsResponse tempStruct;
+    UPlayFabJsonObject* dataObj = !(response->HasField("data")) ? nullptr : response->GetObjectField("data");
+
+    tempStruct.ErrorMessage = !(dataObj->HasField("ErrorMessage")) ? TEXT("") : dataObj->GetStringField("ErrorMessage");
 
-FAdminGetAllSegmentsResult UPlayFabAdminModelDecoder::decodeGetAllSegmentsResultResponse(UPlayFabJsonObject* Response) {
-    return FAdminGetAllSegmentsResult{};
+    return tempStruct;
 }
 
-FAdminGetActionsOnPlayersInSegmentTaskInstanceResult UPlayFabAdminModelDecoder::decodeGetActionsOnPlayersInSegmentTaskInstanceResultResponse(UPlayFabJsonObject* Response) {
-    return FAdminGetActionsOnPlayersInSegmentTaskInstanceResult{};
+FAdminGetSegmentsResponse UPlayFabAdminModelDecoder::decodeGetSegmentsResponseResponse(UPlayFabJsonObject* response)
+{
+    // Temp ustruct
+    FAdminGetSegmentsResponse tempStruct;
+    UPlayFabJsonObject* dataObj = !(response->HasField("data")) ? nullptr : response->GetObjectField("data");
+
+    tempStruct.ErrorMessage = !(dataObj->HasField("ErrorMessage")) ? TEXT("") : dataObj->GetStringField("ErrorMessage");
+    tempStruct.Segments = !(dataObj->HasField("Segments")) ? TArray<UPlayFabJsonObject*>() : dataObj->GetObjectArrayField("Segments");
+
+    return tempStruct;
 }
+
+FAdminUpdateSegmentResponse UPlayFabAdminModelDecoder::decodeUpdateSegmentResponseResponse(UPlayFabJsonObject* response)
+{
+    // Temp ustruct
+    FAdminUpdateSegmentResponse tempStruct;
+    UPlayFabJsonObject* dataObj = !(response->HasField("data")) ? nullptr : response->GetObjectField("data");
 
-FAdminExportPlayersInSegmentResult UPlayFabAdminModelDecoder::decodeExportPlayersInSegmentResultResponse(UPlayFabJsonObject* Response) {
-    return FAdminExportPlayersInSegmentResult{};
+    tempStruct.ErrorMessage = !(dataObj->HasField("ErrorMessage")) ? TEXT("") : dataObj->GetStringField("ErrorMessage");
+    tempStruct.SegmentId = !(dataObj->HasField("SegmentId")) ? TEXT("") : dataObj->GetStringField("SegmentId");
+
+    return tempStruct;
 }
+
+
 
-FAdminExportMasterPlayerDataResult UPlayFabAdminModelDecoder::decodeExportMasterPlayerDataResultResponse(UPlayFabJsonObject* Response) {
-    return FAdminExportMasterPlayerDataResult{};
+///////////////////////////////////////////////////////
+// Server-Side Cloud Script
+//////////////////////////////////////////////////////
+
+FAdminGetCloudScriptRevisionResult UPlayFabAdminModelDecoder::decodeGetCloudScriptRevisionResultResponse(UPlayFabJsonObject* response)
+{
+    // Temp ustruct
+    FAdminGetCloudScriptRevisionResult tempStruct;
+    UPlayFabJsonObject* dataObj = !(response->HasField("data")) ? nullptr : response->GetObjectField("data");
+
+    tempStruct.CreatedAt = !(dataObj->HasField("CreatedAt")) ? TEXT("") : dataObj->GetStringField("CreatedAt");
+    tempStruct.Files = !(dataObj->HasField("Files")) ? TArray<UPlayFabJsonObject*>() : dataObj->GetObjectArrayField("Files");
+    tempStruct.IsPublished = !(dataObj->HasField("IsPublished")) ? false : dataObj->GetBoolField("IsPublished");
+    tempStruct.Revision = !(dataObj->HasField("Revision")) ? 0 : int(dataObj->GetNumberField("Revision"));
+    tempStruct.Version = !(dataObj->HasField("Version")) ? 0 : int(dataObj->GetNumberField("Version"));
+
+    return tempStruct;
 }
 
-FAdminEmptyResponse UPlayFabAdminModelDecoder::decodeEmptyResponseResponse(UPlayFabJsonObject* Response) {
-    return FAdminEmptyResponse{};
+FAdminGetCloudScriptVersionsResult UPlayFabAdminModelDecoder::decodeGetCloudScriptVersionsResultResponse(UPlayFabJsonObject* response)
+{
+    // Temp ustruct
+    FAdminGetCloudScriptVersionsResult tempStruct;
+    UPlayFabJsonObject* dataObj = !(response->HasField("data")) ? nullptr : response->GetObjectField("data");
+
+    tempStruct.Versions = !(dataObj->HasField("Versions")) ? TArray<UPlayFabJsonObject*>() : dataObj->GetObjectArrayField("Versions");
+
+    return tempStruct;
 }
+
+FAdminSetPublishedRevisionResult UPlayFabAdminModelDecoder::decodeSetPublishedRevisionResultResponse(UPlayFabJsonObject* response)
+{
+    // Temp ustruct
+    FAdminSetPublishedRevisionResult tempStruct;
+
 
-FAdminDeleteTitleResult UPlayFabAdminModelDecoder::decodeDeleteTitleResultResponse(UPlayFabJsonObject* Response) {
-    return FAdminDeleteTitleResult{};
+    return tempStruct;
 }
 
-FAdminDeleteTitleDataOverrideResult UPlayFabAdminModelDecoder::decodeDeleteTitleDataOverrideResultResponse(UPlayFabJsonObject* Response) {
-    return FAdminDeleteTitleDataOverrideResult{};
+FAdminUpdateCloudScriptResult UPlayFabAdminModelDecoder::decodeUpdateCloudScriptResultResponse(UPlayFabJsonObject* response)
+{
+    // Temp ustruct
+    FAdminUpdateCloudScriptResult tempStruct;
+    UPlayFabJsonObject* dataObj = !(response->HasField("data")) ? nullptr : response->GetObjectField("data");
+
+    tempStruct.Revision = !(dataObj->HasField("Revision")) ? 0 : int(dataObj->GetNumberField("Revision"));
+    tempStruct.Version = !(dataObj->HasField("Version")) ? 0 : int(dataObj->GetNumberField("Version"));
+
+    return tempStruct;
 }
+
+
+
+///////////////////////////////////////////////////////
+// Shared Group Data
+//////////////////////////////////////////////////////
+
+FAdminSetPublisherDataResult UPlayFabAdminModelDecoder::decodeSetPublisherDataResultResponse(UPlayFabJsonObject* response)
+{
+    // Temp ustruct
+    FAdminSetPublisherDataResult tempStruct;
+
 
-FAdminDeleteStoreResult UPlayFabAdminModelDecoder::decodeDeleteStoreResultResponse(UPlayFabJsonObject* Response) {
-    return FAdminDeleteStoreResult{};
+    return tempStruct;
 }
 
-FAdminDeleteSegmentsResponse UPlayFabAdminModelDecoder::decodeDeleteSegmentsResponseResponse(UPlayFabJsonObject* Response) {
-    return FAdminDeleteSegmentsResponse{};
+
+
+///////////////////////////////////////////////////////
+// Title-Wide Data Management
+//////////////////////////////////////////////////////
+
+FAdminAddLocalizedNewsResult UPlayFabAdminModelDecoder::decodeAddLocalizedNewsResultResponse(UPlayFabJsonObject* response)
+{
+    // Temp ustruct
+    FAdminAddLocalizedNewsResult tempStruct;
+
+
+    return tempStruct;
 }
+
+FAdminAddNewsResult UPlayFabAdminModelDecoder::decodeAddNewsResultResponse(UPlayFabJsonObject* response)
+{
+    // Temp ustruct
+    FAdminAddNewsResult tempStruct;
+    UPlayFabJsonObject* dataObj = !(response->HasField("data")) ? nullptr : response->GetObjectField("data");
+
+    tempStruct.NewsId = !(dataObj->HasField("NewsId")) ? TEXT("") : dataObj->GetStringField("NewsId");
 
-FAdminDeletePlayerSharedSecretResult UPlayFabAdminModelDecoder::decodeDeletePlayerSharedSecretResultResponse(UPlayFabJsonObject* Response) {
-    return FAdminDeletePlayerSharedSecretResult{};
+    return tempStruct;
 }
 
-FAdminDeletePlayerResult UPlayFabAdminModelDecoder::decodeDeletePlayerResultResponse(UPlayFabJsonObject* Response) {
-    return FAdminDeletePlayerResult{};
+FAdminDeleteStoreResult UPlayFabAdminModelDecoder::decodeDeleteStoreResultResponse(UPlayFabJsonObject* response)
+{
+    // Temp ustruct
+    FAdminDeleteStoreResult tempStruct;
+
+
+    return tempStruct;
 }
+
+FAdminDeleteTitleDataOverrideResult UPlayFabAdminModelDecoder::decodeDeleteTitleDataOverrideResultResponse(UPlayFabJsonObject* response)
+{
+    // Temp ustruct
+    FAdminDeleteTitleDataOverrideResult tempStruct;
 
-FAdminDeleteMembershipSubscriptionResult UPlayFabAdminModelDecoder::decodeDeleteMembershipSubscriptionResultResponse(UPlayFabJsonObject* Response) {
-    return FAdminDeleteMembershipSubscriptionResult{};
+
+    return tempStruct;
 }
+
+FAdminGetCatalogItemsResult UPlayFabAdminModelDecoder::decodeGetCatalogItemsResultResponse(UPlayFabJsonObject* response)
+{
+    // Temp ustruct
+    FAdminGetCatalogItemsResult tempStruct;
+    UPlayFabJsonObject* dataObj = !(response->HasField("data")) ? nullptr : response->GetObjectField("data");
 
-FAdminDeleteMasterPlayerEventDataResult UPlayFabAdminModelDecoder::decodeDeleteMasterPlayerEventDataResultResponse(UPlayFabJsonObject* Response) {
-    return FAdminDeleteMasterPlayerEventDataResult{};
+    tempStruct.Catalog = !(dataObj->HasField("Catalog")) ? TArray<UPlayFabJsonObject*>() : dataObj->GetObjectArrayField("Catalog");
+
+    return tempStruct;
 }
+
+FAdminGetPublisherDataResult UPlayFabAdminModelDecoder::decodeGetPublisherDataResultResponse(UPlayFabJsonObject* response)
+{
+    // Temp ustruct
+    FAdminGetPublisherDataResult tempStruct;
+    UPlayFabJsonObject* dataObj = !(response->HasField("data")) ? nullptr : response->GetObjectField("data");
 
-FAdminDeleteMasterPlayerAccountResult UPlayFabAdminModelDecoder::decodeDeleteMasterPlayerAccountResultResponse(UPlayFabJsonObject* Response) {
-    return FAdminDeleteMasterPlayerAccountResult{};
+    tempStruct.Data = !(dataObj->HasField("Data")) ? nullptr : dataObj->GetObjectField("Data");
+
+    return tempStruct;
 }
+
+FAdminGetRandomResultTablesResult UPlayFabAdminModelDecoder::decodeGetRandomResultTablesResultResponse(UPlayFabJsonObject* response)
+{
+    // Temp ustruct
+    FAdminGetRandomResultTablesResult tempStruct;
+    UPlayFabJsonObject* dataObj = !(response->HasField("data")) ? nullptr : response->GetObjectField("data");
+
+    tempStruct.Tables = !(dataObj->HasField("Tables")) ? nullptr : dataObj->GetObjectField("Tables");
 
-FAdminCreateTaskResult UPlayFabAdminModelDecoder::decodeCreateTaskResultResponse(UPlayFabJsonObject* Response) {
-    return FAdminCreateTaskResult{};
+    return tempStruct;
 }
 
-FAdminCreateSegmentResponse UPlayFabAdminModelDecoder::decodeCreateSegmentResponseResponse(UPlayFabJsonObject* Response) {
-    return FAdminCreateSegmentResponse{};
+FAdminGetStoreItemsResult UPlayFabAdminModelDecoder::decodeGetStoreItemsResultResponse(UPlayFabJsonObject* response)
+{
+    // Temp ustruct
+    FAdminGetStoreItemsResult tempStruct;
+    UPlayFabJsonObject* dataObj = !(response->HasField("data")) ? nullptr : response->GetObjectField("data");
+
+    tempStruct.CatalogVersion = !(dataObj->HasField("CatalogVersion")) ? TEXT("") : dataObj->GetStringField("CatalogVersion");
+    tempStruct.MarketingData = !(dataObj->HasField("MarketingData")) ? nullptr : dataObj->GetObjectField("MarketingData");
+    GetEnumValueFromString<EPfSourceType>(TEXT("EPfSourceType"), dataObj->GetStringField("Source"), tempStruct.Source);
+    tempStruct.Store = !(dataObj->HasField("Store")) ? TArray<UPlayFabJsonObject*>() : dataObj->GetObjectArrayField("Store");
+    tempStruct.StoreId = !(dataObj->HasField("StoreId")) ? TEXT("") : dataObj->GetStringField("StoreId");
+
+    return tempStruct;
 }
+
+FAdminGetTitleDataResult UPlayFabAdminModelDecoder::decodeGetTitleDataResultResponse(UPlayFabJsonObject* response)
+{
+    // Temp ustruct
+    FAdminGetTitleDataResult tempStruct;
+    UPlayFabJsonObject* dataObj = !(response->HasField("data")) ? nullptr : response->GetObjectField("data");
+
+    tempStruct.Data = !(dataObj->HasField("Data")) ? nullptr : dataObj->GetObjectField("Data");
 
-FAdminCreatePlayerStatisticDefinitionResult UPlayFabAdminModelDecoder::decodeCreatePlayerStatisticDefinitionResultResponse(UPlayFabJsonObject* Response) {
-    return FAdminCreatePlayerStatisticDefinitionResult{};
+    return tempStruct;
 }
 
-FAdminCreatePlayerSharedSecretResult UPlayFabAdminModelDecoder::decodeCreatePlayerSharedSecretResultResponse(UPlayFabJsonObject* Response) {
-    return FAdminCreatePlayerSharedSecretResult{};
+FAdminListVirtualCurrencyTypesResult UPlayFabAdminModelDecoder::decodeListVirtualCurrencyTypesResultResponse(UPlayFabJsonObject* response)
+{
+    // Temp ustruct
+    FAdminListVirtualCurrencyTypesResult tempStruct;
+    UPlayFabJsonObject* dataObj = !(response->HasField("data")) ? nullptr : response->GetObjectField("data");
+
+    tempStruct.VirtualCurrencies = !(dataObj->HasField("VirtualCurrencies")) ? TArray<UPlayFabJsonObject*>() : dataObj->GetObjectArrayField("VirtualCurrencies");
+
+    return tempStruct;
 }
+
+FAdminUpdateCatalogItemsResult UPlayFabAdminModelDecoder::decodeUpdateCatalogItemsResultResponse(UPlayFabJsonObject* response)
+{
+    // Temp ustruct
+    FAdminUpdateCatalogItemsResult tempStruct;
 
-FAdminCheckLimitedEditionItemAvailabilityResult UPlayFabAdminModelDecoder::decodeCheckLimitedEditionItemAvailabilityResultResponse(UPlayFabJsonObject* Response) {
-    return FAdminCheckLimitedEditionItemAvailabilityResult{};
+
+    return tempStruct;
 }
+
+FAdminUpdateStoreItemsResult UPlayFabAdminModelDecoder::decodeUpdateStoreItemsResultResponse(UPlayFabJsonObject* response)
+{
+    // Temp ustruct
+    FAdminUpdateStoreItemsResult tempStruct;
 
-FAdminBlankResult UPlayFabAdminModelDecoder::decodeBlankResultResponse(UPlayFabJsonObject* Response) {
-    return FAdminBlankResult{};
+
+    return tempStruct;
 }
+
+FAdminSetTitleDataResult UPlayFabAdminModelDecoder::decodeSetTitleDataResultResponse(UPlayFabJsonObject* response)
+{
+    // Temp ustruct
+    FAdminSetTitleDataResult tempStruct;
 
-FAdminBanUsersResult UPlayFabAdminModelDecoder::decodeBanUsersResultResponse(UPlayFabJsonObject* Response) {
-    return FAdminBanUsersResult{};
+
+    return tempStruct;
 }
+
+FAdminSetTitleDataAndOverridesResult UPlayFabAdminModelDecoder::decodeSetTitleDataAndOverridesResultResponse(UPlayFabJsonObject* response)
+{
+    // Temp ustruct
+    FAdminSetTitleDataAndOverridesResult tempStruct;
+
 
-FAdminAddPlayerTagResult UPlayFabAdminModelDecoder::decodeAddPlayerTagResultResponse(UPlayFabJsonObject* Response) {
-    return FAdminAddPlayerTagResult{};
+    return tempStruct;
 }
 
-FAdminAddNewsResult UPlayFabAdminModelDecoder::decodeAddNewsResultResponse(UPlayFabJsonObject* Response) {
-    return FAdminAddNewsResult{};
+FAdminSetupPushNotificationResult UPlayFabAdminModelDecoder::decodeSetupPushNotificationResultResponse(UPlayFabJsonObject* response)
+{
+    // Temp ustruct
+    FAdminSetupPushNotificationResult tempStruct;
+    UPlayFabJsonObject* dataObj = !(response->HasField("data")) ? nullptr : response->GetObjectField("data");
+
+    tempStruct.ARN = !(dataObj->HasField("ARN")) ? TEXT("") : dataObj->GetStringField("ARN");
+
+    return tempStruct;
 }
+
+FAdminUpdateRandomResultTablesResult UPlayFabAdminModelDecoder::decodeUpdateRandomResultTablesResultResponse(UPlayFabJsonObject* response)
+{
+    // Temp ustruct
+    FAdminUpdateRandomResultTablesResult tempStruct;
+
 
-FAdminAddLocalizedNewsResult UPlayFabAdminModelDecoder::decodeAddLocalizedNewsResultResponse(UPlayFabJsonObject* Response) {
-    return FAdminAddLocalizedNewsResult{};
+    return tempStruct;
 }
 
 
