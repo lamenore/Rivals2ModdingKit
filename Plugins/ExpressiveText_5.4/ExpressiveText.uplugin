@@ -1,0 +1,42 @@
+{
+	"FileVersion": 3,
+	"Version": 1732829988,
+	"VersionName": "0.5.1(5c5d117)",
+	"FriendlyName": "Expressive Text",
+	"Description": "Write astonishing text and place it wherever you want",
+	"Category": "Text",
+	"CreatedBy": "Guganana",
+	"CreatedByURL": "https://www.twitter.com/gugananadev",
+	"DocsURL": "https://expressivetext.com/Documentation",
+	"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/product/fc8f100e734144179e1679596d1eee07",
+	"SupportURL": "https://expressivetext.com/Report-a-bug",
+	"EngineVersion": "5.4.0",
+	"CanContainContent": true,
+	"IsBetaVersion": false,
+	"IsExperimentalVersion": false,
+	"Installed": true,
+	"SupportedTargetPlatforms": [
+		"Win64",
+		"Mac",
+		"Linux"
+	],
+	"Modules": [
+		{
+			"Name": "ExpressiveText",
+			"Type": "Runtime",
+			"LoadingPhase": "PreDefault",
+			"PlatformAllowList": [
+				"Win64",
+				"Mac",
+				"Linux",
+				"LinuxArm64"
+			]
+		}
+	],
+	"Plugins": [
+		{
+			"Name": "EditorScriptingUtilities",
+			"Enabled": true
+		}
+	]
+}
