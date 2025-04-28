@@ -7,6 +7,7 @@
 class UBasePopupWidget;
 class UBaseScreenWidget;
 class UUIAssetMaps;
+class UUIMaps;
 class UWidget;
 
 UCLASS(Blueprintable)
@@ -22,6 +23,9 @@ public:
 private:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UUIAssetMaps* AssetMaps;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UUIMaps* UIMaps;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     TArray<UBasePopupWidget*> OpenDialogs;

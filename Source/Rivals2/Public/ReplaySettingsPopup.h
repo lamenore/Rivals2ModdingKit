@@ -1,5 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "UObject/NoExportTypes.h"
+#include "Types/SlateEnums.h"
 #include "BasePopupWidget.h"
 #include "EMarkerCameraType.h"
 #include "ReplaySettingsPopup.generated.h"
@@ -7,10 +9,12 @@
 class ARivalsCamera;
 class ULevelSequence;
 class UMaterialParameterCollection;
+class UMenuButtonWidget;
 class UMoviePipelineCommandLineEncoderSettings;
 class UMoviePipelinePrimaryConfig;
-class URivalsButtonWidget;
+class UReplaySettingsOutputTab;
 class UTextBlock;
+class UWidget;
 class UWidgetAnimation;
 class UWidgetSwitcher;
 
@@ -25,19 +29,16 @@ public:
     UWidgetSwitcher* BP_TabSwitcher;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
-    URivalsButtonWidget* BP_CameraTypeButton;
+    UMenuButtonWidget* BP_ExportButton;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
-    UTextBlock* BP_CameraTypeText;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
-    URivalsButtonWidget* BP_ExportButton;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
-    URivalsButtonWidget* BP_CloseButton;
+    UMenuButtonWidget* BP_CloseButton;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UTextBlock* BP_ErrorText;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    UReplaySettingsOutputTab* BP_OutputSettings;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     UWidgetAnimation* BP_ErrorTextAnimation;
@@ -57,16 +58,22 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UMoviePipelineCommandLineEncoderSettings* CommandLineEncoderSettings;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FIntPoint ExportResolution;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    int32 ExportFrameRate;
+    
     UReplaySettingsPopup();
 
     UFUNCTION(BlueprintCallable)
-    void OnExportPressed();
+    UWidget* OnNavigate(EUINavigation Direction);
     
     UFUNCTION(BlueprintCallable)
-    void OnClosePressed();
+    void OnExportPressed(const int32 UserIndex);
     
     UFUNCTION(BlueprintCallable)
-    void OnCameraTypePressed();
+    void OnClosePressed(const int32 UserIndex);
     
 };
 

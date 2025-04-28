@@ -32,6 +32,7 @@ enum class ERivalsBufferedInputAction : uint8 {
     Taunt2,
     Taunt3,
     Taunt4,
+    AllTaunt,
     Walk,
     Count,
 };

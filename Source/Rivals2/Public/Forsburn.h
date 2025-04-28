@@ -15,6 +15,9 @@ public:
     FSnapNetPropertyEntityIndex CloneEntityIndex;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FSnapNetPropertyInt32 CommandCloneCooldown;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FSnapNetPropertyBoolean bIsFullyInSmoke;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -34,5 +37,8 @@ public:
     
     AForsburn(const FObjectInitializer& ObjectInitializer);
 
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    bool IsCloneOnCooldown() const;
+    
 };
 

@@ -56,6 +56,9 @@ public:
     FSnapNetPropertyBoolean bPreventChaingrabs;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FSnapNetPropertyInt32 PreventChaingrabsTimer;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FSnapNetPropertyInt32 ShieldStunDuration;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))

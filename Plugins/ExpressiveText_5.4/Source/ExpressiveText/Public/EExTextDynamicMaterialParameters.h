@@ -4,6 +4,7 @@
 
 UENUM(BlueprintType)
 enum class EExTextDynamicMaterialParameters : uint8 {
+    None = 0,
     PerInstanceRandom = 1,
     RevealAndClearInformation,
     LineIndex = 4,

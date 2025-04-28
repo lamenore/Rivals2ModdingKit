@@ -6,6 +6,7 @@ ARivalsPlayerController::ARivalsPlayerController(const FObjectInitializer& Objec
     this->ClickEventKeys.AddDefaulted(1);
     this->HardPressSecondsMax = 0.05f;
     this->bAutoWalk = false;
+    this->bDoubleTapDash = false;
     this->HardPressThreshold = 0.80f;
     this->UpwardHardPressThreshold = 0.70f;
     this->SoftPressThreshold = 0.29f;
@@ -18,6 +19,7 @@ ARivalsPlayerController::ARivalsPlayerController(const FObjectInitializer& Objec
     this->bTapJumpEnabled = false;
     this->bTapStrongEnabled = false;
     this->bTapWalljumpEnabled = false;
+    this->bAutoShorthopAerial = false;
     this->bRightStickPressed = false;
     this->bUIHorizontalPressed = false;
     this->bUIVerticalPressed = false;
@@ -27,9 +29,13 @@ ARivalsPlayerController::ARivalsPlayerController(const FObjectInitializer& Objec
     this->bAction4Down = false;
     this->bGCCSelectDown = false;
     this->bDownHard = false;
+    this->DownHardTimer = 0.00f;
     this->bLeftHard = false;
+    this->LeftHardTimer = 0.00f;
     this->bRightHard = false;
+    this->RightHardTimer = 0.00f;
     this->bUpHard = false;
+    this->UpHardTimer = 0.00f;
     this->bLeftTriggerPressed = false;
     this->bLeftTriggerSpringless = false;
     this->bRightTriggerPressed = false;

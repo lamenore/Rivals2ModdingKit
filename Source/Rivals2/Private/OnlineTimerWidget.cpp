@@ -17,5 +17,9 @@ void UOnlineTimerWidget::UpdateTimer(float InTimeRemaining) {
 void UOnlineTimerWidget::UpdateNotice(FText InNotice) {
 }
 
+int32 UOnlineTimerWidget::GetDisplayTime() {
+    return 0;
+}
+
 
 

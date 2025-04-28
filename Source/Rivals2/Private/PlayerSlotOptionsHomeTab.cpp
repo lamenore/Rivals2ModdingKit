@@ -3,6 +3,7 @@
 UPlayerSlotOptionsHomeTab::UPlayerSlotOptionsHomeTab() {
     this->BP_PlayerProfilesButton = NULL;
     this->BP_RedeemCodeButton = NULL;
+    this->BP_CreatorSupportButton = NULL;
     this->BP_AccountDetailsButton = NULL;
     this->BP_ControlsButton = NULL;
     this->BP_NetworkSettingsButton = NULL;

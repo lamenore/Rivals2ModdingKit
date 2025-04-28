@@ -13,10 +13,14 @@ UUIAssetMaps::UUIAssetMaps() {
     this->ItemTypeRespawnPlatformIcon = NULL;
     this->ItemTypePaletteIcon = NULL;
     this->ItemTypeBundleIcon = NULL;
+    this->ItemTypeTauntIcon = NULL;
+    this->ItemTypeStageIcon = NULL;
+    this->ItemTypeStageSkinIcon = NULL;
     this->CurrencyTypeBetaCoinIcon = NULL;
     this->CurrencyTypeAetherCoinIcon = NULL;
     this->CurrencyTypeAetherBuckIcon = NULL;
     this->CurrencyTypeRealIcon = NULL;
+    this->CurrencyTypeRankedMedalIcon = NULL;
 }
 
 

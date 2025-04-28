@@ -1,12 +1,12 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Blueprint/UserWidget.h"
+#include "ClientBehavior.h"
 #include "MainMenuTabInterface.generated.h"
 
 class UVerticalBox;
 
 UCLASS(Blueprintable, EditInlineNew)
-class UMainMenuTabInterface : public UUserWidget {
+class UMainMenuTabInterface : public UClientBehavior {
     GENERATED_BODY()
 public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))

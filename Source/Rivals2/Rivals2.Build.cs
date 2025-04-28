@@ -14,6 +14,7 @@ public class Rivals2 : ModuleRules {
             "CoreUObject",
             "DeveloperSettings",
             "Engine",
+            "ExpressiveText",
             "FMODStudio",
             "GameplayCameras",
             "HorizonUI",

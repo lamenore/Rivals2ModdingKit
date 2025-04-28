@@ -4,11 +4,11 @@
 #include "EntityComponentOwner.generated.h"
 
 UINTERFACE()
-class UEntityComponentOwner : public UInterface {
+class RIVALS2_API UEntityComponentOwner : public UInterface {
     GENERATED_BODY()
 };
 
-class IEntityComponentOwner : public IInterface {
+class RIVALS2_API IEntityComponentOwner : public IInterface {
     GENERATED_BODY()
 public:
 };

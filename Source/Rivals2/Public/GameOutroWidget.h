@@ -3,7 +3,7 @@
 #include "Blueprint/UserWidget.h"
 #include "GameOutroWidget.generated.h"
 
-class UImage;
+class URivalsExpressiveTextWidget;
 class UTexture2D;
 
 UCLASS(Blueprintable, EditInlineNew)
@@ -20,7 +20,7 @@ public:
     UTexture2D* GameOverTexture;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
-    UImage* BP_GameImage;
+    URivalsExpressiveTextWidget* BP_BodyText;
     
     UGameOutroWidget();
 

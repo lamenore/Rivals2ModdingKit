@@ -46,7 +46,7 @@ public:
     UMaterialInstance* DefaultMaterial;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    FString Name;
+    FText Name;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 DefaultIndex;
@@ -55,7 +55,7 @@ public:
     EValueType Type;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    TArray<FString> Options;
+    TArray<FText> Options;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float NumberValue;
@@ -123,7 +123,7 @@ public:
     bool HasFocus();
     
     UFUNCTION(BlueprintCallable)
-    FString GetDefaultValue();
+    FText GetDefaultValue();
     
     UFUNCTION(BlueprintCallable)
     FString GetCurrentStringValue();

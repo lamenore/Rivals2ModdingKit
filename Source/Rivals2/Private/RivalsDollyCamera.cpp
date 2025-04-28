@@ -130,16 +130,16 @@ void URivalsDollyCamera::HideCameraPreview() {
 void URivalsDollyCamera::HandleKeyframe() {
 }
 
-UKeyframe* URivalsDollyCamera::GetNearestKeyframe(int32 Direction) {
-    return NULL;
-}
-
 int32 URivalsDollyCamera::GetKeyframeIndexFromTick(int32 Tick) {
     return 0;
 }
 
 TEnumAsByte<Rivals2_CameraEditMode> URivalsDollyCamera::GetEditMode() {
     return Firstperson;
+}
+
+UKeyframe* URivalsDollyCamera::GetCurrentKeyframe() {
+    return NULL;
 }
 
 TEnumAsByte<Rivals2_CameraMode> URivalsDollyCamera::GetCameraMode() {

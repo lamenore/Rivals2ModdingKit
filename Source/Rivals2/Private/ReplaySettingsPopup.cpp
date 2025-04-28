@@ -1,28 +1,29 @@
 #include "ReplaySettingsPopup.h"
 
 UReplaySettingsPopup::UReplaySettingsPopup() {
-    this->CameraType = EMarkerCameraType::Dolly;
+    this->CameraType = EMarkerCameraType::Regular;
     this->BP_TabSwitcher = NULL;
-    this->BP_CameraTypeButton = NULL;
-    this->BP_CameraTypeText = NULL;
     this->BP_ExportButton = NULL;
     this->BP_CloseButton = NULL;
     this->BP_ErrorText = NULL;
+    this->BP_OutputSettings = NULL;
     this->BP_ErrorTextAnimation = NULL;
     this->RivalsCamera = NULL;
     this->LevelSequence = NULL;
     this->MPC_GameplayValues = NULL;
     this->MRQ_Config = NULL;
     this->CommandLineEncoderSettings = NULL;
+    this->ExportFrameRate = 60;
 }
 
-void UReplaySettingsPopup::OnExportPressed() {
+UWidget* UReplaySettingsPopup::OnNavigate(EUINavigation Direction) {
+    return NULL;
 }
 
-void UReplaySettingsPopup::OnClosePressed() {
+void UReplaySettingsPopup::OnExportPressed(const int32 UserIndex) {
 }
 
-void UReplaySettingsPopup::OnCameraTypePressed() {
+void UReplaySettingsPopup::OnClosePressed(const int32 UserIndex) {
 }
 
 

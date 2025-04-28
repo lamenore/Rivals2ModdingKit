@@ -9,6 +9,7 @@ enum class ERivalsCurrencyType : uint8 {
     AetherCoin,
     AetherBuck,
     Real,
+    RankedMedal,
     CurrencyType_MAX UMETA(Hidden),
 };
 

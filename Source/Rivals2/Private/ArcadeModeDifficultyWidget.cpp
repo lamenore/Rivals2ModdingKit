@@ -21,13 +21,13 @@ void UArcadeModeDifficultyWidget::ShowDifficultyButtons() {
 void UArcadeModeDifficultyWidget::SetDifficultyText(ERivalsArcadeModeDifficultySetting Difficulty) {
 }
 
-void UArcadeModeDifficultyWidget::OnRightReleased() {
+void UArcadeModeDifficultyWidget::OnRightReleased(const int32 UserIndex) {
 }
 
-void UArcadeModeDifficultyWidget::OnLeftReleased() {
+void UArcadeModeDifficultyWidget::OnLeftReleased(const int32 UserIndex) {
 }
 
-void UArcadeModeDifficultyWidget::HideDifficultyButton(URivalsButtonWidget* Button) {
+void UArcadeModeDifficultyWidget::HideDifficultyButton(UCSSGenericButton* Button) {
 }
 
 

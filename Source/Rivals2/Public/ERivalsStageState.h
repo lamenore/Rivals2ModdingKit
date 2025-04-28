@@ -5,7 +5,6 @@
 UENUM(BlueprintType)
 enum class ERivalsStageState : uint8 {
     None,
-    Struck,
     Banned,
 };
 

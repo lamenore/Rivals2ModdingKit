@@ -2,6 +2,7 @@
 #include "CoreMinimal.h"
 #include "BaseScreenWidget.h"
 #include "ERivalsCurrencyType.h"
+#include "ResultsMedalUpdateInfo.h"
 #include "ResultsPlayerBoxInfo.h"
 #include "ResultsPlayerInfo.h"
 #include "ResultsRankUpdateInfo.h"
@@ -44,6 +45,9 @@ protected:
     FResultsRankUpdateInfo RankUpdateToDisplay;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FResultsMedalUpdateInfo RankMedalUpdate;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float TimeToForceReadyInSeconds;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -59,6 +63,15 @@ protected:
     UOnlineTimerWidget* BP_OnlineStateTimer;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    UCanvasPanel* BP_ReportServerButtonContainer;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    UMenuButtonWidget* BP_ReportServerButton;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    UWidgetAnimation* BP_ServerReported;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UCanvasPanel* BP_SaveReplayButtonContainer;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
@@ -72,6 +85,9 @@ protected:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bRequestedManualReplaySave;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    float ViewingStatsTimeout;
     
 private:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
@@ -90,6 +106,9 @@ public:
     void ShowFadeIn();
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
+    bool ShouldShowMedalUpdate();
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool ShouldDisplayXpForSlot(const int32& PlayerSlot);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
@@ -100,6 +119,9 @@ public:
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool ShouldAutoShowStats();
+    
+    UFUNCTION(BlueprintCallable)
+    void SetTimeStartedViewingStats(const double& InTime);
     
     UFUNCTION(BlueprintCallable)
     void RequestSaveReplay(const int32& PlayerSlot);
@@ -115,6 +137,9 @@ public:
     
     UFUNCTION(BlueprintCallable)
     void ProcessNextReward();
+    
+    UFUNCTION(BlueprintCallable)
+    void ProcessMedalUpdate(const FResultsMedalUpdateInfo InMedalUpdate);
     
     UFUNCTION(BlueprintCallable)
     void ProcessEventXpUpdate(const FResultsXpUpdateInfo XpUpdate);
@@ -140,6 +165,9 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void LocalPlayerClickedBackToMatchmaking(const int32& PlayerSlot);
     
+    UFUNCTION(BlueprintPure)
+    bool JustStartedViewingStats(const double& InTime);
+    
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsPlayerReady(const int32& PlayerSlot) const;
     
@@ -160,6 +188,9 @@ public:
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsEveryoneReady() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    bool HasReportedServer() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     FResultsXpUpdateInfo GetXpUpdateForSlot(const int32& PlayerSlot);
@@ -189,7 +220,16 @@ public:
     TArray<FRivalsMatchResult> GetPlayerMatchHistory(const int32& PlayerSlot) const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
+    int32 GetPlayerInitialWinStreak(const int32& PlayerSlot) const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    int32 GetPlayerCurrentWinStreak(const int32& PlayerSlot) const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FResultsRankUpdateInfo GetNextRankUpdate();
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    FResultsMedalUpdateInfo GetMedalUpdate();
     
     UFUNCTION(BlueprintCallable)
     FRivalsPlayerTag GetCurrentPlayerTagInfo(const int32& PlayerSlot);
@@ -211,6 +251,9 @@ public:
     
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BP_ProcessedPlayerXpUpdate(const int32& PlayerSlot);
+    
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
+    void BP_ProcessedMedalUpdate();
     
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BP_ProcessedEventXpUpdate();

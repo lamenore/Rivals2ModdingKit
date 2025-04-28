@@ -7,6 +7,7 @@
 #include "ERivalsHitpauseMovementType.h"
 #include "ERivalsKnockbackAngleMode.h"
 #include "ERivalsParryReaction.h"
+#include "ERivalsProjectileInteraction.h"
 #include "RivalsAdvancedHitboxOnHitProperties.generated.h"
 
 USTRUCT(BlueprintType)
@@ -53,10 +54,13 @@ public:
     bool bAutoFloorhuggable;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    bool bCanBreakProjectiles;
+    ERivalsProjectileInteraction ProjectileInteraction;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bForceKnockbackInKnockdown;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool bPreserveFacing;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     ERivalsKnockbackAngleMode KnockbackAngleMode;
@@ -96,6 +100,12 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool ForceTumble;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool IgnoreKnockbackArmor;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool PreventChaingrabsOnHit;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     ERivalsCharacterState HitstunAnimationStateOverride;

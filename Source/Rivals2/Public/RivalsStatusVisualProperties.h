@@ -32,6 +32,9 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FLinearColor EmissiveColor;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FLinearColor OrmsOffset;
+    
     RIVALS2_API FRivalsStatusVisualProperties();
 };
 

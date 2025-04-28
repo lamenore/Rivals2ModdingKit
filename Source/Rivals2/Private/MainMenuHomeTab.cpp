@@ -13,6 +13,9 @@ UMainMenuHomeTab::UMainMenuHomeTab() {
     this->BP_BottomRightAd = NULL;
 }
 
+void UMainMenuHomeTab::ShowRewardsCachedDuringTitleScreen() {
+}
+
 void UMainMenuHomeTab::OnTutorialButtonPressed() {
 }
 

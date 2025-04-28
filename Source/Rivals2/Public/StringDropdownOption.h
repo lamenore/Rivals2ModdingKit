@@ -1,6 +1,5 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "UObject/NoExportTypes.h"
 #include "Types/SlateEnums.h"
 #include "Blueprint/UserWidget.h"
 #include "StringDropdownOption.generated.h"
@@ -10,6 +9,7 @@ class URivalsButtonWidget;
 class USizeBox;
 class UTextBlock;
 class UWidget;
+class UWidgetAnimation;
 
 UCLASS(Blueprintable, EditInlineNew)
 class RIVALS2_API UStringDropdownOption : public UUserWidget {
@@ -28,11 +28,11 @@ protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UTextBlock* BP_OptionNameTextBlock;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    FLinearColor HoverColor;
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    UWidgetAnimation* BP_OnHoverAnim;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    FLinearColor DefaultColor;
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    UWidgetAnimation* BP_OnUnHoverAnim;
     
 public:
     UStringDropdownOption();

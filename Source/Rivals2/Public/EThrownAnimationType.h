@@ -10,6 +10,8 @@ enum class EThrownAnimationType : uint8 {
     Struggle,
     StumbleForward,
     StumbleBackward,
+    GrabbedLand,
+    Spin,
     PulledForward,
     PulledUnder,
     LaunchedUpward,

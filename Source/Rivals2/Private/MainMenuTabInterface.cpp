@@ -1,6 +1,6 @@
 #include "MainMenuTabInterface.h"
 
-UMainMenuTabInterface::UMainMenuTabInterface() : UUserWidget(FObjectInitializer::Get()) {
+UMainMenuTabInterface::UMainMenuTabInterface() {
     this->BP_LeftButtonContainer = NULL;
 }
 

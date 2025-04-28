@@ -6,11 +6,13 @@ UENUM(BlueprintType)
 enum class ERivalsCpuCounterOption : uint8 {
     None,
     Spotdodge,
+    Airdodge,
     Shield,
     Grab,
     UpSpecial,
     DownSpecial,
     ForwardSpecial,
+    NeutralSpecial,
     UpStrong,
     DownStrong,
     ForwardStrong,
@@ -27,5 +29,6 @@ enum class ERivalsCpuCounterOption : uint8 {
     UpTilt,
     ShortHop,
     FullHop,
+    Jump,
 };
 

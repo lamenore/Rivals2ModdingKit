@@ -1,5 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "RivalsCameraInfluencer.h"
 #include "RivalsGameplayRenderer.h"
 #include "RivalsArticleRenderer.generated.h"
 
@@ -10,7 +11,7 @@ class USnapNetEntityRendererComponent;
 class UWidgetComponent;
 
 UCLASS(Blueprintable)
-class RIVALS2_API ARivalsArticleRenderer : public ARivalsGameplayRenderer {
+class RIVALS2_API ARivalsArticleRenderer : public ARivalsGameplayRenderer, public IRivalsCameraInfluencer {
     GENERATED_BODY()
 public:
 protected:
@@ -35,8 +36,13 @@ protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bHasOutline;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool bIgnoreEntityFacing;
+    
 public:
     ARivalsArticleRenderer(const FObjectInitializer& ObjectInitializer);
 
+
+    // Fix for true pure virtual functions not being implemented
 };
 

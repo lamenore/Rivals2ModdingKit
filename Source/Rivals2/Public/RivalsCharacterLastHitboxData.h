@@ -15,6 +15,9 @@ public:
     FSnapNetPropertyInt32 LastHitboxAchievementIndex;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FSnapNetPropertyInt32 LastHitboxAttackCountIndex;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FSnapNetPropertyFloat LastHitboxHitfallHitpauseMultiplier;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))

@@ -1,6 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
+#include "UObject/NoExportTypes.h"
 #include "RivalsStatusVisualDefinition.generated.h"
 
 USTRUCT(BlueprintType)
@@ -53,10 +54,16 @@ public:
     float EmissiveColorAlpha;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FVector4 OrmsOffset;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FName> MaterialSlotsToApplyTo;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TMap<FName, FString> SkinOverrideStatusVisualNames;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool bShowSkeleton;
     
     FRivalsStatusVisualDefinition();
 };

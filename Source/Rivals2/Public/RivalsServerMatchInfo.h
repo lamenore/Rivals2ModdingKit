@@ -13,7 +13,7 @@ public:
     FSnapNetPropertyString QueueName;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    FSnapNetPropertyString REGION;
+    FSnapNetPropertyString Region;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FSnapNetPropertyString TitleId;
@@ -44,6 +44,9 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FSnapNetPropertyBoolean bIsOnlineMatch;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FSnapNetPropertyInt32 SeasonIndex;
     
     RIVALS2_API FRivalsServerMatchInfo();
 };

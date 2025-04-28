@@ -29,6 +29,9 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     UWidgetAnimation* BP_LetterBox_Close;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    UWidgetAnimation* BP_PressStartAppearAnim;
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UTextBlock* BP_StageTime;
     
@@ -62,8 +65,11 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     TArray<UArcadeMedalWidget*> ArcadeMedals;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    UTextBlock* BP_ServerText;
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    float WidgetLockoutTimer;
+    bool WidgetAnimLockout;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool PlayingOutroAnimation;
@@ -93,6 +99,9 @@ public:
     
     UFUNCTION(BlueprintCallable)
     void PlayIntroAnim();
+    
+    UFUNCTION(BlueprintCallable)
+    void OnCharacterXpCallbackTimeout(bool bSuccessful);
     
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void InitPostMatchResultsBP();

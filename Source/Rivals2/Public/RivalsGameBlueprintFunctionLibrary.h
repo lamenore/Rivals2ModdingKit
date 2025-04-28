@@ -33,6 +33,9 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext="WorldContextObject"))
     static bool IsLobbySession(const UObject* WorldContextObject);
     
+    UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext="WorldContextObject"))
+    static bool IsBotMatchMode(const UObject* WorldContextObject);
+    
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static FLinearColor GetTeamColorLight(const ERivalsColorSlot InTeam, const float ShadeValue, const float AlphaOverride, const bool bSquareResult, const bool bIsArcadeMode);
     
@@ -47,6 +50,15 @@ public:
     
     UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext="WorldContextObject"))
     static FRivalsServerMatchInfo GetServerMatchInfo(const UObject* WorldContextObject);
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext="WorldContextObject"))
+    static FLinearColor GetRankedColorLight(const UObject* WorldContextObject, const int32 InPlayerIndex, const float AlphaOverride);
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext="WorldContextObject"))
+    static FLinearColor GetRankedColorDark(const UObject* WorldContextObject, const int32 InPlayerIndex, const float AlphaOverride);
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext="WorldContextObject"))
+    static FLinearColor GetRankedColor(const UObject* WorldContextObject, const int32 InPlayerIndex, const float AlphaOverride);
     
     UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext="WorldContextObject"))
     static int32 GetPlayerSlotForPlayerController(const UObject* WorldContextObject, APlayerController* InController);
@@ -71,6 +83,9 @@ public:
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static UObject* GetDefaultObject(UClass* ObjectClass);
+    
+    UFUNCTION(BlueprintCallable)
+    static void FlushControllerInput(APlayerController* InController);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static FString DateTimeToFormattedString(const FDateTime& InDateTime, const FString& Format);

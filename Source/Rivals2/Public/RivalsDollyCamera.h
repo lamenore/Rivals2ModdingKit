@@ -184,13 +184,13 @@ public:
     void HandleKeyframe();
     
     UFUNCTION(BlueprintCallable)
-    UKeyframe* GetNearestKeyframe(int32 Direction);
-    
-    UFUNCTION(BlueprintCallable)
     int32 GetKeyframeIndexFromTick(int32 Tick);
     
     UFUNCTION(BlueprintCallable)
     TEnumAsByte<Rivals2_CameraEditMode> GetEditMode();
+    
+    UFUNCTION(BlueprintCallable)
+    UKeyframe* GetCurrentKeyframe();
     
     UFUNCTION(BlueprintCallable)
     TEnumAsByte<Rivals2_CameraMode> GetCameraMode();

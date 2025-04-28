@@ -8,9 +8,12 @@
 #include "ERivalsConnectionLeniency.h"
 #include "MatchmakingStateChangeDelegate.h"
 #include "RivalsEdgegapLocationInfo.h"
+#include "RivalsLocationConnectionInfo.h"
 #include "RivalsPlayFabMatchmakingTicketInfo.h"
+#include "RivalsRegionMappingTitleData.h"
 #include "RivalsMatchmakingSubsystem.generated.h"
 
+class UMatchAcceptDenyModal;
 class UObject;
 class URivalsMatchmakingSubsystem;
 
@@ -52,6 +55,9 @@ public:
     FMatchmakingStateChange MatchFoundDelegate;
     
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FMatchmakingStateChange JoinMatchStartedDelegate;
+    
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FMatchmakingStateChange JoinMatchSuccessDelegate;
     
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -64,6 +70,15 @@ protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FString LastMatchmadeQueue;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    int32 SeparatorValue;
+    
+    UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
+    double LastSeparatorUpdateTime;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    UMatchAcceptDenyModal* MatchAcceptDenyModal;
+    
 public:
     URivalsMatchmakingSubsystem();
 
@@ -71,7 +86,13 @@ public:
     void UpdateReconnectData();
     
     UFUNCTION(BlueprintCallable)
-    void SetRegionAcceptMatchmaking(const FString& InRegion, const bool bInShouldAcceptMatchmaking);
+    void TriggerMatchAcceptDenyModal(const FString& InServerRegion, const FString& InConnectionIpPort, const FString& InMatchId);
+    
+    UFUNCTION(BlueprintCallable)
+    void SetSeparatorValue(const int32& InValue);
+    
+    UFUNCTION(BlueprintCallable)
+    void SetLocationAcceptMatchmaking(const FString& InLocation, const bool bInShouldAcceptMatchmaking);
     
     UFUNCTION(BlueprintCallable)
     void SetLastMatchmadeQueue(const FString& InQueueName);
@@ -83,7 +104,13 @@ public:
     void RequestPublicIp();
     
     UFUNCTION(BlueprintCallable)
+    void ReportServer();
+    
+    UFUNCTION(BlueprintCallable)
     void QueueForMatchmaking(const TArray<FString>& QueueNames, const TArray<FString>& MembersToMatchWith);
+    
+    UFUNCTION(BlueprintCallable)
+    void ProcessBeaconResponse(const FPingQoSInfo& Result);
     
     UFUNCTION(BlueprintCallable)
     void PollServerConnection(const FString& ConnectionString);
@@ -98,6 +125,9 @@ public:
     void OnPingQosBeaconsComplete(const TArray<FPingQoSInfo>& Result);
     
     UFUNCTION(BlueprintCallable)
+    void OnPingQosBeaconComplete(const FPingQoSInfo Result);
+    
+    UFUNCTION(BlueprintCallable)
     void JoinMatchmakingTicket(const FString& InTicketId, const FString& InQueueName);
     
     UFUNCTION(BlueprintCallable)
@@ -105,6 +135,9 @@ public:
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsUserPublicIpValid();
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    bool IsRegionAcceptedForMatchmaking(const FString& InRegionName) const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool IsQueueRanked(const FString& InQueueName);
@@ -122,7 +155,7 @@ public:
     void InitializeReconnectData(const FString& InConnectionString, const FString& InQueueName);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
-    bool HasValidRegionsSelected();
+    bool HasValidLocationsSelected();
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool HasActiveMatchmakingTickets();
@@ -134,7 +167,19 @@ public:
     static FString GetSinglesQueue();
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
+    int32 GetSeparatorValue();
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    FRivalsRegionMappingTitleData GetRegionMappingTitleData();
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     static FString GetRankedQueue();
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    FRivalsLocationConnectionInfo GetLocationConnectionInfoForRegion(const FString& InRegionName) const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    static FString GetLobbyEOSQueue();
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static FString GetLobby4pQueue();
@@ -176,6 +221,14 @@ public:
     static URivalsMatchmakingSubsystem* Get(const UObject* WorldContextObject);
     
     UFUNCTION(BlueprintCallable)
+    void ForceStopConnectionLoop();
+    
+protected:
+    UFUNCTION(BlueprintCallable)
+    void DenyMatch();
+    
+public:
+    UFUNCTION(BlueprintCallable)
     void DebugJoinServer(const FString& IP, const FString& Port);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
@@ -184,8 +237,13 @@ public:
     UFUNCTION(BlueprintCallable)
     void ConnectToServer(const FString& ConnectionString);
     
+protected:
     UFUNCTION(BlueprintCallable)
-    void ClearReconnectData();
+    void CloseMatchAcceptDenyModal();
+    
+public:
+    UFUNCTION(BlueprintCallable)
+    void ClearReconnectData(bool bIsReconnectingInValue);
     
     UFUNCTION(BlueprintCallable)
     void ClearMatchUserData(const FString& MatchID);
@@ -201,6 +259,10 @@ public:
     
     UFUNCTION(BlueprintCallable)
     void AttemptReconnect();
+    
+protected:
+    UFUNCTION(BlueprintCallable)
+    void AcceptMatch(const FString& InServerRegion, const FString& InConnectionIpPort, const FString& InMatchId);
     
 };
 

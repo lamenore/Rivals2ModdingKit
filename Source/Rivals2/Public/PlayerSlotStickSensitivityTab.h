@@ -17,6 +17,9 @@ protected:
     UPlayerSlotOptionsButtonWidget* BP_LeftStickSensitivityButton;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    UPlayerSlotOptionsButtonWidget* BP_HardPressThresholdButton;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UPlayerSlotOptionsButtonWidget* BP_RightStickThresholdButton;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))

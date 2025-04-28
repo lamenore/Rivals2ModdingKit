@@ -3,6 +3,7 @@
 	"Modules": 
 	{
 		"PlayFab": "UnrealEditor-PlayFab.dll",
-		"PlayFabCommon": "UnrealEditor-PlayFabCommon.dll"
+		"PlayFabCommon": "UnrealEditor-PlayFabCommon.dll",
+		"PlayFabCpp": "UnrealEditor-PlayFabCpp.dll"
 	}
 }

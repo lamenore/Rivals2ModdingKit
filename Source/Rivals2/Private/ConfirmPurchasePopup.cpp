@@ -1,6 +1,7 @@
 #include "ConfirmPurchasePopup.h"
 
 UConfirmPurchasePopup::UConfirmPurchasePopup() {
+    this->bAnimButtonLock = false;
     this->BP_ItemEntry = NULL;
     this->BP_BreakdownSwitcher = NULL;
     this->BP_VirtualBreakdownBox = NULL;

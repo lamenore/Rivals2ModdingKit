@@ -12,13 +12,12 @@ AMenuRivalCapture::AMenuRivalCapture(const FObjectInitializer& ObjectInitializer
     this->RivalCharDefinition = NULL;
     this->PostProcessMaterial = NULL;
     this->SkinToDisplay = NULL;
-    this->ColorSlotToLoad = ERivalsColorSlot::Default;
+    this->ColorSlotToLoad = ERivalsColorSlot::None;
     this->RenderDataToLoad = NULL;
     this->CharacterPoseAnimation = NULL;
     this->CharacterAltPoseAnimation = NULL;
     this->CharacterPoseAnimPos = 0.00f;
     this->ShowAllMeshEffects = false;
-    this->OutlineThicknessMultiplier = 1.00f;
     this->ShadingCurve = NULL;
     this->GlobalMaterialParameterCollection = NULL;
     this->ShadingCurveAtlas = NULL;
@@ -41,6 +40,10 @@ bool AMenuRivalCapture::UpdateLighting() {
 }
 
 bool AMenuRivalCapture::UpdateCustomColors() {
+    return false;
+}
+
+bool AMenuRivalCapture::SpawnVFX(const TSoftClassPtr<ARivalsVfxRenderer> VFXToSpawn) {
     return false;
 }
 
@@ -67,14 +70,23 @@ bool AMenuRivalCapture::PoseRival(UAnimSequence* Animation, float AnimPos) {
     return false;
 }
 
-void AMenuRivalCapture::PlayUniversalSFX(FName SFXName) {
+void AMenuRivalCapture::PlayVFX(FRivalCaptureVFX VFX) {
 }
 
-void AMenuRivalCapture::PlayRivalSFX(FName SFXName) {
+void AMenuRivalCapture::PlayUniversalSFX(FName SFXName, int32 DurationFrames) {
+}
+
+void AMenuRivalCapture::PlayRivalSFX(FName SFXName, int32 DurationFrames) {
 }
 
 bool AMenuRivalCapture::LoadRenderData() {
     return false;
+}
+
+void AMenuRivalCapture::ClearVFXSpawns() {
+}
+
+void AMenuRivalCapture::ClearAllSpawns() {
 }
 
 void AMenuRivalCapture::Capture() {

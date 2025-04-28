@@ -7,10 +7,27 @@ ARivalsPlatformRenderer::ARivalsPlatformRenderer(const FObjectInitializer& Objec
     this->WindowTimer = 0;
     this->WindowLength = 0;
     this->HasTrainingPlatform = true;
+    this->bTrainingPlatformVisible = false;
 }
 
 void ARivalsPlatformRenderer::SetTrainingPlatformVisible(bool IsVisible) {
 }
 
+
+bool ARivalsPlatformRenderer::IsTrainingPlatformVisible() {
+    return false;
+}
+
+TArray<UStaticMeshComponent*> ARivalsPlatformRenderer::GetTrainingPlatMeshComponents() {
+    return TArray<UStaticMeshComponent*>();
+}
+
+TArray<USkeletalMeshComponent*> ARivalsPlatformRenderer::GetPlatSkeletalMeshComponents() {
+    return TArray<USkeletalMeshComponent*>();
+}
+
+TArray<UStaticMeshComponent*> ARivalsPlatformRenderer::GetPlatMeshComponents() {
+    return TArray<UStaticMeshComponent*>();
+}
 
 

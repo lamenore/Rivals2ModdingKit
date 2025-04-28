@@ -19,10 +19,6 @@ bool URivalsCursorManager::IsRivalsCursorValid() const {
     return false;
 }
 
-bool URivalsCursorManager::IsRivalsCursorOverInteractableWidget() const {
-    return false;
-}
-
 bool URivalsCursorManager::IsRivalsCursorLocked() const {
     return false;
 }

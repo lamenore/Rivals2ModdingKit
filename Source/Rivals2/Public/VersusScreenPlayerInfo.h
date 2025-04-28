@@ -15,7 +15,7 @@ public:
     bool bIsActive;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    FText PlayerName;
+    FText playerName;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     URivalsCharacterDefinition* Character;

@@ -11,6 +11,7 @@ enum class ERivalsHurtboxState : uint8 {
     Unhitgrabbable,
     Shielding,
     Parrying,
+    ProjectileParrying,
     ProjectileIntangible,
     OnlyHittableByProjectileKiller,
     Countering,

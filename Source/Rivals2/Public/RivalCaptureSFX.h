@@ -13,6 +13,9 @@ public:
     int32 CreationWindowFrame;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    int32 DestroyWindowFrame;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bHasPlayed;
     
     RIVALS2_API FRivalCaptureSFX();

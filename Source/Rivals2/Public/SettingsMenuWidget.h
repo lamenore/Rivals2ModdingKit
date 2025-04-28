@@ -4,6 +4,7 @@
 #include "BasePopupWidget.h"
 #include "SettingsMenuWidget.generated.h"
 
+class UCharacterSelectScreen;
 class UHorizontalBox;
 class UMaterialInstance;
 class UMenuButtonWidget;
@@ -11,6 +12,7 @@ class URivalsSettingsSaveGame;
 class USettingsMenuAudio;
 class USettingsMenuGameplay;
 class USettingsMenuGraphics;
+class USettingsMenuMatchTab;
 class USettingsMenuTabButton;
 class USettingsMenuTabInterface;
 class UWidget;
@@ -22,6 +24,9 @@ class RIVALS2_API USettingsMenuWidget : public UBasePopupWidget {
 public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UWidgetSwitcher* BP_TabSwitcher;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    USettingsMenuMatchTab* BP_MatchTab;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     USettingsMenuGraphics* BP_GraphicsTab;
@@ -40,6 +45,9 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     USettingsMenuTabButton* BP_GameplayTabButton;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    USettingsMenuTabButton* BP_MatchTabButton;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UHorizontalBox* BP_TabBox;
@@ -69,6 +77,9 @@ protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 ControllerIndex;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    UCharacterSelectScreen* CssParent;
+    
 public:
     USettingsMenuWidget();
 
@@ -78,6 +89,9 @@ public:
 private:
     UFUNCTION(BlueprintCallable)
     UWidget* OnNavigate(EUINavigation Direction);
+    
+    UFUNCTION(BlueprintCallable)
+    void OnMatchTabPressed(const int32 UserIndex);
     
     UFUNCTION(BlueprintCallable)
     void OnGraphicsTabPressed(const int32 UserIndex);

@@ -3,7 +3,7 @@
 #include "RPSGesture.generated.h"
 
 UENUM(BlueprintType)
-enum class RPSGesture : uint8{
+enum RPSGesture {
     Rock,
     Paper,
     Scissors,

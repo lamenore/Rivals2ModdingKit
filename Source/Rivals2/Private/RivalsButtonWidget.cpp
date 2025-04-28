@@ -14,6 +14,12 @@ void URivalsButtonWidget::SetIsButtonFocusable(const bool bIsFocusable) {
 void URivalsButtonWidget::OnUnhoveredRelay(const int32 UserIndex) {
 }
 
+void URivalsButtonWidget::OnRightTriggerReleasedRelay(const int32 UserIndex) {
+}
+
+void URivalsButtonWidget::OnRightTriggerPressedRelay(const int32 UserIndex) {
+}
+
 void URivalsButtonWidget::OnReleasedRelay(const int32 UserIndex) {
 }
 
@@ -24,6 +30,12 @@ void URivalsButtonWidget::OnPressedRelay(const int32 UserIndex) {
 }
 
 void URivalsButtonWidget::OnLostFocusRelay(const int32 UserIndex) {
+}
+
+void URivalsButtonWidget::OnLeftTriggerReleasedRelay(const int32 UserIndex) {
+}
+
+void URivalsButtonWidget::OnLeftTriggerPressedRelay(const int32 UserIndex) {
 }
 
 void URivalsButtonWidget::OnHoveredRelay(const int32 UserIndex) {

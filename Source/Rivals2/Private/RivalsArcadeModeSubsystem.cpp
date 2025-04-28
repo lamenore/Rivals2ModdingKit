@@ -13,9 +13,13 @@ URivalsArcadeModeSubsystem::URivalsArcadeModeSubsystem() {
     this->RemainingTargets = 10;
     this->bIsOnResults = false;
     this->bIsGameOver = false;
+    this->bMovedToVictoryScreen = false;
 }
 
 void URivalsArcadeModeSubsystem::RemoveTarget(ARivalsTargetEntity* TargetEntity) {
+}
+
+void URivalsArcadeModeSubsystem::MoveToVictoryPostRewardGrant() {
 }
 
 bool URivalsArcadeModeSubsystem::IsGameOver() {

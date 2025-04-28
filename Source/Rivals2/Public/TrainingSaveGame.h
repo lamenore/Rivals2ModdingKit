@@ -1,11 +1,17 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "GameFramework/SaveGame.h"
+#include "EEdgeguardHeight.h"
 #include "ERivalsCpuCounterOption.h"
 #include "ERivalsCpuDiMode.h"
 #include "ERivalsCpuGetupOption.h"
+#include "ERivalsCpuLedgeOption.h"
 #include "ERivalsCpuMode.h"
+#include "ERivalsCpuPlaybackMode.h"
+#include "ERivalsCpuPummelOption.h"
 #include "ERivalsCpuTechOption.h"
+#include "ERivalsCpuThrowOption.h"
+#include "ERivalsFacingDirection.h"
 #include "TrainingSaveGame.generated.h"
 
 UCLASS(Blueprintable)
@@ -31,6 +37,15 @@ public:
     ERivalsCpuTechOption CpuTechOption;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    ERivalsCpuThrowOption CpuThrowOption;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    ERivalsCpuPummelOption CpuPummelOption;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    ERivalsCpuLedgeOption CpuLedgeOption;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     ERivalsCpuCounterOption CPUGroundOption;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -38,6 +53,12 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     ERivalsCpuCounterOption CPUAirOption;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    int32 CounterDelay;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool Floorhug;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool ShowTrainingGrid;
@@ -53,6 +74,33 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool ShowDILines;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool InputHistoryVisible;
+    
+    UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
+    ERivalsFacingDirection Side;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    EEdgeguardHeight Height;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    int32 PlayerPercent;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    ERivalsCpuPlaybackMode PlaybackMode;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    uint8 RecordingSlot;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    uint8 PlaybackSlot;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool LoopPlayback;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool AutoRestore;
     
     UTrainingSaveGame();
 

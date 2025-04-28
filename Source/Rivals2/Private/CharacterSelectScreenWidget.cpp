@@ -6,6 +6,7 @@ UCharacterSelectScreenWidget::UCharacterSelectScreenWidget() {
     this->BP_CSSButtonRow_UpperRow = NULL;
     this->BP_CSSButtonRow_LowerRow = NULL;
     this->BP_CursorInterface = NULL;
+    this->BP_BotMatchDetails = NULL;
     this->GameSettingsWidget = NULL;
     this->bIsInitialized = false;
     this->BP_CssPlayerSlotWidget0 = NULL;
@@ -47,7 +48,13 @@ void UCharacterSelectScreenWidget::ToggleRandomizeTeams() {
 void UCharacterSelectScreenWidget::ToggleDpadMovement(const int32& PlayerSlot) {
 }
 
+void UCharacterSelectScreenWidget::ToggleDoubleTapDash(const int32& PlayerSlot) {
+}
+
 void UCharacterSelectScreenWidget::ToggleAutoWalk(const int32& PlayerSlot) {
+}
+
+void UCharacterSelectScreenWidget::ToggleAutoShorthopAerial(const int32& PlayerSlot) {
 }
 
 void UCharacterSelectScreenWidget::SetWinsRequired(const int32 InWinsRequired) {
@@ -88,6 +95,9 @@ bool UCharacterSelectScreenWidget::SetHoverColorSlot(const int32& PlayerSlot, ER
     return false;
 }
 
+void UCharacterSelectScreenWidget::SetHardPressThreshold(const int32& PlayerSlot, float InValue) {
+}
+
 void UCharacterSelectScreenWidget::SetDifficultySetting(ERivalsArcadeModeDifficultySetting DifficultySetting) {
 }
 
@@ -118,7 +128,7 @@ void UCharacterSelectScreenWidget::SelectHoveredCharacter(const int32& PlayerSlo
 void UCharacterSelectScreenWidget::SelectCharacter(const int32& PlayerSlot, TSoftClassPtr<URivalsCharacterDefinition> InCharacterDefinition, TSoftClassPtr<URivalsCharacterSkinDefinition> InSkinDefinition, ERivalsColorSlot ColorSlot) {
 }
 
-void UCharacterSelectScreenWidget::ReturnToMainMenu() {
+void UCharacterSelectScreenWidget::ReturnToMainMenu(bool ReturnedFromHeldBackAction) {
 }
 
 void UCharacterSelectScreenWidget::ResetPlayerSettings(const int32& PlayerSlot) {
@@ -155,6 +165,10 @@ void UCharacterSelectScreenWidget::MarkPlayerReady(const int32& PlayerSlot) {
 void UCharacterSelectScreenWidget::MarkPlayerNotReady(const int32& PlayerSlot) {
 }
 
+bool UCharacterSelectScreenWidget::IsPopupOpen() const {
+    return false;
+}
+
 bool UCharacterSelectScreenWidget::IsPlayerUsingDefaultControls(const int32& PlayerSlot) {
     return false;
 }
@@ -184,6 +198,10 @@ bool UCharacterSelectScreenWidget::IsEveryoneReady() const {
 }
 
 bool UCharacterSelectScreenWidget::IsColorSlotAvailable(const int32& PlayerSlot, TSoftClassPtr<URivalsCharacterDefinition> InCharacterDefinition, TSoftClassPtr<URivalsCharacterSkinDefinition> InSkinDefinition, ERivalsColorSlot ColorSlot) const {
+    return false;
+}
+
+bool UCharacterSelectScreenWidget::IsBotMatchMode() const {
     return false;
 }
 

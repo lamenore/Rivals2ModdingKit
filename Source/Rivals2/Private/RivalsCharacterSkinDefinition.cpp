@@ -19,4 +19,8 @@ URivalsColorSlotData* URivalsCharacterSkinDefinition::GetColorSlotData(const ERi
     return NULL;
 }
 
+FText URivalsCharacterSkinDefinition::GetCharacterName() const {
+    return FText::GetEmpty();
+}
+
 

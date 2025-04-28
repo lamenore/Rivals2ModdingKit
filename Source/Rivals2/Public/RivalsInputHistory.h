@@ -5,7 +5,7 @@
 #include "RivalsInputHistory.generated.h"
 
 USTRUCT(BlueprintType)
-struct FRivalsInputHistory {
+struct RIVALS2_API FRivalsInputHistory {
     GENERATED_BODY()
 public:
 private:
@@ -19,6 +19,9 @@ private:
     FSnapNetPropertyVector2D JoystickHistory[4];
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FSnapNetPropertyInt32 InputsLocked;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FSnapNetPropertyInt32 LatestInputIndex;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -27,7 +30,13 @@ private:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FSnapNetPropertyVector2D RightStickPosition;
     
+    UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
+    uint32 CurrentInputHeldDuration;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    int32 PreviousInput;
+    
 public:
-    RIVALS2_API FRivalsInputHistory();
+    FRivalsInputHistory();
 };
 

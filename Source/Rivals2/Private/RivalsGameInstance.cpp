@@ -1,10 +1,12 @@
 #include "RivalsGameInstance.h"
 
 URivalsGameInstance::URivalsGameInstance() {
+    this->bIgnoreLobby = false;
     this->InPIE = false;
     this->UIManager = NULL;
     this->UIManagerClass = NULL;
     this->UserSettingsClass = NULL;
+    this->bFollowPlayerCam = false;
     this->bCameraLocked = false;
     this->DebugCameraMode = EDebugCameraMode::None;
     this->bSnapNetDebugging = false;
@@ -17,12 +19,16 @@ URivalsGameInstance::URivalsGameInstance() {
     this->bFreeCameraEnabled = false;
     this->bDollyCameraEnabled = false;
     this->bTargetBreak = false;
+    this->bTutorialMode = false;
     this->bArcadeMode = false;
+    this->bBotMatchMode = false;
+    this->BotMatchCount = 0;
     this->bReplayMode = false;
     this->bStartLocalSessionAfterMapLoad = false;
     this->bStartDedicatedServerAfterMapLoad = false;
     this->bIsReconnecting = false;
     this->bTrainingMode = false;
+    this->bIsDialogueOpen = false;
     this->bUseDeterministicRandom = true;
     this->bIsSpectator = false;
     this->MvpVictorySequenceData = NULL;
@@ -30,6 +36,7 @@ URivalsGameInstance::URivalsGameInstance() {
     this->bWasMatchJustCancelled = false;
     this->bWasMatchJustForfeited = false;
     this->bDidLocalPlayerForfeit = false;
+    this->bJustLostConnectionToServer = false;
     this->PreviousSessionState = ERivalsSessionState::None;
     this->bStartedPIEinGameplayLevel = false;
     this->ReconnectMessage = NULL;
@@ -43,12 +50,14 @@ URivalsGameInstance::URivalsGameInstance() {
     this->GlobalMaterialParameterCollection = NULL;
     this->PostProcessMaterialParameterCollection = NULL;
     this->MenuSoundContainer = NULL;
+    this->TutorialSoundContainer = NULL;
     this->UniversalSfxContainer = NULL;
     this->UniversalVfxContainer = NULL;
     this->bInStoryMode = false;
     this->bFinishedLoadingGameplayAssets = false;
     this->bSimulateLastStock = false;
     this->bHasViewedStartupSequence = false;
+    this->bPauseMenuVisible = false;
     this->TapJumpDefault = false;
     this->TapStrongDefault = false;
     this->DeselectCharactersAfterMatch = false;
@@ -67,12 +76,15 @@ URivalsGameInstance::URivalsGameInstance() {
     this->UseOnlineColors = false;
     this->PausedPlayer = NULL;
     this->TargetArticleData = NULL;
-    this->MovingTargetArticleData = NULL;
+    this->SpikeArticleData = NULL;
+    this->OrbyArticleData = NULL;
     this->ShowBuildType = EShowBuildType::None;
-    this->VersionString = TEXT("Editor - No Version String Assigned");
 }
 
 void URivalsGameInstance::WaitForShaderCompilation() const {
+}
+
+void URivalsGameInstance::UpdateBotMatchLevel(const bool bWonLastMatch) {
 }
 
 void URivalsGameInstance::ToggleSnapNetDebugging() {
@@ -119,6 +131,12 @@ void URivalsGameInstance::SetNextGreenScreenType(EGreenScreenType OverrideType) 
 void URivalsGameInstance::SetIsReconnecting(bool bInIsReconnecting) {
 }
 
+void URivalsGameInstance::SetIsPauseMenuVisible(bool IsVisible) {
+}
+
+void URivalsGameInstance::SetIsDialogueOpen(bool NewIsDialogueOpen) {
+}
+
 void URivalsGameInstance::SetInputDisplay(bool Enabled) {
 }
 
@@ -129,6 +147,9 @@ void URivalsGameInstance::SetHoldToPause(const bool& Enabled) {
 }
 
 void URivalsGameInstance::SetFreeCamera(bool FreeCameraEnabled) {
+}
+
+void URivalsGameInstance::SetFollowPlayerCam(bool FollowPlayerCam) {
 }
 
 void URivalsGameInstance::SetDollyCamera(bool DollyCameraEnabled) {
@@ -153,6 +174,9 @@ void URivalsGameInstance::SetDebugCameraMode(EDebugCameraMode InMode) {
 }
 
 void URivalsGameInstance::SetCameraLocked(bool LockCamera) {
+}
+
+void URivalsGameInstance::SetBotMatchCount(const int32& InMatchCount) {
 }
 
 void URivalsGameInstance::SendReadyToStartMatchMessage() {
@@ -183,7 +207,11 @@ void URivalsGameInstance::RestartMatch() {
 void URivalsGameInstance::ReassignControllerPort(const int32& OldPortNum, const int32& NewPortNum) {
 }
 
-void URivalsGameInstance::PlayUniversalSFX(const FName& SoundName) const {
+FFMODEventInstance URivalsGameInstance::PlayUniversalSFX(const FName& SoundName) const {
+    return FFMODEventInstance{};
+}
+
+void URivalsGameInstance::PlayTutorialSfx(ETutorialSoundType TutorialSoundType, int32 FramePriority) const {
 }
 
 void URivalsGameInstance::PlayReplayFromFile(const FString& Filename) {
@@ -196,16 +224,24 @@ FFMODEventInstance URivalsGameInstance::PlayMenuSoundWithHandle(EMenuSoundType M
 void URivalsGameInstance::PlayMenuSound(EMenuSoundType MenuSoundType, int32 FramePriority) const {
 }
 
-void URivalsGameInstance::PlayCharSfx(const FName& SoundName, const URivalsCharacterDefinition* SkinDefinition) const {
+FFMODEventInstance URivalsGameInstance::PlayCharSfx(const FName& SoundName, const URivalsCharacterDefinition* SkinDefinition) const {
+    return FFMODEventInstance{};
 }
 
 void URivalsGameInstance::OnResultsAnimationFinished() {
 }
 
-void URivalsGameInstance::OnLeaveCSSToMainMenu() {
+void URivalsGameInstance::OnLeaveTutorialToMainMenu(ERivalsTutorialDifficulty Difficulty, ERivalsTutorialType TutorialType) {
+}
+
+void URivalsGameInstance::OnLeaveCSSToMainMenu(bool ReturnedFromHeldBackAction) {
 }
 
 void URivalsGameInstance::OnAcceptedInvite() {
+}
+
+bool URivalsGameInstance::LoadStateUnpaused(const int32 SaveStateIndex) {
+    return false;
 }
 
 bool URivalsGameInstance::LoadState(const int32 SaveStateIndex) {
@@ -213,6 +249,10 @@ bool URivalsGameInstance::LoadState(const int32 SaveStateIndex) {
 }
 
 void URivalsGameInstance::LaunchDedicatedServer(TSoftObjectPtr<UWorld> Map) {
+}
+
+bool URivalsGameInstance::IsValidSaveState(const int32 SaveStateIndex) {
+    return false;
 }
 
 bool URivalsGameInstance::IsUsingTrailerCamera() const {
@@ -223,7 +263,15 @@ bool URivalsGameInstance::IsUsingDeterministicRandom() const {
     return false;
 }
 
+bool URivalsGameInstance::IsTutorialMode() const {
+    return false;
+}
+
 bool URivalsGameInstance::IsTrainingMode() const {
+    return false;
+}
+
+bool URivalsGameInstance::IsTrainingGame() const {
     return false;
 }
 
@@ -263,7 +311,15 @@ bool URivalsGameInstance::IsRankedSession() const {
     return false;
 }
 
+bool URivalsGameInstance::IsPlaytest() const {
+    return false;
+}
+
 bool URivalsGameInstance::IsPlayerTagInUse(const FString& PlayerTagName) const {
+    return false;
+}
+
+bool URivalsGameInstance::IsPauseMenuVisible() {
     return false;
 }
 
@@ -291,6 +347,10 @@ bool URivalsGameInstance::IsLocalPlayer(const int32& PlayerIndex) const {
     return false;
 }
 
+bool URivalsGameInstance::IsInEditor() {
+    return false;
+}
+
 bool URivalsGameInstance::IsHoldToPauseEnabled() const {
     return false;
 }
@@ -307,11 +367,31 @@ bool URivalsGameInstance::IsFrameAdvanceAllowed() const {
     return false;
 }
 
+bool URivalsGameInstance::IsFollowPlayerCam() const {
+    return false;
+}
+
+bool URivalsGameInstance::IsEyeBreakMode() const {
+    return false;
+}
+
+bool URivalsGameInstance::IsEdgeguardMode() const {
+    return false;
+}
+
 bool URivalsGameInstance::IsDollyCameraEnabled() const {
     return false;
 }
 
+bool URivalsGameInstance::IsDialogueOpen() const {
+    return false;
+}
+
 bool URivalsGameInstance::IsCameraLocked() const {
+    return false;
+}
+
+bool URivalsGameInstance::IsBotMatchMode() const {
     return false;
 }
 
@@ -328,6 +408,10 @@ URivalsUIManager* URivalsGameInstance::GetUIManager() const {
 
 ERivalsSessionState URivalsGameInstance::GetSessionState() const {
     return ERivalsSessionState::None;
+}
+
+FText URivalsGameInstance::GetSessionName() {
+    return FText::GetEmpty();
 }
 
 ESnapNetRenderInterpolationMethod URivalsGameInstance::GetRenderInterpolationMethod() const {
@@ -354,8 +438,16 @@ bool URivalsGameInstance::GetInputDisplay() const {
     return false;
 }
 
+FText URivalsGameInstance::GetHudModeText() const {
+    return FText::GetEmpty();
+}
+
 EHudMode URivalsGameInstance::GetHudMode() const {
     return EHudMode::ShowAll;
+}
+
+FText URivalsGameInstance::GetDebuggingInfoModeText() const {
+    return FText::GetEmpty();
 }
 
 EDebuggingInfoMode URivalsGameInstance::GetDebuggingInfoMode() const {
@@ -370,8 +462,16 @@ FString URivalsGameInstance::GetCurrentPlayerTagString(const int32& PlayerIndex)
     return TEXT("");
 }
 
-FString URivalsGameInstance::GetCurrentGreenScreenTypeString() {
-    return TEXT("");
+FText URivalsGameInstance::GetCurrentGreenScreenTypeText() {
+    return FText::GetEmpty();
+}
+
+int32 URivalsGameInstance::GetBotMatchLevel() {
+    return 0;
+}
+
+int32 URivalsGameInstance::GetBotMatchCount() const {
+    return 0;
 }
 
 TArray<FString> URivalsGameInstance::GetAllReplayFilenames() const {
@@ -399,6 +499,9 @@ void URivalsGameInstance::DeleteReplay(const FString& ReplayName) const {
 }
 
 void URivalsGameInstance::ContinueLocalSession(TSoftObjectPtr<UWorld> Map) {
+}
+
+void URivalsGameInstance::ClearSaveStates() {
 }
 
 bool URivalsGameInstance::CanPause() const {

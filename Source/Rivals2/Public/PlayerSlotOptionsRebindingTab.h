@@ -8,7 +8,6 @@ class UHorizontalBox;
 class UProgressBar;
 class URivalsWidget;
 class UTextBlock;
-class UUIButtonDisplayer;
 
 UCLASS(Blueprintable, EditInlineNew)
 class RIVALS2_API UPlayerSlotOptionsRebindingTab : public UPlayerSlotOptionsTabInterface {
@@ -16,10 +15,10 @@ class RIVALS2_API UPlayerSlotOptionsRebindingTab : public UPlayerSlotOptionsTabI
 public:
 protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
-    TArray<UUIButtonDisplayer*> OldDisplayers;
+    TArray<UBetterButtonDisplayer*> OldDisplayers;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
-    TArray<UUIButtonDisplayer*> NewDisplayers;
+    TArray<UBetterButtonDisplayer*> NewDisplayers;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     URivalsWidget* BP_ButtonInteract;
@@ -49,28 +48,28 @@ protected:
     float MinBackPressTime;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
-    UUIButtonDisplayer* BP_OldBindingDisplayer0;
+    UBetterButtonDisplayer* BP_OldBindingDisplayer0;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
-    UUIButtonDisplayer* BP_OldBindingDisplayer1;
+    UBetterButtonDisplayer* BP_OldBindingDisplayer1;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
-    UUIButtonDisplayer* BP_OldBindingDisplayer2;
+    UBetterButtonDisplayer* BP_OldBindingDisplayer2;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
-    UUIButtonDisplayer* BP_OldBindingDisplayer3;
+    UBetterButtonDisplayer* BP_OldBindingDisplayer3;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
-    UUIButtonDisplayer* BP_NewBindingDisplayer0;
+    UBetterButtonDisplayer* BP_NewBindingDisplayer0;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
-    UUIButtonDisplayer* BP_NewBindingDisplayer1;
+    UBetterButtonDisplayer* BP_NewBindingDisplayer1;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
-    UUIButtonDisplayer* BP_NewBindingDisplayer2;
+    UBetterButtonDisplayer* BP_NewBindingDisplayer2;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
-    UUIButtonDisplayer* BP_NewBindingDisplayer3;
+    UBetterButtonDisplayer* BP_NewBindingDisplayer3;
     
 public:
     UPlayerSlotOptionsRebindingTab();

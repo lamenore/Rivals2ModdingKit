@@ -4,9 +4,7 @@ UTrainingMenuPopup::UTrainingMenuPopup() {
     this->BP_TabSwitcher = NULL;
     this->BP_CPUTab = NULL;
     this->BP_CloseButton = NULL;
-}
-
-void UTrainingMenuPopup::OnInfiniteShieldPressed(const int32 Index) {
+    this->BP_MenuBorder = NULL;
 }
 
 void UTrainingMenuPopup::OnCloseReleased(const int32 Index) {

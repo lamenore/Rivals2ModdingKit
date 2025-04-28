@@ -6,11 +6,15 @@ UResultsScreenWidget::UResultsScreenWidget() {
     this->BP_LetterBoxTop_Hide = NULL;
     this->BP_LetterBoxBottom_Hide = NULL;
     this->BP_OnlineStateTimer = NULL;
+    this->BP_ReportServerButtonContainer = NULL;
+    this->BP_ReportServerButton = NULL;
+    this->BP_ServerReported = NULL;
     this->BP_SaveReplayButtonContainer = NULL;
     this->BP_SaveReplayButton = NULL;
     this->BP_ReplaySaved = NULL;
     this->bCanShowOnlineTimer = false;
     this->bRequestedManualReplaySave = false;
+    this->ViewingStatsTimeout = 1.00f;
     this->ForfeitPopup = NULL;
 }
 
@@ -22,6 +26,10 @@ void UResultsScreenWidget::StartCoinSFX() {
 }
 
 void UResultsScreenWidget::ShowFadeIn() {
+}
+
+bool UResultsScreenWidget::ShouldShowMedalUpdate() {
+    return false;
 }
 
 bool UResultsScreenWidget::ShouldDisplayXpForSlot(const int32& PlayerSlot) {
@@ -40,6 +48,9 @@ bool UResultsScreenWidget::ShouldAutoShowStats() {
     return false;
 }
 
+void UResultsScreenWidget::SetTimeStartedViewingStats(const double& InTime) {
+}
+
 void UResultsScreenWidget::RequestSaveReplay(const int32& PlayerSlot) {
 }
 
@@ -53,6 +64,9 @@ void UResultsScreenWidget::ProcessRankUpdate(const FResultsRankUpdateInfo RankUp
 }
 
 void UResultsScreenWidget::ProcessNextReward() {
+}
+
+void UResultsScreenWidget::ProcessMedalUpdate(const FResultsMedalUpdateInfo InMedalUpdate) {
 }
 
 void UResultsScreenWidget::ProcessEventXpUpdate(const FResultsXpUpdateInfo XpUpdate) {
@@ -70,6 +84,10 @@ void UResultsScreenWidget::MarkNotReadyForNextMatch(const int32& PlayerSlot) {
 }
 
 
+
+bool UResultsScreenWidget::JustStartedViewingStats(const double& InTime) {
+    return false;
+}
 
 bool UResultsScreenWidget::IsPlayerReady(const int32& PlayerSlot) const {
     return false;
@@ -96,6 +114,10 @@ bool UResultsScreenWidget::IsLastMatchInSet() {
 }
 
 bool UResultsScreenWidget::IsEveryoneReady() const {
+    return false;
+}
+
+bool UResultsScreenWidget::HasReportedServer() const {
     return false;
 }
 
@@ -135,8 +157,20 @@ TArray<FRivalsMatchResult> UResultsScreenWidget::GetPlayerMatchHistory(const int
     return TArray<FRivalsMatchResult>();
 }
 
+int32 UResultsScreenWidget::GetPlayerInitialWinStreak(const int32& PlayerSlot) const {
+    return 0;
+}
+
+int32 UResultsScreenWidget::GetPlayerCurrentWinStreak(const int32& PlayerSlot) const {
+    return 0;
+}
+
 FResultsRankUpdateInfo UResultsScreenWidget::GetNextRankUpdate() {
     return FResultsRankUpdateInfo{};
+}
+
+FResultsMedalUpdateInfo UResultsScreenWidget::GetMedalUpdate() {
+    return FResultsMedalUpdateInfo{};
 }
 
 FRivalsPlayerTag UResultsScreenWidget::GetCurrentPlayerTagInfo(const int32& PlayerSlot) {
@@ -154,6 +188,7 @@ void UResultsScreenWidget::ClickedNextRound(const int32& PlayerSlot) {
 
 void UResultsScreenWidget::ClickedBackToMatchmaking(const int32& PlayerSlot) {
 }
+
 
 
 

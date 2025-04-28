@@ -21,6 +21,10 @@ bool URivalsGameBlueprintFunctionLibrary::IsLobbySession(const UObject* WorldCon
     return false;
 }
 
+bool URivalsGameBlueprintFunctionLibrary::IsBotMatchMode(const UObject* WorldContextObject) {
+    return false;
+}
+
 FLinearColor URivalsGameBlueprintFunctionLibrary::GetTeamColorLight(const ERivalsColorSlot InTeam, const float ShadeValue, const float AlphaOverride, const bool bSquareResult, const bool bIsArcadeMode) {
     return FLinearColor{};
 }
@@ -39,6 +43,18 @@ FLinearColor URivalsGameBlueprintFunctionLibrary::GetTeamColor(const ERivalsColo
 
 FRivalsServerMatchInfo URivalsGameBlueprintFunctionLibrary::GetServerMatchInfo(const UObject* WorldContextObject) {
     return FRivalsServerMatchInfo{};
+}
+
+FLinearColor URivalsGameBlueprintFunctionLibrary::GetRankedColorLight(const UObject* WorldContextObject, const int32 InPlayerIndex, const float AlphaOverride) {
+    return FLinearColor{};
+}
+
+FLinearColor URivalsGameBlueprintFunctionLibrary::GetRankedColorDark(const UObject* WorldContextObject, const int32 InPlayerIndex, const float AlphaOverride) {
+    return FLinearColor{};
+}
+
+FLinearColor URivalsGameBlueprintFunctionLibrary::GetRankedColor(const UObject* WorldContextObject, const int32 InPlayerIndex, const float AlphaOverride) {
+    return FLinearColor{};
 }
 
 int32 URivalsGameBlueprintFunctionLibrary::GetPlayerSlotForPlayerController(const UObject* WorldContextObject, APlayerController* InController) {
@@ -71,6 +87,9 @@ ARivalsGameStateEntity* URivalsGameBlueprintFunctionLibrary::GetGameStateEntity(
 
 UObject* URivalsGameBlueprintFunctionLibrary::GetDefaultObject(UClass* ObjectClass) {
     return NULL;
+}
+
+void URivalsGameBlueprintFunctionLibrary::FlushControllerInput(APlayerController* InController) {
 }
 
 FString URivalsGameBlueprintFunctionLibrary::DateTimeToFormattedString(const FDateTime& InDateTime, const FString& Format) {

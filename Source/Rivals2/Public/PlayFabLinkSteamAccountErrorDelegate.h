@@ -2,5 +2,5 @@
 #include "CoreMinimal.h"
 #include "PlayFabLinkSteamAccountErrorDelegate.generated.h"
 
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FPlayFabLinkSteamAccountError, const FString&, ErrorReport);
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FPlayFabLinkSteamAccountError, FText, ErrorReport);
 

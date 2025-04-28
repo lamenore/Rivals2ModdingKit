@@ -15,10 +15,19 @@ public:
     UKeyframeManager();
 
     UFUNCTION(BlueprintCallable)
+    void SortKeyframes();
+    
+    UFUNCTION(BlueprintCallable)
     bool SaveKeyframesToFile();
     
     UFUNCTION(BlueprintCallable)
     bool LoadKeyframesFromFile();
+    
+    UFUNCTION(BlueprintCallable)
+    int32 GetNewKeyframeIndex(UKeyframe* Keyframe);
+    
+    UFUNCTION(BlueprintCallable)
+    UKeyframe* GetNearestKeyframe(int32 Direction);
     
 };
 

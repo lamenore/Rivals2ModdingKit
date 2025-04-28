@@ -1,6 +1,8 @@
 #include "TopBarCurrencyDisplayer.h"
 
 UTopBarCurrencyDisplayer::UTopBarCurrencyDisplayer() : UUserWidget(FObjectInitializer::Get()) {
+    this->CurrencyDigits = 10;
+    this->PreviewCurrencyAmount = 0;
     this->DisplayedCurrencyType = EDisplayedCurrencyType::Bucks;
     this->BP_Zeroes = NULL;
     this->BP_CurrencyAmount = NULL;

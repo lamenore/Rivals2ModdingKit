@@ -14,6 +14,7 @@ enum class ERivalsWindowCancelPrerequisite : uint8 {
     JoystickIdle,
     JoystickNotIdle,
     ShieldNotDown,
+    SpecialNotDown,
     StateInt0,
     StateInt1,
     StateInt2,

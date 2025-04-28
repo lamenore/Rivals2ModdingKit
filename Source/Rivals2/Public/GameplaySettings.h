@@ -18,6 +18,9 @@ public:
     bool TeamOutlines;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FString Language;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     ERivalsReplayAutoSaveSetting ReplayAutoSave;
     
     RIVALS2_API FGameplaySettings();

@@ -9,5 +9,6 @@ FRivalsStatusVisualDefinition::FRivalsStatusVisualDefinition() {
     this->OverlayColorTopAlpha = 0.00f;
     this->OverlayColorBottomAlpha = 0.00f;
     this->EmissiveColorAlpha = 0.00f;
+    this->bShowSkeleton = false;
 }
 

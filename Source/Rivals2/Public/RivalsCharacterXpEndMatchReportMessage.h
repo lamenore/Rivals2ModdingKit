@@ -74,7 +74,10 @@ public:
     FSnapNetPropertyString CharacterShortName;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    FSnapNetPropertyString MasterPlayerAccountId;
+    FSnapNetPropertyBoolean bIsArcadeModeCompletion;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FSnapNetPropertyString masterPlayerAccountId;
     
     URivalsCharacterXpEndMatchReportMessage();
 

@@ -19,6 +19,7 @@
 class APlayerController;
 class ARivalsPlayerController;
 class ARivalsPlayerEntity;
+class UBotMatchDetailsWidget;
 class UCSSCharacterButtonWidget;
 class UCanvasPanel;
 class UCharacterSelectScreenWidget;
@@ -49,6 +50,9 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UCursorInterfaceWidget* BP_CursorInterface;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    UBotMatchDetailsWidget* BP_BotMatchDetails;
     
 protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -124,7 +128,13 @@ public:
     void ToggleDpadMovement(const int32& PlayerSlot);
     
     UFUNCTION(BlueprintCallable)
+    void ToggleDoubleTapDash(const int32& PlayerSlot);
+    
+    UFUNCTION(BlueprintCallable)
     void ToggleAutoWalk(const int32& PlayerSlot);
+    
+    UFUNCTION(BlueprintCallable)
+    void ToggleAutoShorthopAerial(const int32& PlayerSlot);
     
     UFUNCTION(BlueprintCallable)
     void SetWinsRequired(const int32 InWinsRequired);
@@ -163,6 +173,9 @@ public:
     bool SetHoverColorSlot(const int32& PlayerSlot, ERivalsColorSlot ColorSlot);
     
     UFUNCTION(BlueprintCallable)
+    void SetHardPressThreshold(const int32& PlayerSlot, float InValue);
+    
+    UFUNCTION(BlueprintCallable)
     void SetDifficultySetting(ERivalsArcadeModeDifficultySetting DifficultySetting);
     
     UFUNCTION(BlueprintCallable)
@@ -193,7 +206,7 @@ public:
     void SelectCharacter(const int32& PlayerSlot, TSoftClassPtr<URivalsCharacterDefinition> InCharacterDefinition, TSoftClassPtr<URivalsCharacterSkinDefinition> InSkinDefinition, ERivalsColorSlot ColorSlot);
     
     UFUNCTION(BlueprintCallable)
-    void ReturnToMainMenu();
+    void ReturnToMainMenu(bool ReturnedFromHeldBackAction);
     
     UFUNCTION(BlueprintCallable)
     void ResetPlayerSettings(const int32& PlayerSlot);
@@ -232,6 +245,9 @@ public:
     void MarkPlayerNotReady(const int32& PlayerSlot);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
+    bool IsPopupOpen() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsPlayerUsingDefaultControls(const int32& PlayerSlot);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
@@ -254,6 +270,9 @@ public:
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsColorSlotAvailable(const int32& PlayerSlot, TSoftClassPtr<URivalsCharacterDefinition> InCharacterDefinition, TSoftClassPtr<URivalsCharacterSkinDefinition> InSkinDefinition, ERivalsColorSlot ColorSlot) const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    bool IsBotMatchMode() const;
     
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void InitCSSWidget();

@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Engine/DataAsset.h"
+#include "EquipmentItemAsset.h"
 #include "PlatformSoundEvent.h"
 #include "RivalsBgmData.h"
 #include "StageSkinScalarParameterContainer.h"
@@ -11,33 +11,30 @@
 class ARivalsPlatformRenderer;
 class ARivalsStageEntity;
 class URivalsSoundEffectContainer;
+class URivalsStageData;
 class URivalsVfxDefinitionAsset;
-class UTexture2D;
 
 UCLASS(Blueprintable)
-class RIVALS2_API URivalsStageSkinData : public UPrimaryDataAsset {
+class RIVALS2_API URivalsStageSkinData : public UEquipmentItemAsset {
     GENERATED_BODY()
 public:
-    UPROPERTY(AssetRegistrySearchable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    bool ExcludeFromBuild;
-    
     UPROPERTY(AssetRegistrySearchable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FName StageSkinName;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TSoftClassPtr<URivalsStageData> ParentStageData;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FName OriginalStageName;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FText LocalizableName;
     
     UPROPERTY(AssetRegistrySearchable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FName LevelName;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSubclassOf<ARivalsStageEntity> StageClass;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    TSoftObjectPtr<UTexture2D> StageSelectImageLarge;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    TSoftObjectPtr<UTexture2D> StageSelectImageSmall;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FRivalsBgmData BgmData;

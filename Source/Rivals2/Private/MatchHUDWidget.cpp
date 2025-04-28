@@ -3,14 +3,20 @@
 UMatchHUDWidget::UMatchHUDWidget() {
     this->BP_LetterBox_Open = NULL;
     this->BP_LetterBox_Close = NULL;
-    this->BP_LetterBox_FocusOpen = NULL;
-    this->BP_LetterBox_FocusClose = NULL;
+    this->BP_LetterBox_OpenToFocus = NULL;
+    this->BP_LetterBox_CloseToFocus = NULL;
+    this->BP_LetterBox_CloseFromFocus = NULL;
     this->BP_HordeStockDisplay = NULL;
     this->bHasProcessedMatchStart = false;
 }
 
 void UMatchHUDWidget::ShowLetterbox(ELetterboxTransition TransitionType) {
 }
+
+
+
+
+
 
 FRivalsServerMatchInfo UMatchHUDWidget::GetServerMatchInfo() {
     return FRivalsServerMatchInfo{};

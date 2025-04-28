@@ -10,6 +10,7 @@
 
 class AActor;
 class ARivalsPlayerController;
+class ARivalsPlayerEntity;
 class UReplayTimeline;
 class URivalsDollyCamera;
 class USceneCaptureComponent2D;
@@ -36,6 +37,12 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     URivalsDollyCamera* DollyCamera;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    float FollowDistance;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    float FollowHeightOffset;
+    
 protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FRivalsCameraSettings CameraSettings;
@@ -57,6 +64,9 @@ protected:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     float SavedCameraFov;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    ARivalsPlayerEntity* PlayerToFollow;
     
 public:
     ARivalsCamera(const FObjectInitializer& ObjectInitializer);

@@ -1,7 +1,7 @@
 #include "RivalsEdgegapServerSettings.h"
 
 URivalsEdgegapServerSettings::URivalsEdgegapServerSettings() {
-    this->StartupDelay = 1.00f;
+    this->StartupDelay = 0.55f;
 }
 
 

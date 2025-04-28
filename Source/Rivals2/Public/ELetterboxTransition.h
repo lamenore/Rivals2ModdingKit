@@ -6,7 +6,8 @@ UENUM(BlueprintType)
 enum class ELetterboxTransition : uint8 {
     Open,
     Close,
-    FocusOpen,
-    FocusClose,
+    OpenToFocus,
+    CloseToFocus,
+    CloseFromFocus,
 };
 

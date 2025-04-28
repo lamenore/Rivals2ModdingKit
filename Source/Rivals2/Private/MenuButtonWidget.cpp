@@ -12,6 +12,7 @@ UMenuButtonWidget::UMenuButtonWidget() : UUserWidget(FObjectInitializer::Get()) 
     this->ShouldListenForInputChange = true;
     this->HorizontalAlignment = HAlign_Fill;
     this->TextPadding = 0.00f;
+    this->bAcceptMouseInput = false;
     this->bIsLocked = false;
     this->BP_ScaleBox = NULL;
     this->BP_SizeBox = NULL;

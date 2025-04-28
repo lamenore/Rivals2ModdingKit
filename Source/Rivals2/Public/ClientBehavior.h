@@ -1,12 +1,12 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Blueprint/UserWidget.h"
+#include "BetterWidget.h"
 #include "ClientBehavior.generated.h"
 
 class ARivalsPlayerController;
 
 UCLASS(Blueprintable, EditInlineNew)
-class RIVALS2_API UClientBehavior : public UUserWidget {
+class RIVALS2_API UClientBehavior : public UBetterWidget {
     GENERATED_BODY()
 public:
     UClientBehavior();

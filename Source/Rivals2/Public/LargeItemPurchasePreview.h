@@ -54,6 +54,12 @@ protected:
     URivalsMenuButtonWidget* BP_ConfirmButton;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    USizeBox* BP_PreviewButtonBox;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    URivalsMenuButtonWidget* BP_PreviewButton;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     USizeBox* BP_CloseButtonBox;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
@@ -76,6 +82,9 @@ public:
     ULargeItemPurchasePreview();
 
 private:
+    UFUNCTION(BlueprintCallable)
+    void OnPreviewButtonPressed();
+    
     UFUNCTION(BlueprintCallable)
     UWidget* OnNavigateButtons(EUINavigation InNavigation);
     

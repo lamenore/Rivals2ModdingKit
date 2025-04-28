@@ -58,6 +58,18 @@ public:
     FOnPlayerInteraction OnAction4ReleasedByPlayer;
     
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FOnPlayerInteraction OnRightTriggerPressedByPlayer;
+    
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FOnPlayerInteraction OnRightTriggerReleasedByPlayer;
+    
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FOnPlayerInteraction OnLeftTriggerPressedByPlayer;
+    
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FOnPlayerInteraction OnLeftTriggerReleasedByPlayer;
+    
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FOnPlayerInteraction OnReceivedFocusByPlayer;
     
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -73,6 +85,12 @@ protected:
     void OnUnhoveredRelay(const int32 UserIndex);
     
     UFUNCTION(BlueprintCallable)
+    void OnRightTriggerReleasedRelay(const int32 UserIndex);
+    
+    UFUNCTION(BlueprintCallable)
+    void OnRightTriggerPressedRelay(const int32 UserIndex);
+    
+    UFUNCTION(BlueprintCallable)
     void OnReleasedRelay(const int32 UserIndex);
     
     UFUNCTION(BlueprintCallable)
@@ -83,6 +101,12 @@ protected:
     
     UFUNCTION(BlueprintCallable)
     void OnLostFocusRelay(const int32 UserIndex);
+    
+    UFUNCTION(BlueprintCallable)
+    void OnLeftTriggerReleasedRelay(const int32 UserIndex);
+    
+    UFUNCTION(BlueprintCallable)
+    void OnLeftTriggerPressedRelay(const int32 UserIndex);
     
     UFUNCTION(BlueprintCallable)
     void OnHoveredRelay(const int32 UserIndex);

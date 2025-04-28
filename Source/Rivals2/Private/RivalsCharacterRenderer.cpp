@@ -12,6 +12,7 @@ ARivalsCharacterRenderer::ARivalsCharacterRenderer(const FObjectInitializer& Obj
     this->CharacterMeshComponent = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("CharacterMeshComponent"));
     this->OutlineMeshComponent = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("OutlineMeshComponent"));
     this->AuraMeshComponent = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("AuraMeshComponent"));
+    this->SkeletonMeshComponent = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("SkeletonMeshComponent"));
     this->EntityRendererComponent = CreateDefaultSubobject<USnapNetEntityRendererComponent>(TEXT("SnapNetEntityRendererComponent"));
     this->OffscreenIndicatorComponent = CreateDefaultSubobject<UWidgetComponent>(TEXT("OffscreenIndicatorComponent"));
     this->OverheadHudComponent = CreateDefaultSubobject<UWidgetComponent>(TEXT("OverheadHudComponent"));
@@ -22,6 +23,7 @@ ARivalsCharacterRenderer::ARivalsCharacterRenderer(const FObjectInitializer& Obj
     this->RespawnPlatform = NULL;
     this->RootSceneComponent = (USceneComponent*)RootComponent;
     this->ShieldMeshComponent = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("ShieldMeshComponent"));
+    this->bShowSkeleton = false;
     this->DetectVolume = CreateDefaultSubobject<UBoxComponent>(TEXT("DetectVolume"));
     this->CharacterMeshComponentData.AddDefaulted(1);
     this->AuraMeshComponent->SetupAttachment(CharacterMeshComponent);
@@ -31,6 +33,7 @@ ARivalsCharacterRenderer::ARivalsCharacterRenderer(const FObjectInitializer& Obj
     this->OutlineMeshComponent->SetupAttachment(CharacterMeshComponent);
     this->OverheadHudComponent->SetupAttachment(RootComponent);
     this->ShieldMeshComponent->SetupAttachment(CharacterMeshComponent);
+    this->SkeletonMeshComponent->SetupAttachment(CharacterMeshComponent);
 }
 
 TArray<FName> ARivalsCharacterRenderer::GetMaterialSlotsInGroup(FName GroupName) const {

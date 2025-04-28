@@ -14,11 +14,13 @@ USettingsMenuRow::USettingsMenuRow() : UUserWidget(FObjectInitializer::Get()) {
     this->BP_LRBox = NULL;
     this->HoveredMaterial = NULL;
     this->DefaultMaterial = NULL;
-    this->TrueValueText = TEXT("True");
-    this->FalseValueText = TEXT("False");
+    this->TrueValueText = FText::FromString(TEXT("True"));
+    this->FalseValueText = FText::FromString(TEXT("False"));
     this->DefaultIndex = 0;
     this->Type = EValueType::String;
     this->NumberValue = 0.00f;
+    this->MinValue = 0.00f;
+    this->MaxValue = 100.00f;
     this->BoolValue = false;
     this->ParentTab = NULL;
     this->BP_Activate = NULL;

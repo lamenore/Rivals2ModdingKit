@@ -25,6 +25,9 @@ protected:
     UScaleBox* BP_RankScaleBox;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    UScaleBox* BP_BonusScaleBox;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UImage* BP_RankIconImage;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
@@ -35,6 +38,9 @@ protected:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UTextBlock* BP_DeltaEloText;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    UTextBlock* BP_WinStreakBonusEloText;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UTextBlock* BP_NewEloText;
@@ -68,6 +74,9 @@ public:
     
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BP_ProcessedPlacementUpdate(const FResultsRankUpdateInfo& RankInfo);
+    
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
+    void BP_OnWinStreakBonusReceived();
     
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BP_OnStartedAnimating();

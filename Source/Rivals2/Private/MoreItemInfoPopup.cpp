@@ -9,6 +9,7 @@ UMoreItemInfoPopup::UMoreItemInfoPopup() {
     this->BP_ChoiceContainer = NULL;
     this->BP_MultiLargeItemPreview = NULL;
     this->ItemEntryClass = NULL;
+    this->BP_CreatorSupportButton = NULL;
     this->InitialItem = NULL;
 }
 

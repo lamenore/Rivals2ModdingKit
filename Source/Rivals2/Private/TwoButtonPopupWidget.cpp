@@ -7,4 +7,7 @@ UTwoButtonPopupWidget::UTwoButtonPopupWidget() {
 void UTwoButtonPopupWidget::OnConfirmPressed(const int32 UserIndex) {
 }
 
+void UTwoButtonPopupWidget::OnCancelPressed(const int32 UserIndex) {
+}
+
 

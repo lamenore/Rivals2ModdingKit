@@ -45,6 +45,9 @@ public:
     UMainMenuHomeTab();
 
     UFUNCTION(BlueprintCallable)
+    void ShowRewardsCachedDuringTitleScreen();
+    
+    UFUNCTION(BlueprintCallable)
     void OnTutorialButtonPressed();
     
     UFUNCTION(BlueprintCallable)

@@ -1,11 +1,13 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Subsystems/GameInstanceSubsystem.h"
+#include "ClaimCharacterArcadeRewardResponse.h"
 #include "ERivalsAbyssArmorState.h"
 #include "ERivalsArcadeMedalType.h"
 #include "ERivalsArcadeModeDifficultySetting.h"
 #include "ERivalsArcadeModeStageType.h"
 #include "ResultsXpUpdateInfo.h"
+#include "RivalsTargetData.h"
 #include "Templates/SubclassOf.h"
 #include "RivalsArcadeModeSubsystem.generated.h"
 
@@ -22,6 +24,9 @@ UCLASS(Blueprintable)
 class RIVALS2_API URivalsArcadeModeSubsystem : public UGameInstanceSubsystem {
     GENERATED_BODY()
 public:
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TArray<FRivalsTargetData> TargetData;
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     ERivalsArcadeModeDifficultySetting ArcadeModeDifficulty;
     
@@ -64,10 +69,21 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FResultsXpUpdateInfo> XpUpdates;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FClaimCharacterArcadeRewardResponse CachedRewardResponse;
+    
+private:
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool bMovedToVictoryScreen;
+    
+public:
     URivalsArcadeModeSubsystem();
 
     UFUNCTION(BlueprintCallable)
     void RemoveTarget(ARivalsTargetEntity* TargetEntity);
+    
+    UFUNCTION(BlueprintCallable)
+    void MoveToVictoryPostRewardGrant();
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsGameOver();

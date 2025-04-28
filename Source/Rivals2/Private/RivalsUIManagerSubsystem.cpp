@@ -4,6 +4,7 @@ URivalsUIManagerSubsystem::URivalsUIManagerSubsystem() {
     this->CurrentScreen = NULL;
     this->StartupMovieLoaded = false;
     this->AssetMaps = NULL;
+    this->UIMaps = NULL;
     this->IsInTextEntry = false;
     this->FocusLockedToViewport = false;
     this->PreviousFocusWidget = NULL;

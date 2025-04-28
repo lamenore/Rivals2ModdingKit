@@ -13,6 +13,7 @@ class UBetterButtonDisplayer;
 class UImage;
 class URivalsButtonWidget;
 class UTextBlock;
+class UTexture2D;
 class UWidget;
 class UWidgetAnimation;
 
@@ -24,13 +25,10 @@ public:
     bool UseNavigationDelegate;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    FString ButtonLabel;
+    FText ButtonLabel;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FText BP_ToolTipText;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    bool bMultilineTooltip;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 SliderValue;
@@ -45,13 +43,16 @@ public:
     EPlayerSlotOptionButtonType ButtonType;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UTexture2D* IconImage;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EPlayerSlotOptionButtonSliderType SliderType;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FString Tag;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    FString Action;
+    FText Action;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UImage* BP_Highlight1;
@@ -106,6 +107,9 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UWidget* BP_IconContainer;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    UImage* BP_IconImage;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UBetterButtonDisplayer* BP_MappingDisplayer0;

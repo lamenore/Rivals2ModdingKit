@@ -17,6 +17,9 @@ protected:
     UPlayerSlotOptionsButtonWidget* BP_RedeemCodeButton;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    UPlayerSlotOptionsButtonWidget* BP_CreatorSupportButton;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UPlayerSlotOptionsButtonWidget* BP_AccountDetailsButton;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))

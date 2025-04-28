@@ -5,5 +5,7 @@ FRivalsActiveHitbox::FRivalsActiveHitbox() {
     this->FramesSinceHitboxCreation = 0;
     this->HitboxDurationInFrames = 0;
     this->HitboxID = 0;
+    this->FreezeLocationPrev = false;
+    this->CustomKnockbackAngle = 0;
 }
 

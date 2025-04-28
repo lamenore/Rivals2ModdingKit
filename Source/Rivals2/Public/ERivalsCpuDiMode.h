@@ -4,8 +4,8 @@
 
 UENUM(BlueprintType)
 enum class ERivalsCpuDiMode : uint8 {
-    None,
     Random,
+    None,
     In,
     Away,
     Down,

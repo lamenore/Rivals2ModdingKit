@@ -8,9 +8,12 @@ ARivalsCamera::ARivalsCamera(const FObjectInitializer& ObjectInitializer) : Supe
     this->AnchorActor = NULL;
     this->ReplayTimeline = NULL;
     this->DollyCamera = NULL;
+    this->FollowDistance = 400.00f;
+    this->FollowHeightOffset = 0.00f;
     this->ForsburnSmokeCaptureComponent = CreateDefaultSubobject<USceneCaptureComponent2D>(TEXT("ForsburnSmokeCaptureComponent"));
     this->FreePlayerController = NULL;
     this->SavedCameraFov = 0.00f;
+    this->PlayerToFollow = NULL;
     this->ForsburnSmokeCaptureComponent->SetupAttachment(RootComponent);
 }
 

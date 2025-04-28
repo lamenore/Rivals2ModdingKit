@@ -15,6 +15,9 @@ class RIVALS2_API UConfirmPurchasePopup : public UBasePopupWidget {
     GENERATED_BODY()
 public:
 protected:
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool bAnimButtonLock;
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UPreviewItemEntry* BP_ItemEntry;
     

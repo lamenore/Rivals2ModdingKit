@@ -14,8 +14,33 @@
 				"CinematicCamera",
 				"MovieRenderPipelineCore",
 				"CoreUObject",
-				"UMG"
+				"UMG",
+				"ExpressiveText",
+				"OnlineSubsystem",
+				"OnlineSubsystemSteam",
+				"OnlineSubsystemEOS",
+				"OnlineSubsystemEOSPlus"
 			]
+		},
+		{
+			"Name": "Etalus",
+			"Type": "Runtime",
+			"LoadingPhase": "Default"
+		},
+		{
+			"Name": "Olympia",
+			"Type": "Runtime",
+			"LoadingPhase": "Default"
+		},
+		{
+			"Name": "StateTreeModule",
+			"Type": "Runtime",
+			"LoadingPhase": "Default"
+		},
+		{
+			"Name": "VirtualCursor",
+			"Type": "Runtime",
+			"LoadingPhase": "Default"
 		}
 	],
 	"Plugins": [
@@ -40,28 +65,6 @@
 			"Enabled": true
 		},
 		{
-			"Name": "OnlineSubsystemPlayFab",
-			"Enabled": true,
-			"SupportedTargetPlatforms": [
-				"XB1",
-				"WinGDK",
-				"XSX",
-				"Win64",
-				"Switch",
-				"PS4",
-				"PS5"
-			],
-			"PlatformAllowList": [
-				"XB1",
-				"WinGDK",
-				"XSX",
-				"Win64",
-				"Switch",
-				"PS4",
-				"PS5"
-			]
-		},
-		{
 			"Name": "CommonUI",
 			"Enabled": false
 		},
@@ -82,10 +85,6 @@
 			"Enabled": true,
 			"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/content/217fdf581b784571af03d3fb6580368f"
 		},
-		{                           
-            "Name": "PlayFabGSDK",  
-            "Enabled": true         
-        },
 		{
 			"Name": "RestartEditor",
 			"Enabled": true,
@@ -94,11 +93,6 @@
 		{
 			"Name": "FMODStudio",
 			"Enabled": true
-		},
-		{
-			"Name": "AutoSizeComments",
-			"Enabled": true,
-			"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/content/ae89a2c4ab384de0a3f213b23de324f3"
 		},
 		{
 			"Name": "Reflex",
@@ -134,6 +128,37 @@
 				"Win64",
 				"Android"
 			]
+		},
+		{
+			"Name": "ScaleShape",
+			"Enabled": true,
+			"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/content/0583bee0862b443d949b91bcf32a2918"
+		},
+		{
+			"Name": "ExpressiveText",
+			"Enabled": true,
+			"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/product/fc8f100e734144179e1679596d1eee07",
+			"SupportedTargetPlatforms": [
+				"Win64",
+				"Mac",
+				"Linux"
+			]
+		},
+		{
+			"Name": "OnlineSubsystem",
+			"Enabled": true
+		},
+		{
+			"Name": "OnlineSubsystemEOS",
+			"Enabled": true
+		},
+		{
+			"Name": "OnlineSubsystemNull",
+			"Enabled": false
+		},
+		{
+			"Name": "JsonAsAsset",
+			"Enabled": false
 		}
 	]
 }

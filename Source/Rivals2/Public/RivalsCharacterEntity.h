@@ -16,9 +16,12 @@
 #include "RivalsCharacterOverlay.h"
 #include "RivalsCollisionData.h"
 #include "RivalsCpuData.h"
+#include "RivalsEcbData.h"
 #include "RivalsGameplayEntity.h"
 #include "RivalsHitData.h"
 #include "RivalsInputHistory.h"
+#include "RivalsInputListener.h"
+#include "RivalsInputQueue.h"
 #include "RivalsMovementData.h"
 #include "RivalsStatusEffect.h"
 #include "RivalsCharacterEntity.generated.h"
@@ -54,6 +57,9 @@ protected:
     TArray<FRivalsAttackCooldown> AttackCooldowns;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FSnapNetPropertyInt32 AttacksPerformed;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FSnapNetPropertyVector2D AverageBoneOffset;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -69,19 +75,22 @@ protected:
     FRivalsCpuData CpuData;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    FSnapNetPropertyVector2D EcbBottomPrevious;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    FSnapNetPropertyVector2D EcbLeftPrevious;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    FSnapNetPropertyFloat EcbWidthPrevious;
+    FRivalsEcbData EcbData;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     URivalsCharacterEntityComponent* entityComponent;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FSnapNetPropertyInt32 FidgetTimer;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FSnapNetPropertyInt32 FloorhugTimer;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FSnapNetPropertyInt32 FloorhuggedStrongAttackCountIndex;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FSnapNetPropertyInt32 FloorhuggedStrongPlayerIndex;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FRivalsHitData HitData;
@@ -117,6 +126,12 @@ public:
 protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     FRivalsInputHistory InputHistory;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FRivalsInputQueue InputQueue;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FRivalsInputListener InputListener;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FSnapNetPropertyBoolean bInvisible;

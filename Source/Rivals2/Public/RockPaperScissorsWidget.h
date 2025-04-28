@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "BasePopupWidget.h"
 #include "RPSGesture.h"
 #include "RPSPlayerState.h"
-#include "RivalsWidget.h"
 #include "RockPaperScissorsWidget.generated.h"
 
 class URPSGestureDisplayer;
@@ -11,7 +11,7 @@ class UTextBlock;
 class UWidgetSwitcher;
 
 UCLASS(Blueprintable, EditInlineNew)
-class RIVALS2_API URockPaperScissorsWidget : public URivalsWidget {
+class RIVALS2_API URockPaperScissorsWidget : public UBasePopupWidget {
     GENERATED_BODY()
 public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
@@ -86,7 +86,7 @@ public:
     URockPaperScissorsWidget();
 
     UFUNCTION(BlueprintCallable)
-    void BP_OnButtonActionPressed(const RPSGesture GesturePressed, const int32& PlayerIndex);
+    void BP_OnButtonActionPressed(const TEnumAsByte<RPSGesture> GesturePressed, const int32& PlayerIndex);
     
 };
 

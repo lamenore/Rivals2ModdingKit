@@ -3,12 +3,21 @@
 URivalsMatchmakingSubsystem::URivalsMatchmakingSubsystem() {
     this->bPollingEdgegapSession = false;
     this->ServerRegionName = TEXT("Undefined");
+    this->SeparatorValue = 2;
+    this->LastSeparatorUpdateTime = -1.00f;
+    this->MatchAcceptDenyModal = NULL;
 }
 
 void URivalsMatchmakingSubsystem::UpdateReconnectData() {
 }
 
-void URivalsMatchmakingSubsystem::SetRegionAcceptMatchmaking(const FString& InRegion, const bool bInShouldAcceptMatchmaking) {
+void URivalsMatchmakingSubsystem::TriggerMatchAcceptDenyModal(const FString& InServerRegion, const FString& InConnectionIpPort, const FString& InMatchId) {
+}
+
+void URivalsMatchmakingSubsystem::SetSeparatorValue(const int32& InValue) {
+}
+
+void URivalsMatchmakingSubsystem::SetLocationAcceptMatchmaking(const FString& InLocation, const bool bInShouldAcceptMatchmaking) {
 }
 
 void URivalsMatchmakingSubsystem::SetLastMatchmadeQueue(const FString& InQueueName) {
@@ -20,7 +29,13 @@ void URivalsMatchmakingSubsystem::SetConnectionLeniency(const ERivalsConnectionL
 void URivalsMatchmakingSubsystem::RequestPublicIp() {
 }
 
+void URivalsMatchmakingSubsystem::ReportServer() {
+}
+
 void URivalsMatchmakingSubsystem::QueueForMatchmaking(const TArray<FString>& QueueNames, const TArray<FString>& MembersToMatchWith) {
+}
+
+void URivalsMatchmakingSubsystem::ProcessBeaconResponse(const FPingQoSInfo& Result) {
 }
 
 void URivalsMatchmakingSubsystem::PollServerConnection(const FString& ConnectionString) {
@@ -35,6 +50,9 @@ void URivalsMatchmakingSubsystem::PingQosBeacons(bool bShouldPrintPings) {
 void URivalsMatchmakingSubsystem::OnPingQosBeaconsComplete(const TArray<FPingQoSInfo>& Result) {
 }
 
+void URivalsMatchmakingSubsystem::OnPingQosBeaconComplete(const FPingQoSInfo Result) {
+}
+
 void URivalsMatchmakingSubsystem::JoinMatchmakingTicket(const FString& InTicketId, const FString& InQueueName) {
 }
 
@@ -42,6 +60,10 @@ void URivalsMatchmakingSubsystem::JoinEdgegapSession(const FString& MatchID) {
 }
 
 bool URivalsMatchmakingSubsystem::IsUserPublicIpValid() {
+    return false;
+}
+
+bool URivalsMatchmakingSubsystem::IsRegionAcceptedForMatchmaking(const FString& InRegionName) const {
     return false;
 }
 
@@ -64,7 +86,7 @@ bool URivalsMatchmakingSubsystem::IsConnectingToServer() {
 void URivalsMatchmakingSubsystem::InitializeReconnectData(const FString& InConnectionString, const FString& InQueueName) {
 }
 
-bool URivalsMatchmakingSubsystem::HasValidRegionsSelected() {
+bool URivalsMatchmakingSubsystem::HasValidLocationsSelected() {
     return false;
 }
 
@@ -80,7 +102,23 @@ FString URivalsMatchmakingSubsystem::GetSinglesQueue() {
     return TEXT("");
 }
 
+int32 URivalsMatchmakingSubsystem::GetSeparatorValue() {
+    return 0;
+}
+
+FRivalsRegionMappingTitleData URivalsMatchmakingSubsystem::GetRegionMappingTitleData() {
+    return FRivalsRegionMappingTitleData{};
+}
+
 FString URivalsMatchmakingSubsystem::GetRankedQueue() {
+    return TEXT("");
+}
+
+FRivalsLocationConnectionInfo URivalsMatchmakingSubsystem::GetLocationConnectionInfoForRegion(const FString& InRegionName) const {
+    return FRivalsLocationConnectionInfo{};
+}
+
+FString URivalsMatchmakingSubsystem::GetLobbyEOSQueue() {
     return TEXT("");
 }
 
@@ -132,6 +170,12 @@ URivalsMatchmakingSubsystem* URivalsMatchmakingSubsystem::Get(const UObject* Wor
     return NULL;
 }
 
+void URivalsMatchmakingSubsystem::ForceStopConnectionLoop() {
+}
+
+void URivalsMatchmakingSubsystem::DenyMatch() {
+}
+
 void URivalsMatchmakingSubsystem::DebugJoinServer(const FString& IP, const FString& Port) {
 }
 
@@ -142,7 +186,10 @@ bool URivalsMatchmakingSubsystem::CouldAttemptReconnection() {
 void URivalsMatchmakingSubsystem::ConnectToServer(const FString& ConnectionString) {
 }
 
-void URivalsMatchmakingSubsystem::ClearReconnectData() {
+void URivalsMatchmakingSubsystem::CloseMatchAcceptDenyModal() {
+}
+
+void URivalsMatchmakingSubsystem::ClearReconnectData(bool bIsReconnectingInValue) {
 }
 
 void URivalsMatchmakingSubsystem::ClearMatchUserData(const FString& MatchID) {
@@ -158,6 +205,9 @@ void URivalsMatchmakingSubsystem::CancelAllMatchmakingTickets(const bool bIsMatc
 }
 
 void URivalsMatchmakingSubsystem::AttemptReconnect() {
+}
+
+void URivalsMatchmakingSubsystem::AcceptMatch(const FString& InServerRegion, const FString& InConnectionIpPort, const FString& InMatchId) {
 }
 
 

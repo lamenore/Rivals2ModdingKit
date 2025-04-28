@@ -1,6 +1,11 @@
 #include "StoreItem.h"
 
 UStoreItem::UStoreItem() : UUserWidget(FObjectInitializer::Get()) {
+    this->RowIndex = 0;
+    this->ColumnIndex = 0;
+    this->bUseCustomNavigation = true;
+    this->bListenForInventoryUpdate = false;
+    this->bLargeStoreItemOverride = false;
     this->AssetData = NULL;
     this->DefaultBorderMaterial = NULL;
     this->HoveredBorderMaterial = NULL;
@@ -24,6 +29,7 @@ UStoreItem::UStoreItem() : UUserWidget(FObjectInitializer::Get()) {
     this->BP_IconBG = NULL;
     this->BP_RarityImage = NULL;
     this->BP_ItemNameBox = NULL;
+    this->BP_OutOfStockPanel = NULL;
     this->BP_ItemName = NULL;
     this->BP_ItemNameBoxBig = NULL;
     this->BP_ItemNameBig = NULL;

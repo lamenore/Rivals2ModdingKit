@@ -16,6 +16,9 @@ enum class ERivalsHitboxEffect : uint8 {
     ForceWrap,
     TipperStun,
     AutoTipperOnly,
+    Freeze,
+    Crystalize,
+    Zap,
     Count,
 };
 

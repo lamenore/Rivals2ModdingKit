@@ -19,5 +19,8 @@ public:
     UFUNCTION(BlueprintCallable)
     void OnConfirmPressed(const int32 UserIndex);
     
+    UFUNCTION(BlueprintCallable)
+    void OnCancelPressed(const int32 UserIndex);
+    
 };
 

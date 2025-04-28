@@ -1,0 +1,6 @@
+#pragma once
+#include "CoreMinimal.h"
+#include "InitialDataFetchingFinalStepFinishedDynamicMulticastDelegateDelegate.generated.h"
+
+UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FInitialDataFetchingFinalStepFinishedDynamicMulticastDelegate, bool, bWasSuccessful);
+

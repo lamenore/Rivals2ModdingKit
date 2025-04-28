@@ -73,13 +73,16 @@ protected:
     FSnapNetPropertyEnum PreviousMatchWinningTeam;
     
     UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
-    FSnapNetPropertyInt32 PreviousRandomStageIndices[3];
+    FSnapNetPropertyString PreviouslyPlayedStageFriendlyIDs[3];
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FSnapNetPropertyBoolean RandomizeTeams;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FSnapNetPropertyBoolean StageSelected;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FSnapNetPropertyBoolean Playtesting;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FSnapNetPropertyInt32 StockSetting;

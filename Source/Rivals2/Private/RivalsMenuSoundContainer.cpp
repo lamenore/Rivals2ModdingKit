@@ -75,6 +75,18 @@ URivalsMenuSoundContainer::URivalsMenuSoundContainer() {
     this->MenuSounds[71] = NULL;
     this->MenuSounds[72] = NULL;
     this->MenuSounds[73] = NULL;
+    this->MenuSounds[74] = NULL;
+    this->MenuSounds[75] = NULL;
+    this->MenuSounds[76] = NULL;
+    this->MenuSounds[77] = NULL;
+    this->MenuSounds[78] = NULL;
+    this->MenuSounds[79] = NULL;
+    this->MenuSounds[80] = NULL;
+    this->MenuSounds[81] = NULL;
+    this->MenuSounds[82] = NULL;
+    this->MenuSounds[83] = NULL;
+    this->MenuSounds[84] = NULL;
+    this->MenuSounds[85] = NULL;
 }
 
 

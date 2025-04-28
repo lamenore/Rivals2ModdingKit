@@ -22,6 +22,9 @@ public:
     UMainMenuButtonWidget* BP_ProgressionButton;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    UMainMenuButtonWidget* BP_LeaderboardButton;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UMainMenuButtonWidget* BP_BackButton;
     
     UMainMenuExtrasTab();
@@ -31,6 +34,9 @@ public:
     
     UFUNCTION(BlueprintCallable)
     void OnProgressionButtonPressed();
+    
+    UFUNCTION(BlueprintCallable)
+    void OnLeaderboardButtonPressed();
     
     UFUNCTION(BlueprintCallable)
     void OnInventoryButtonPressed();

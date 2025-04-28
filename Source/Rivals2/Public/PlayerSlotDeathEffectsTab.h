@@ -4,9 +4,9 @@
 #include "Templates/SubclassOf.h"
 #include "PlayerSlotDeathEffectsTab.generated.h"
 
+class UBetterButtonDisplayer;
 class UPlayerSlotOptionsIconGridButton;
 class UTextBlock;
-class UUIButtonDisplayer;
 class UUniformGridPanel;
 
 UCLASS(Blueprintable, EditInlineNew)
@@ -27,16 +27,16 @@ protected:
     UUniformGridPanel* BP_ButtonGrid;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
-    UUIButtonDisplayer* BP_ZoomInBinding;
+    UBetterButtonDisplayer* BP_ZoomInBinding;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
-    UUIButtonDisplayer* BP_ZoomOutBinding;
+    UBetterButtonDisplayer* BP_ZoomOutBinding;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
-    UUIButtonDisplayer* BP_PrevPageBinding;
+    UBetterButtonDisplayer* BP_PrevPageBinding;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
-    UUIButtonDisplayer* BP_NextPageBinding;
+    UBetterButtonDisplayer* BP_NextPageBinding;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSubclassOf<UPlayerSlotOptionsIconGridButton> BP_GridButtonInstance;

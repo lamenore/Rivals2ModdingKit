@@ -8,6 +8,7 @@ class UBorder;
 class UCharacterLevelWidget;
 class UImage;
 class UPlayerRankWidget;
+class UPlayerWinStreakWidget;
 class UScaleBox;
 class UTextBlock;
 class UTexture2D;
@@ -40,6 +41,9 @@ protected:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UPlayerRankWidget* BP_PlayerRankDisplay;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    UPlayerWinStreakWidget* BP_WinStreakDisplay;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UCharacterLevelWidget* BP_CharacterLevelDisplay;

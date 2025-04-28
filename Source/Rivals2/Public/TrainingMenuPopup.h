@@ -3,6 +3,7 @@
 #include "BasePopupWidget.h"
 #include "TrainingMenuPopup.generated.h"
 
+class UBorder;
 class URivalsButtonWidget;
 class UTrainingMenuCPUTab;
 class UWidgetSwitcher;
@@ -20,12 +21,12 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     URivalsButtonWidget* BP_CloseButton;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    UBorder* BP_MenuBorder;
+    
     UTrainingMenuPopup();
 
 private:
-    UFUNCTION(BlueprintCallable)
-    void OnInfiniteShieldPressed(const int32 Index);
-    
     UFUNCTION(BlueprintCallable)
     void OnCloseReleased(const int32 Index);
     

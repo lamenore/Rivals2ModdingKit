@@ -7,6 +7,7 @@
 class UEquipmentItemAsset;
 class ULargeItemPurchasePreview;
 class UPreviewItemEntry;
+class URivalsMenuButtonWidget;
 class USizeBox;
 class UTextBlock;
 class UVerticalBox;
@@ -40,6 +41,9 @@ protected:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSubclassOf<UPreviewItemEntry> ItemEntryClass;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    URivalsMenuButtonWidget* BP_CreatorSupportButton;
     
 private:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))

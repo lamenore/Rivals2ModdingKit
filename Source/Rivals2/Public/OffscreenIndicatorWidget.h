@@ -5,6 +5,7 @@
 #include "OffscreenIndicatorWidget.generated.h"
 
 class ARivalsGameplayEntity;
+class URivalsCharacterDefinition;
 class UTexture2D;
 
 UCLASS(Blueprintable, EditInlineNew)
@@ -25,6 +26,9 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     ARivalsGameplayEntity* OwnerObject;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    URivalsCharacterDefinition* CharacterDefinition;
     
     UOffscreenIndicatorWidget();
 

@@ -23,10 +23,13 @@ public:
     UWidgetAnimation* BP_LetterBox_Close;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
-    UWidgetAnimation* BP_LetterBox_FocusOpen;
+    UWidgetAnimation* BP_LetterBox_OpenToFocus;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
-    UWidgetAnimation* BP_LetterBox_FocusClose;
+    UWidgetAnimation* BP_LetterBox_CloseToFocus;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    UWidgetAnimation* BP_LetterBox_CloseFromFocus;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UHordeStockDisplayWidget* BP_HordeStockDisplay;

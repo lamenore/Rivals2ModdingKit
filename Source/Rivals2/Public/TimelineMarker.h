@@ -4,6 +4,7 @@
 #include "TimelineMarker.generated.h"
 
 class UImage;
+class UKeyframe;
 
 UCLASS(Blueprintable, EditInlineNew)
 class RIVALS2_API UTimelineMarker : public UUserWidget {
@@ -11,6 +12,9 @@ class RIVALS2_API UTimelineMarker : public UUserWidget {
 public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UImage* BP_TimelineMarker;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UKeyframe* Keyframe;
     
     UTimelineMarker();
 

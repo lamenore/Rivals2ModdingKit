@@ -2,10 +2,14 @@
 
 ULobbyPopupWidget::ULobbyPopupWidget() {
     this->BP_QueueLobbyButton = NULL;
+    this->BP_RemoveServerButton = NULL;
+    this->BP_JoinServerButton = NULL;
     this->BP_ChangeRegionButton = NULL;
     this->BP_ToggleSpectatingButton = NULL;
     this->BP_LeaveLobbyButton = NULL;
     this->BP_CopyCodeButton = NULL;
+    this->BP_ShowCodeButton = NULL;
+    this->BP_LobbyCodeTextBlock = NULL;
     this->BP_LoadingImage = NULL;
     this->BP_AlertTextBlock = NULL;
     this->BP_CurrentPlayerCountTextBlock = NULL;
@@ -26,6 +30,12 @@ void ULobbyPopupWidget::SyncLobbyUIState() {
 void ULobbyPopupWidget::OnToggleSpectatingPressed(const int32 UserIndex) {
 }
 
+void ULobbyPopupWidget::OnShowLobbyCodePressed(const int32 UserIndex) {
+}
+
+void ULobbyPopupWidget::OnRemoveServerPressed(const int32 UserIndex) {
+}
+
 void ULobbyPopupWidget::OnRegionChangePressed(const int32 UserIndex) {
 }
 
@@ -41,7 +51,13 @@ void ULobbyPopupWidget::OnLobbyCodeCopyPressed(const int32 UserIndex) {
 void ULobbyPopupWidget::OnLeaveLobbyPressed(const int32 UserIndex) {
 }
 
+void ULobbyPopupWidget::OnJoinServerPressed(const int32 UserIndex) {
+}
+
 void ULobbyPopupWidget::OnJoinMatchSuccess() {
+}
+
+void ULobbyPopupWidget::OnJoinMatchStarted() {
 }
 
 void ULobbyPopupWidget::OnJoinMatchFail() {

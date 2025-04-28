@@ -1,0 +1,32 @@
+{
+	"FileVersion": 3,
+	"Version": 1,
+	"VersionName": "1.0",
+	"FriendlyName": "ScaleShape",
+	"Description": "Easy-to-use UMG widgets that draw geometric primitives and add shadows with SDF",
+	"Category": "UI",
+	"CreatedBy": "howaajin",
+	"CreatedByURL": "https://github.com/howaajin",
+	"DocsURL": "https://github.com/howaajin/scaleshape",
+	"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/content/0583bee0862b443d949b91bcf32a2918",
+	"SupportURL": "https://github.com/howaajin/scaleshape",
+	"EngineVersion": "5.4.0",
+	"CanContainContent": true,
+	"IsBetaVersion": false,
+	"IsExperimentalVersion": false,
+	"Installed": true,
+	"Modules": [
+		{
+			"Name": "ScaleShape",
+			"Type": "Runtime",
+			"LoadingPhase": "Default",
+			"PlatformAllowList": [
+				"Win64",
+				"Mac",
+				"Linux",
+				"Android",
+				"IOS"
+			]
+		}
+	]
+}

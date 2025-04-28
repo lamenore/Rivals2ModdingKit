@@ -1,11 +1,10 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Blueprint/UserWidget.h"
+#include "BaseTopBar.h"
 #include "GamewideTopBar.generated.h"
 
 class UBorder;
-class URivalsButtonWidget;
-class UTextBlock;
+class USupportCreatorButton;
 class UTopBarCurrencyDisplayer;
 class UTopBarPlayerCard;
 class UTopBarPlayerSlotPopup;
@@ -13,20 +12,17 @@ class UUIButtonDisplayer;
 class UWidgetAnimation;
 
 UCLASS(Blueprintable, EditInlineNew)
-class RIVALS2_API UGamewideTopBar : public UUserWidget {
+class RIVALS2_API UGamewideTopBar : public UBaseTopBar {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    FText ScreenName;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
-    UTextBlock* BP_ScreenNameTextBox;
-    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UTopBarCurrencyDisplayer* BP_CoinCurrencyDisplayer;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UTopBarCurrencyDisplayer* BP_BuckCurrencyDisplayer;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    UTopBarCurrencyDisplayer* BP_MedalCurrencyDisplayer;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UTopBarPlayerSlotPopup* BP_TopBarPlayerSlot;
@@ -38,9 +34,6 @@ public:
     UBorder* BP_BackAreaBorder;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
-    URivalsButtonWidget* BP_BackAreaButton;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UUIButtonDisplayer* BP_BackDisplayer;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
@@ -48,6 +41,9 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     UWidgetAnimation* BP_BackOnUnHoverAnim;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    USupportCreatorButton* BP_NexusSupportCreatorButton;
     
     UGamewideTopBar();
 
@@ -61,16 +57,7 @@ public:
     void OnPlayerCardButtonHovered();
     
     UFUNCTION(BlueprintCallable)
-    void OnCoinCurrencyButtonReleased(const int32 UserIndex);
-    
-    UFUNCTION(BlueprintCallable)
-    void OnBuckCurrencyButtonReleased(const int32 UserIndex);
-    
-    UFUNCTION(BlueprintCallable)
     void OnBackAreaButtonUnhovered();
-    
-    UFUNCTION(BlueprintCallable)
-    void OnBackAreaButtonReleased(const int32 UserIndex);
     
     UFUNCTION(BlueprintCallable)
     void OnBackAreaButtonLostFocus(const int32 UserIndex);

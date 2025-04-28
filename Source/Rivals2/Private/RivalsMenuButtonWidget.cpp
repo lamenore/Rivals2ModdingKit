@@ -26,7 +26,6 @@ URivalsMenuButtonWidget::URivalsMenuButtonWidget() {
     this->BP_OnUnHoverAnim = NULL;
     this->BP_OnPressAnim = NULL;
     this->BP_OnReleaseAnim = NULL;
-    this->BP_NormalAnim = NULL;
     this->BP_LinkIcon = NULL;
     this->bIsLocked = false;
 }

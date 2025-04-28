@@ -4,7 +4,7 @@
 #include "SettingsMenuTabInterface.generated.h"
 
 class ARivalsPlayerController;
-class UCharacterSelectScreenWidget;
+class UCharacterSelectScreen;
 class USettingsMenuRow;
 class USettingsMenuWidget;
 class UVerticalBox;
@@ -14,7 +14,7 @@ class RIVALS2_API USettingsMenuTabInterface : public UUserWidget {
     GENERATED_BODY()
 public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
-    UCharacterSelectScreenWidget* CSSWidget;
+    UCharacterSelectScreen* CSSWidget;
     
 protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))

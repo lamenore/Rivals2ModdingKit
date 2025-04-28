@@ -2,9 +2,11 @@
 
 FRivalsControlSettings::FRivalsControlSettings() {
     this->bAutoWalk = false;
+    this->bDoubleTapDash = false;
     this->bDpadMovement = false;
     this->JoystickDeadzoneMultiplier = 0.00f;
     this->JoystickSensitivityMultiplier = 0.00f;
+    this->HardPressThreshold = 0.00f;
     this->RightStickThreshold = 0.00f;
     this->RightStickSetting = ERivalsRightStickSetting::Strong;
     this->AirGrabSetting = ERivalsAirGrabParrySetting::Nair;
@@ -14,5 +16,6 @@ FRivalsControlSettings::FRivalsControlSettings() {
     this->bTapJumpEnabled = false;
     this->bTapStrongEnabled = false;
     this->bTapWalljumpEnabled = false;
+    this->bAutoShorthopAerial = false;
 }
 

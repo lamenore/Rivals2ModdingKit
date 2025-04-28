@@ -13,10 +13,16 @@ public:
     URivalsMenuButtonWidget* BP_LocalButton;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    URivalsMenuButtonWidget* BP_ArcadeButton;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     URivalsMenuButtonWidget* BP_TrainingButton;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
-    URivalsMenuButtonWidget* BP_ArcadeButton;
+    URivalsMenuButtonWidget* BP_TrialsButton;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    URivalsMenuButtonWidget* BP_BotMatchButton;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     URivalsMenuButtonWidget* BP_BackButton;
@@ -24,10 +30,16 @@ public:
     UMainMenuLocalTab();
 
     UFUNCTION(BlueprintCallable)
+    void OnTrialsPressed();
+    
+    UFUNCTION(BlueprintCallable)
     void OnTrainingPressed();
     
     UFUNCTION(BlueprintCallable)
     void OnLocalPressed();
+    
+    UFUNCTION(BlueprintCallable)
+    void OnBotMatchButtonPressed();
     
     UFUNCTION(BlueprintCallable)
     void OnBackButtonPressed();

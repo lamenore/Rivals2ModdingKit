@@ -45,6 +45,9 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UTextBlock* BP_RotationText;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    UTextBlock* BP_IndexText;
+    
     UMarkerMenuPopup();
 
     UFUNCTION(BlueprintCallable)

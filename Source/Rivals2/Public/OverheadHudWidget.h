@@ -24,6 +24,9 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void UpdateOverheadHudBlueprint();
     
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    bool IsEmpowered();
+    
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void InitBlueprint();
     

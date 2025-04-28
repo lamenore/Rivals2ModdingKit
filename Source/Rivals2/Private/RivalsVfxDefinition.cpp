@@ -4,6 +4,7 @@ FRivalsVfxDefinition::FRivalsVfxDefinition() {
     this->EffectDuration = 0;
     this->bRotateWithHostBone = false;
     this->DetachOnFrame = 0;
+    this->bRotateWithHostVelocity = false;
     this->bCanHaveHitpause = false;
     this->bParticlesPersistAfterEarlyDestroy = false;
     this->bMatchHostRivalVisibility = false;

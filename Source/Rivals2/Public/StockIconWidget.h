@@ -23,8 +23,11 @@ public:
     
     UStockIconWidget();
 
+    UFUNCTION(BlueprintCallable)
+    void SetStockIconMaterialWithColorSlotData(URivalsColorSlotData* InColorSlotData, bool Sync);
+    
     UFUNCTION(BlueprintCallable, BlueprintPure)
-    UMaterialInterface* GetStockIconMaterial() const;
+    UMaterialInterface* GetStockIconMaterial(bool Sync) const;
     
 };
 

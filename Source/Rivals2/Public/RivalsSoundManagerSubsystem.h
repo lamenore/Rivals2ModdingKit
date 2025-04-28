@@ -25,6 +25,9 @@ protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FFMODEventInstance> FramePriorityBuffer;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TMap<int32, FFMODEventInstance> VoiceLinesByEntityIndex;
+    
 public:
     URivalsSoundManagerSubsystem();
 

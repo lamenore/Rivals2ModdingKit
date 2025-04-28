@@ -6,7 +6,7 @@
 #include "RivalsEquipmentId.generated.h"
 
 USTRUCT(BlueprintType)
-struct FRivalsEquipmentId {
+struct RIVALS2_API FRivalsEquipmentId {
     GENERATED_BODY()
 public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -28,8 +28,20 @@ public:
     bool IsBaseGameItem;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool HideFromUnlockEverything;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    int32 ColorSlot;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    int32 Coolness;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FString> Tags;
     
-    RIVALS2_API FRivalsEquipmentId();
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FString ParentCharacterId;
+    
+    FRivalsEquipmentId();
 };
 

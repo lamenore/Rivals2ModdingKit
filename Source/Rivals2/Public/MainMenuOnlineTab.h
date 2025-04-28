@@ -4,6 +4,7 @@
 #include "MainMenuOnlineTab.generated.h"
 
 class UMainMenuButtonWidget;
+class URivalsMenuButtonWidget;
 class USpinnerPopupWidget;
 
 UCLASS(Blueprintable, EditInlineNew)
@@ -21,6 +22,9 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UMainMenuButtonWidget* BP_FriendlyButton;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    URivalsMenuButtonWidget* BP_BotMatchButton;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UMainMenuButtonWidget* BP_BackButton;
@@ -43,6 +47,9 @@ public:
     
     UFUNCTION(BlueprintCallable)
     void OnCasualButtonPressed();
+    
+    UFUNCTION(BlueprintCallable)
+    void OnBotMatchButtonPressed();
     
     UFUNCTION(BlueprintCallable)
     void OnBackButtonReleased();

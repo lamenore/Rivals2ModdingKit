@@ -13,19 +13,13 @@ private:
     FRuntimeFloatCurve CursorAccelerationCurve;
     
     UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
-    float MaxCursorSpeed;
+    float BaseCursorSpeed;
     
     UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     float CursorDeadZone;
     
     UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
-    float CursorSize;
-    
-    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
-    float CursorAccelLerpValue;
-    
-    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
-    float CursorDecelLerpValue;
+    float CursorRadius;
     
 public:
     URivalsCursorSettings();

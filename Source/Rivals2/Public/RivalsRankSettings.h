@@ -3,6 +3,7 @@
 #include "UObject/NoExportTypes.h"
 #include "Engine/DeveloperSettings.h"
 #include "ERivalsRank.h"
+#include "ERivalsWinStreakQuality.h"
 #include "RivalsRankSettings.generated.h"
 
 class UTexture2D;
@@ -19,6 +20,15 @@ public:
     
     UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     TMap<ERivalsRank, FText> RankToRankNameMap;
+    
+    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TMap<ERivalsWinStreakQuality, FLinearColor> WinStreakToColorMap;
+    
+    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TMap<uint8, FText> QuarterIndexToNameMap;
+    
+    UPROPERTY(Config, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TMap<uint32, FText> SeasonIndexToNameMap;
     
     URivalsRankSettings();
 

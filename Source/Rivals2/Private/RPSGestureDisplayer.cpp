@@ -1,7 +1,7 @@
 #include "RPSGestureDisplayer.h"
 
 URPSGestureDisplayer::URPSGestureDisplayer() {
-    this->CurrentHandDisplayState = RPSGesture::Rock;
+    this->CurrentHandDisplayState = Rock;
     this->DisplaySide = Left;
     this->BP_InputButtonSwitcher = NULL;
     this->BP_HandGestureSwitcher = NULL;

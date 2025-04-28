@@ -4,6 +4,7 @@
 
 UENUM(BlueprintType)
 enum class EExTextAnimationFlags : uint8 {
+    None=0,
     PositionIsPercentageOfSize = 1,
 };
 

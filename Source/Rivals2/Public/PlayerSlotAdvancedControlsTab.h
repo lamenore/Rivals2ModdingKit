@@ -17,10 +17,16 @@ protected:
     UPlayerSlotOptionsButtonWidget* BP_AutoWalkButton;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    UPlayerSlotOptionsButtonWidget* BP_DoubleTapDashButton;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UPlayerSlotOptionsButtonWidget* BP_AirParryButton;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UPlayerSlotOptionsButtonWidget* BP_AirGrabButton;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    UPlayerSlotOptionsButtonWidget* BP_AutoShorthopAerialButton;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UPlayerSlotOptionsButtonWidget* BP_BackButton;

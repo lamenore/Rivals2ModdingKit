@@ -62,7 +62,7 @@ public:
     void PlayEntryAnim();
     
     UFUNCTION()
-    UTexture2D* GetMedalTexture(ERivalsArcadeMedalType MedalType);
+    UTexture2D* GetMedalTexture(ERivalsArcadeMedalType MedalType) const;
     
 };
 

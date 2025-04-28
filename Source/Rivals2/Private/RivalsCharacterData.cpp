@@ -8,6 +8,7 @@ URivalsCharacterData::URivalsCharacterData() {
     this->StrongAttackType = ERivalsCharacterStateCategory::GroundOnly;
     this->DacusSpeedMultiplier = 1.00f;
     this->Weight = 0;
+    this->EcbBones.AddDefaulted(7);
     this->LandFrames = 4;
     this->FrictionGround = 0.00f;
     this->FrictionAir = 0.00f;
@@ -34,6 +35,7 @@ URivalsCharacterData::URivalsCharacterData() {
     this->DoubleJumpMaxHorizontalSpeed = 0.00f;
     this->DoubleJumpSpeedDecay = 0.00f;
     this->MaxDoubleJumps = 1;
+    this->PlatdropLandingLockoutFrames = 10;
     this->AirDodgeSpeed = 0.00f;
     this->AirDodgeFriction = 0.00f;
     this->RollSpeed = 0.00f;
@@ -57,6 +59,7 @@ URivalsCharacterData::URivalsCharacterData() {
     this->CanWallCling = false;
     this->CharacterVfxContainerClass = NULL;
     this->SoundEffectContainer = NULL;
+    this->TetherUairBoostOverride = 0.00f;
 }
 
 

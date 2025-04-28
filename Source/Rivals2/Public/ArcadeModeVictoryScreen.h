@@ -32,7 +32,7 @@ public:
     URivalsButtonWidget* BP_ButtonInteract;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    TMap<FName, UTexture2D*> CharacterSplashImages;
+    TMap<FName, TSoftObjectPtr<UTexture2D>> CharacterSplashImages;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TMap<FName, TSoftObjectPtr<UFMODEvent>> CharacterThemes;
@@ -90,7 +90,7 @@ public:
     TScriptInterface<IXpUpdateDisplayInterface> GetXpUpdateDisplayInterface();
     
     UFUNCTION(BlueprintCallable)
-    FString GetTimeString(int32 Frames);
+    static FString GetTimeString(int32 Frames);
     
     UFUNCTION(BlueprintCallable)
     void EndCoinSFX();

@@ -7,6 +7,7 @@
 
 class UCanvasPanel;
 class UImage;
+class UMenuButtonCheckmark;
 class USizeBox;
 class UTextBlock;
 class UTexture2D;
@@ -21,7 +22,7 @@ public:
     int32 NotificationCount;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    TMap<FName, UTexture2D*> BP_CharacterImages;
+    TMap<FName, TSoftObjectPtr<UTexture2D>> BP_CharacterImages;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TMap<FName, FVector2D> BP_CharacterImageOffsetsR;
@@ -43,6 +44,12 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bIsAbyss;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool bShowCheckbox;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool bShowCheckmark;
     
 private:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
@@ -77,6 +84,12 @@ private:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UCanvasPanel* BP_ExperimentalBanner;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    UCanvasPanel* BP_CheckboxContainer;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    UMenuButtonCheckmark* BP_Checkmark;
     
 public:
     UMainMenuButtonWidget();

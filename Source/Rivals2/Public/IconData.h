@@ -3,7 +3,6 @@
 #include "EquipmentItemAsset.h"
 #include "IconData.generated.h"
 
-class UIconData;
 class UPaperFlipbook;
 
 UCLASS(Blueprintable)
@@ -18,8 +17,5 @@ public:
     
     UIconData();
 
-    UFUNCTION(BlueprintCallable)
-    static TArray<UIconData*> GetAllIcons();
-    
 };
 

@@ -5,6 +5,8 @@ UStringDropdownOption::UStringDropdownOption() : UUserWidget(FObjectInitializer:
     this->BP_ButtonInteract = NULL;
     this->BP_BGBorder = NULL;
     this->BP_OptionNameTextBlock = NULL;
+    this->BP_OnHoverAnim = NULL;
+    this->BP_OnUnHoverAnim = NULL;
 }
 
 void UStringDropdownOption::OnReleasedByPlayer(const int32 UserIndex) {

@@ -1,8 +1,12 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Subsystems/GameInstanceSubsystem.h"
+#include "ClaimCharacterArcadeRewardResponse.h"
+#include "CloudScriptItemRedeemResponse.h"
 #include "ConnectToPlayFabServicesErrorDelegate.h"
 #include "ConnectToPlayFabServicesSuccessDelegate.h"
+#include "InitialDataFetchingFinalStepFinishedDynamicMulticastDelegateDelegate.h"
+#include "InitialDataFetchingFirstStepFinishedDynamicMulticastDelegateDelegate.h"
 #include "PlayFabAddUsernamePasswordErrorDelegate.h"
 #include "PlayFabAddUsernamePasswordSuccessDelegate.h"
 #include "PlayFabLinkSteamAccountErrorDelegate.h"
@@ -46,6 +50,12 @@ public:
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FConnectToPlayFabServicesError ConnectToPlayFabServicesErrorDelegate;
     
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FInitialDataFetchingFirstStepFinishedDynamicMulticastDelegate OnInitialDataFetchingFirstStepFinishedDynamicMulticastDelegate;
+    
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FInitialDataFetchingFinalStepFinishedDynamicMulticastDelegate OnInitialDataFetchingFinalStepFinishedDynamicMulticastDelegate;
+    
     URivalsPlayFabClientSubsystem();
 
     UFUNCTION(BlueprintCallable)
@@ -57,6 +67,35 @@ public:
     UFUNCTION(BlueprintCallable)
     void PlayFabAddUsernamePassword(const FString& EmailAddress, const FString& Password, const FString& Username);
     
+private:
+    UFUNCTION(BlueprintCallable)
+    void OnRedeemEconomyV1CouponItemsInEconomyV2Finished(bool bWasSuccessful, const TArray<FCloudScriptItemRedeemResponse>& redeemedItems);
+    
+    UFUNCTION(BlueprintCallable)
+    void OnGetPlayFabRankStatisticsFinished(bool bWasSuccessful);
+    
+    UFUNCTION(BlueprintCallable)
+    void OnGetEdgegapLocationsFinished(bool bWasSuccessful);
+    
+    UFUNCTION(BlueprintCallable)
+    void OnFetchUserInventoryFinished(bool bWasSuccessful);
+    
+    UFUNCTION(BlueprintCallable)
+    void OnFetchTitleDataComplete(bool bWasSuccessful);
+    
+    UFUNCTION(BlueprintCallable)
+    void OnFetchPlayFabItemInfosComplete(bool bWasSuccessful);
+    
+    UFUNCTION(BlueprintCallable)
+    void OnFetchPlayerDataComplete(bool bWasSuccessful, const FString& masterPlayerAccountId);
+    
+    UFUNCTION(BlueprintCallable)
+    void OnFetchCharactersProgressionSettingsComplete(bool bWasSuccessful);
+    
+    UFUNCTION(BlueprintCallable)
+    void OnClaimCharacterArcadeRewardsComplete(bool bWasSuccessful, FClaimCharacterArcadeRewardResponse ClaimCharacterArcadeRewardResponse);
+    
+public:
     UFUNCTION(BlueprintCallable)
     void MarkClientAsDisconnected();
     

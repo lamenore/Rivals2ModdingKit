@@ -3,9 +3,9 @@
 #include "EntityReferenceLookup.generated.h"
 
 USTRUCT(BlueprintType)
-struct FEntityReferenceLookup {
+struct RIVALS2_API FEntityReferenceLookup {
     GENERATED_BODY()
 public:
-    RIVALS2_API FEntityReferenceLookup();
+    FEntityReferenceLookup();
 };
 

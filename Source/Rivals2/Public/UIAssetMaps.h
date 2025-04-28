@@ -8,7 +8,6 @@
 #include "Templates/SubclassOf.h"
 #include "UIAssetMaps.generated.h"
 
-class UBasePopupWidget;
 class UBaseScreenWidget;
 class UMaterial;
 class UMovieRenderDebugWidget;
@@ -19,12 +18,6 @@ UCLASS(Blueprintable)
 class RIVALS2_API UUIAssetMaps : public UPrimaryAssetObject {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    TMap<TSoftClassPtr<UBasePopupWidget>, TSubclassOf<UBasePopupWidget>> DialogMap;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    TMap<TSoftClassPtr<UBaseScreenWidget>, TSubclassOf<UBaseScreenWidget>> ScreenMap;
-    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<TSoftObjectPtr<UWorld>> MapHackScreens;
     
@@ -83,6 +76,15 @@ public:
     UTexture2D* ItemTypeBundleIcon;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UTexture2D* ItemTypeTauntIcon;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UTexture2D* ItemTypeStageIcon;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UTexture2D* ItemTypeStageSkinIcon;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UTexture2D* CurrencyTypeBetaCoinIcon;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -93,6 +95,9 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UTexture2D* CurrencyTypeRealIcon;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UTexture2D* CurrencyTypeRankedMedalIcon;
     
     UUIAssetMaps();
 

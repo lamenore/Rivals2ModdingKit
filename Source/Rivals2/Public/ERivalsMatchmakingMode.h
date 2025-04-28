@@ -7,5 +7,6 @@ enum class ERivalsMatchmakingMode : uint8 {
     Dev,
     Default,
     Alt,
+    Beta,
 };
 

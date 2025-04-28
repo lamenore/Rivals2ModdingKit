@@ -17,5 +17,12 @@
 	"Installed": false,
 	"SupportedTargetPlatforms": [
 		"Win64"
+	],
+	"Modules": [
+		{
+			"Name": "MultiKeyboardInput",
+			"Type": "Runtime",
+			"LoadingPhase": "Default"
+		}
 	]
 }

@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "ClientSendAccountRecoveryEmailResult.h"
-#include "PlayFabError.h"
+#include "PlayFabClientModels.h"
+#include "PlayFabBaseModel.h"
 #include "BasePopupWidget.h"
 #include "EmailEntryPopup.generated.h"
 
@@ -125,13 +125,13 @@ protected:
     void OnLoginWithEmailBeforeSteamLinkSuccess(bool bAlreadyHasSteamAccountLink);
     
     UFUNCTION(BlueprintCallable)
-    void OnLoginWithEmailBeforeSteamLinkError(const FString& ErrorReport);
+    void OnLoginWithEmailBeforeSteamLinkError(FText ErrorReport);
     
     UFUNCTION(BlueprintCallable)
     void OnLinkSteamAccountSuccess();
     
     UFUNCTION(BlueprintCallable)
-    void OnLinkSteamAccountError(const FString& ErrorReport);
+    void OnLinkSteamAccountError(FText ErrorReport);
     
     UFUNCTION(BlueprintCallable)
     void OnLinkLoginClicked();
@@ -155,7 +155,7 @@ protected:
     void OnConnectToPlayFabServicesSuccess();
     
     UFUNCTION(BlueprintCallable)
-    void OnConnectToPlayFabServicesError(const FString& ErrorReport);
+    void OnConnectToPlayFabServicesError(FText ErrorReport);
     
     UFUNCTION(BlueprintCallable)
     void OnConnectingToPlayFabServicesCloseButtonClicked();
@@ -167,7 +167,7 @@ protected:
     void OnAddUsernamePasswordSuccess();
     
     UFUNCTION(BlueprintCallable)
-    void OnAddUsernamePasswordError(const FString& ErrorReport);
+    void OnAddUsernamePasswordError(FText ErrorReport);
     
 };
 

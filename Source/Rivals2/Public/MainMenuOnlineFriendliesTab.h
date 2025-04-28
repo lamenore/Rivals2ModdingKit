@@ -2,9 +2,12 @@
 #include "CoreMinimal.h"
 #include "MainMenuTabInterface.h"
 #include "RivalsPlayFabLobbyInfo.h"
+#include "RivalsPlayFabOssSessionInfo.h"
 #include "MainMenuOnlineFriendliesTab.generated.h"
 
 class UMainMenuButtonWidget;
+class USpinnerPopupWidget;
+class UTextInputPopup;
 
 UCLASS(Blueprintable, EditInlineNew)
 class RIVALS2_API UMainMenuOnlineFriendliesTab : public UMainMenuTabInterface {
@@ -26,6 +29,12 @@ private:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UMainMenuButtonWidget* BP_BackButton;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    UTextInputPopup* TextInputPopupWidget;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    USpinnerPopupWidget* SpinnerPopupWidget;
+    
 public:
     UMainMenuOnlineFriendliesTab();
 
@@ -35,6 +44,20 @@ public:
     UFUNCTION(BlueprintCallable)
     void OnJoinPrivateButtonPressed();
     
+protected:
+    UFUNCTION(BlueprintCallable)
+    void OnJoinLobbyFailed(const FName LobbyInfo);
+    
+    UFUNCTION(BlueprintCallable)
+    void OnJoinedLobby(const FRivalsPlayFabLobbyInfo LobbyInfo);
+    
+    UFUNCTION(BlueprintCallable)
+    void OnFindLobbiesSuccess(const TArray<FRivalsPlayFabOssSessionInfo>& SessionList);
+    
+    UFUNCTION(BlueprintCallable)
+    void OnFindLobbiesFailed();
+    
+public:
     UFUNCTION(BlueprintCallable)
     void OnCreatePublicButtonPressed();
     

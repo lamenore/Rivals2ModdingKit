@@ -8,10 +8,10 @@ USnapNetSettings::USnapNetSettings() {
     this->TickRate = 60;
     this->TicksPerServerSend = 1;
     this->SavedInstantReplays = 1;
-    this->InputActions.AddDefaulted(23);
+    this->InputActions.AddDefaulted(24);
     this->InputAxes.AddDefaulted(6);
     this->IncludeControlRotation = false;
-    this->Maps.AddDefaulted(30);
+    this->Maps.AddDefaulted(37);
     this->StringPools.AddDefaulted(7);
     this->SmallPositionDeltaThreshold = 100.00f;
     this->RotationPrecisionSimulatedOrSpectated = 0.01f;
@@ -28,7 +28,7 @@ USnapNetSettings::USnapNetSettings() {
     this->TimeoutSeconds = 8;
     this->MaxEntities = 1000;
     this->MaxEvents = 1000;
-    this->MaxFutureInputs = 6;
+    this->MaxFutureInputs = 16;
     this->MaxLocalPlayers = 8;
     this->MaxLagCompensationMilliseconds = 200;
     this->DeltaCompressionHistoryMilliseconds = 1500;

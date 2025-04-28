@@ -5,6 +5,8 @@ UMainMenuButtonWidget::UMainMenuButtonWidget() {
     this->bIsRanked = false;
     this->bIsExperimental = false;
     this->bIsAbyss = false;
+    this->bShowCheckbox = false;
+    this->bShowCheckmark = false;
     this->BP_NotificationSwitcher = NULL;
     this->BP_NotificationTextBlock = NULL;
     this->BP_CharacterImageR = NULL;
@@ -16,6 +18,8 @@ UMainMenuButtonWidget::UMainMenuButtonWidget() {
     this->BP_AdditionalTextBlock = NULL;
     this->BP_NormalStateImage = NULL;
     this->BP_ExperimentalBanner = NULL;
+    this->BP_CheckboxContainer = NULL;
+    this->BP_Checkmark = NULL;
 }
 
 UWidget* UMainMenuButtonWidget::OnNavigate(EUINavigation Direction) {

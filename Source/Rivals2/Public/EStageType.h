@@ -7,10 +7,10 @@ enum class EStageType : int32 {
     None,
     Story,
     Casual,
-    CounterPick,
-    Starter,
-    TargetTest,
+    Competitive,
+    TargetTest = 5,
     Development,
     Training,
+    Random,
 };
 

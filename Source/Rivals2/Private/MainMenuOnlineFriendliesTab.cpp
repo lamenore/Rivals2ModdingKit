@@ -6,12 +6,26 @@ UMainMenuOnlineFriendliesTab::UMainMenuOnlineFriendliesTab() {
     this->BP_JoinPublicButton = NULL;
     this->BP_JoinPrivateButton = NULL;
     this->BP_BackButton = NULL;
+    this->TextInputPopupWidget = NULL;
+    this->SpinnerPopupWidget = NULL;
 }
 
 void UMainMenuOnlineFriendliesTab::OnJoinPublicButtonPressed() {
 }
 
 void UMainMenuOnlineFriendliesTab::OnJoinPrivateButtonPressed() {
+}
+
+void UMainMenuOnlineFriendliesTab::OnJoinLobbyFailed(const FName LobbyInfo) {
+}
+
+void UMainMenuOnlineFriendliesTab::OnJoinedLobby(const FRivalsPlayFabLobbyInfo LobbyInfo) {
+}
+
+void UMainMenuOnlineFriendliesTab::OnFindLobbiesSuccess(const TArray<FRivalsPlayFabOssSessionInfo>& SessionList) {
+}
+
+void UMainMenuOnlineFriendliesTab::OnFindLobbiesFailed() {
 }
 
 void UMainMenuOnlineFriendliesTab::OnCreatePublicButtonPressed() {

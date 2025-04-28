@@ -5,6 +5,7 @@ UOffscreenIndicatorWidget::UOffscreenIndicatorWidget() : UUserWidget(FObjectInit
     this->Portrait = NULL;
     this->bIsCharacterFacingRight = false;
     this->OwnerObject = NULL;
+    this->CharacterDefinition = NULL;
 }
 
 

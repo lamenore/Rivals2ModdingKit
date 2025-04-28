@@ -28,9 +28,6 @@ public:
     bool IsRivalsCursorValid() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
-    bool IsRivalsCursorOverInteractableWidget() const;
-    
-    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsRivalsCursorLocked() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)

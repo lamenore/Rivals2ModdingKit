@@ -6,6 +6,19 @@ UBetterButtonDisplayer::UBetterButtonDisplayer() : UUserWidget(FObjectInitialize
     this->Colored = false;
     this->DisplayFor = EDisplayType::Both;
     this->ShouldListenForInputChange = true;
+    this->bPlayAnimation = false;
+    this->bLoopAnim = false;
+    this->AnimationToPlay = EAnimationToPlay::Press;
+    this->PlayedAnim = NULL;
+    this->BP_PressAnim = NULL;
+    this->BP_LeftTiltAnim = NULL;
+    this->BP_RightTiltAnim = NULL;
+    this->BP_UpTiltAnim = NULL;
+    this->BP_DownTiltAnim = NULL;
+    this->BP_LeftStrongAnim = NULL;
+    this->BP_RightStrongAnim = NULL;
+    this->BP_UpStrongAnim = NULL;
+    this->BP_DownStrongAnim = NULL;
     this->WidthOverride = 0.00f;
     this->HeightOverride = 0.00f;
     this->MinDesiredWidth = 0.00f;
@@ -23,7 +36,7 @@ UBetterButtonDisplayer::UBetterButtonDisplayer() : UUserWidget(FObjectInitialize
     this->UserSpecifiedScale = 0.00f;
     this->IgnoreInheritedScale = false;
     this->BP_ScaleBox = NULL;
-    this->BP_ButtonIconScaleBox = NULL;
+    this->BP_ButtonIconPanel = NULL;
     this->BP_SizeBox = NULL;
     this->BP_Switcher = NULL;
     this->BP_NothingIcon = NULL;
@@ -66,6 +79,9 @@ void UBetterButtonDisplayer::SetIgnoreInheritedScale(bool bInIgnoreInheritedScal
 }
 
 void UBetterButtonDisplayer::SetHeightOverride(float InHeightOverride) {
+}
+
+void UBetterButtonDisplayer::SetAnimationToPlay(EAnimationToPlay InAnimationToPlay) {
 }
 
 void UBetterButtonDisplayer::DisplayNothing() {

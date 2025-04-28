@@ -1,6 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "BaseScreenWidget.h"
+#include "RivalsPlayFabLobbyInfo.h"
 #include "MainMenuScreenWidget.generated.h"
 
 class UMainMenuExtrasTab;
@@ -9,7 +10,12 @@ class UMainMenuLocalTab;
 class UMainMenuOnlineFriendliesTab;
 class UMainMenuOnlineTab;
 class UMainMenuProgressionTab;
+class UMainMenuRankedLeaderboardTab;
+class UMainMenuReplayTab;
 class UMainMenuStoreTab;
+class UMainMenuTrialsSubTab;
+class UMainMenuTutorialsSubTab;
+class UMainMenuTutorialsTab;
 class UUserWidget;
 class UWidgetSwitcher;
 
@@ -36,13 +42,31 @@ public:
     UMainMenuLocalTab* BP_MainMenuLocalTab;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    UMainMenuTutorialsTab* BP_MainMenuTutorialsTab;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    UMainMenuTutorialsSubTab* BP_MainMenuTutorialsSubTab;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    UMainMenuTrialsSubTab* BP_MainMenuTrialsSubTab;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UMainMenuExtrasTab* BP_MainMenuExtrasTab;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    UMainMenuReplayTab* BP_MainMenuReplayTab;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UMainMenuProgressionTab* BP_MainMenuProgressionTab;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    UMainMenuRankedLeaderboardTab* BP_MainMenuRankedLeaderboardTab;
+    
     UMainMenuScreenWidget();
 
+    UFUNCTION(BlueprintCallable)
+    void OpenTrialsSubTab(UUserWidget* WidgetToFocus);
+    
     UFUNCTION(BlueprintCallable)
     void OpenProgressionTab(UUserWidget* WidgetToFocus);
     
@@ -50,11 +74,22 @@ public:
     void OpenExtrasTab(UUserWidget* WidgetToFocus);
     
     UFUNCTION(BlueprintCallable)
+    void OnTutorialsPressed();
+    
+    UFUNCTION(BlueprintCallable)
     void OnRefocusScreen();
     
     UFUNCTION(BlueprintCallable)
     void OnLocalPressed();
     
+private:
+    UFUNCTION(BlueprintCallable)
+    void OnJoinLobbyFailed(const FName ErrorTypeName);
+    
+    UFUNCTION(BlueprintCallable)
+    void OnJoinedLobby(const FRivalsPlayFabLobbyInfo LobbyInfo);
+    
+public:
     UFUNCTION(BlueprintCallable)
     void GoToSettingsHack();
     

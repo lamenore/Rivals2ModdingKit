@@ -65,8 +65,8 @@ bool UTrainingMenuRow::HasFocus() {
     return false;
 }
 
-FString UTrainingMenuRow::GetDefaultValue() {
-    return TEXT("");
+FText UTrainingMenuRow::GetDefaultValue() {
+    return FText::GetEmpty();
 }
 
 FString UTrainingMenuRow::GetCurrentStringValue() {

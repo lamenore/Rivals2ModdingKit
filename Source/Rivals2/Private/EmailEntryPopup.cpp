@@ -53,13 +53,13 @@ void UEmailEntryPopup::OnPickBackClicked() {
 void UEmailEntryPopup::OnLoginWithEmailBeforeSteamLinkSuccess(bool bAlreadyHasSteamAccountLink) {
 }
 
-void UEmailEntryPopup::OnLoginWithEmailBeforeSteamLinkError(const FString& ErrorReport) {
+void UEmailEntryPopup::OnLoginWithEmailBeforeSteamLinkError(FText ErrorReport) {
 }
 
 void UEmailEntryPopup::OnLinkSteamAccountSuccess() {
 }
 
-void UEmailEntryPopup::OnLinkSteamAccountError(const FString& ErrorReport) {
+void UEmailEntryPopup::OnLinkSteamAccountError(FText ErrorReport) {
 }
 
 void UEmailEntryPopup::OnLinkLoginClicked() {
@@ -83,7 +83,7 @@ void UEmailEntryPopup::OnCreateBackToLoginClicked() {
 void UEmailEntryPopup::OnConnectToPlayFabServicesSuccess() {
 }
 
-void UEmailEntryPopup::OnConnectToPlayFabServicesError(const FString& ErrorReport) {
+void UEmailEntryPopup::OnConnectToPlayFabServicesError(FText ErrorReport) {
 }
 
 void UEmailEntryPopup::OnConnectingToPlayFabServicesCloseButtonClicked() {
@@ -95,7 +95,7 @@ void UEmailEntryPopup::OnConfirmLinkAccountClicked() {
 void UEmailEntryPopup::OnAddUsernamePasswordSuccess() {
 }
 
-void UEmailEntryPopup::OnAddUsernamePasswordError(const FString& ErrorReport) {
+void UEmailEntryPopup::OnAddUsernamePasswordError(FText ErrorReport) {
 }
 
 

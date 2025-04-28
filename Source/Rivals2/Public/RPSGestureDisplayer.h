@@ -17,7 +17,7 @@ class RIVALS2_API URPSGestureDisplayer : public URivalsWidget {
     GENERATED_BODY()
 public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    RPSGesture CurrentHandDisplayState;
+    TEnumAsByte<RPSGesture> CurrentHandDisplayState;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TEnumAsByte<RPSSide> DisplaySide;

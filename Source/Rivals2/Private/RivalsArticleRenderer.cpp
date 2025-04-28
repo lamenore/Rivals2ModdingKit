@@ -15,6 +15,7 @@ ARivalsArticleRenderer::ARivalsArticleRenderer(const FObjectInitializer& ObjectI
     this->OffscreenIndicatorComponent = CreateDefaultSubobject<UWidgetComponent>(TEXT("OffscreenIndicatorComponent"));
     this->RootSceneComponent = (USceneComponent*)RootComponent;
     this->bHasOutline = true;
+    this->bIgnoreEntityFacing = false;
     this->ArticleMeshComponent->SetupAttachment(RootComponent);
     this->ArticleOutlineMeshComponent->SetupAttachment(ArticleMeshComponent);
     this->OffscreenIndicatorComponent->SetupAttachment(RootComponent);

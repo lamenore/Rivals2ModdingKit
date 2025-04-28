@@ -7,6 +7,10 @@ UOverheadHudWidget::UOverheadHudWidget() : UUserWidget(FObjectInitializer::Get()
 }
 
 
+bool UOverheadHudWidget::IsEmpowered() {
+    return false;
+}
+
 
 int32 UOverheadHudWidget::GetPoisonStacks() {
     return 0;

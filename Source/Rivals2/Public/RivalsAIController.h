@@ -12,7 +12,6 @@
 class AActor;
 class APawn;
 class ARivalsCharacterEntity;
-class ARivalsPlayerEntity;
 
 UCLASS(Blueprintable)
 class RIVALS2_API ARivalsAIController : public ASnapNetAIController {
@@ -61,9 +60,6 @@ public:
     
     UFUNCTION(BlueprintCallable)
     ARivalsCharacterEntity* GetTargetCharacter();
-    
-    UFUNCTION(BlueprintCallable)
-    ARivalsPlayerEntity* GetRivalsPawn();
     
     UFUNCTION(BlueprintCallable)
     ERivalsBufferedInputAction GetInputActionTowardOtherActor(const ARivalsCharacterEntity* CharacterEntity, const AActor* OtherActor);

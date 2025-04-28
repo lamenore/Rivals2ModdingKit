@@ -65,7 +65,7 @@ public:
     FSnapNetPropertyInt32 eventSkinXpBuffPercent;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    FSnapNetPropertyString MasterPlayerAccountId;
+    FSnapNetPropertyString masterPlayerAccountId;
     
     URivalsEventXpEndMatchReportMessage();
 

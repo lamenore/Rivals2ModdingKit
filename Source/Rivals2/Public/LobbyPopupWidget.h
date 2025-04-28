@@ -23,6 +23,12 @@ protected:
     UMenuButtonWidget* BP_QueueLobbyButton;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    UMenuButtonWidget* BP_RemoveServerButton;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    UMenuButtonWidget* BP_JoinServerButton;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UMenuButtonWidget* BP_ChangeRegionButton;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
@@ -33,6 +39,12 @@ protected:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UMenuButtonWidget* BP_CopyCodeButton;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    UMenuButtonWidget* BP_ShowCodeButton;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    UTextBlock* BP_LobbyCodeTextBlock;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UImage* BP_LoadingImage;
@@ -74,6 +86,12 @@ public:
     void OnToggleSpectatingPressed(const int32 UserIndex);
     
     UFUNCTION(BlueprintCallable)
+    void OnShowLobbyCodePressed(const int32 UserIndex);
+    
+    UFUNCTION(BlueprintCallable)
+    void OnRemoveServerPressed(const int32 UserIndex);
+    
+    UFUNCTION(BlueprintCallable)
     void OnRegionChangePressed(const int32 UserIndex);
     
     UFUNCTION(BlueprintCallable)
@@ -89,7 +107,13 @@ public:
     void OnLeaveLobbyPressed(const int32 UserIndex);
     
     UFUNCTION(BlueprintCallable)
+    void OnJoinServerPressed(const int32 UserIndex);
+    
+    UFUNCTION(BlueprintCallable)
     void OnJoinMatchSuccess();
+    
+    UFUNCTION(BlueprintCallable)
+    void OnJoinMatchStarted();
     
     UFUNCTION(BlueprintCallable)
     void OnJoinMatchFail();

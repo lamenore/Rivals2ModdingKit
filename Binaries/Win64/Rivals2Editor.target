@@ -22,6 +22,22 @@
 	},
 	"BuildProducts": [
 		{
+			"Path": "$(ProjectDir)/Binaries/Win64/UnrealEditor-Etalus.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(ProjectDir)/Binaries/Win64/UnrealEditor-Etalus.pdb",
+			"Type": "SymbolFile"
+		},
+		{
+			"Path": "$(ProjectDir)/Binaries/Win64/UnrealEditor-Olympia.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(ProjectDir)/Binaries/Win64/UnrealEditor-Olympia.pdb",
+			"Type": "SymbolFile"
+		},
+		{
 			"Path": "$(ProjectDir)/Binaries/Win64/UnrealEditor-Rivals2.dll",
 			"Type": "DynamicLibrary"
 		},
@@ -30,7 +46,35 @@
 			"Type": "SymbolFile"
 		},
 		{
+			"Path": "$(ProjectDir)/Binaries/Win64/UnrealEditor-StateTreeModule.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(ProjectDir)/Binaries/Win64/UnrealEditor-StateTreeModule.pdb",
+			"Type": "SymbolFile"
+		},
+		{
+			"Path": "$(ProjectDir)/Binaries/Win64/UnrealEditor-VirtualCursor.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(ProjectDir)/Binaries/Win64/UnrealEditor-VirtualCursor.pdb",
+			"Type": "SymbolFile"
+		},
+		{
 			"Path": "$(ProjectDir)/Binaries/Win64/UnrealEditor.modules",
+			"Type": "RequiredResource"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/ExpressiveText_5.4/Binaries/Win64/UnrealEditor-ExpressiveText.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/ExpressiveText_5.4/Binaries/Win64/UnrealEditor-ExpressiveText.pdb",
+			"Type": "SymbolFile"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/ExpressiveText_5.4/Binaries/Win64/UnrealEditor.modules",
 			"Type": "RequiredResource"
 		},
 		{
@@ -78,6 +122,30 @@
 			"Type": "RequiredResource"
 		},
 		{
+			"Path": "$(ProjectDir)/Plugins/MultiKeyboardInput/Binaries/Win64/UnrealEditor-MultiKeyboardInput.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/MultiKeyboardInput/Binaries/Win64/UnrealEditor-MultiKeyboardInput.pdb",
+			"Type": "SymbolFile"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/MultiKeyboardInput/Binaries/Win64/UnrealEditor.modules",
+			"Type": "RequiredResource"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/NexusUnrealSDK/Binaries/Win64/UnrealEditor-NexusUnrealSDK.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/NexusUnrealSDK/Binaries/Win64/UnrealEditor-NexusUnrealSDK.pdb",
+			"Type": "SymbolFile"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/NexusUnrealSDK/Binaries/Win64/UnrealEditor.modules",
+			"Type": "RequiredResource"
+		},
+		{
 			"Path": "$(ProjectDir)/Plugins/NiagaraUIRenderer/Binaries/Win64/UnrealEditor-NiagaraUIRenderer.dll",
 			"Type": "DynamicLibrary"
 		},
@@ -95,18 +163,6 @@
 		},
 		{
 			"Path": "$(ProjectDir)/Plugins/NiagaraUIRenderer/Binaries/Win64/UnrealEditor.modules",
-			"Type": "RequiredResource"
-		},
-		{
-			"Path": "$(ProjectDir)/Plugins/Online/OnlineSubsystemPlayFab/Binaries/Win64/UnrealEditor-OnlineSubsystemPlayFab.dll",
-			"Type": "DynamicLibrary"
-		},
-		{
-			"Path": "$(ProjectDir)/Plugins/Online/OnlineSubsystemPlayFab/Binaries/Win64/UnrealEditor-OnlineSubsystemPlayFab.pdb",
-			"Type": "SymbolFile"
-		},
-		{
-			"Path": "$(ProjectDir)/Plugins/Online/OnlineSubsystemPlayFab/Binaries/Win64/UnrealEditor.modules",
 			"Type": "RequiredResource"
 		},
 		{
@@ -150,6 +206,14 @@
 			"Type": "SymbolFile"
 		},
 		{
+			"Path": "$(ProjectDir)/Plugins/PlayFabSDK/Binaries/Win64/UnrealEditor-PlayFabCpp.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/PlayFabSDK/Binaries/Win64/UnrealEditor-PlayFabCpp.pdb",
+			"Type": "SymbolFile"
+		},
+		{
 			"Path": "$(ProjectDir)/Plugins/PlayFabSDK/Binaries/Win64/UnrealEditor.modules",
 			"Type": "RequiredResource"
 		},
@@ -163,6 +227,18 @@
 		},
 		{
 			"Path": "$(ProjectDir)/Plugins/RivalsStoryEditor/Binaries/Win64/UnrealEditor.modules",
+			"Type": "RequiredResource"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/ScaleShape/Binaries/Win64/UnrealEditor-ScaleShape.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/ScaleShape/Binaries/Win64/UnrealEditor-ScaleShape.pdb",
+			"Type": "SymbolFile"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/ScaleShape/Binaries/Win64/UnrealEditor.modules",
 			"Type": "RequiredResource"
 		},
 		{
@@ -214,24 +290,16 @@
 			"Type": "RequiredResource"
 		},
 		{
-			"Path": "$(ProjectDir)/Plugins/VirtualCursor/Binaries/Win64/UnrealEditor-VirtualCursor.dll",
-			"Type": "DynamicLibrary"
-		},
-		{
-			"Path": "$(ProjectDir)/Plugins/VirtualCursor/Binaries/Win64/UnrealEditor-VirtualCursor.pdb",
-			"Type": "SymbolFile"
-		},
-		{
-			"Path": "$(ProjectDir)/Plugins/VirtualCursor/Binaries/Win64/UnrealEditor.modules",
-			"Type": "RequiredResource"
-		},
-		{
 			"Path": "$(EngineDir)/Binaries/Win64/AgentInterface.dll",
 			"Type": "DynamicLibrary"
 		},
 		{
 			"Path": "$(EngineDir)/Binaries/Win64/AgentInterface.pdb",
 			"Type": "SymbolFile"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/Win64/EOSSDK-Win64-Shipping.dll",
+			"Type": "DynamicLibrary"
 		},
 		{
 			"Path": "$(EngineDir)/Binaries/Win64/OpenColorIO_2_3.dll",
@@ -503,6 +571,10 @@
 		},
 		{
 			"Path": "$(EngineDir)/Binaries/Win64/UnrealEditor-BuildSettings.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/Win64/UnrealEditor-CEF3Utils.dll",
 			"Type": "DynamicLibrary"
 		},
 		{
@@ -1870,6 +1942,10 @@
 			"Type": "DynamicLibrary"
 		},
 		{
+			"Path": "$(EngineDir)/Binaries/Win64/UnrealEditor-WebBrowser.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
 			"Path": "$(EngineDir)/Binaries/Win64/UnrealEditor-WidgetCarousel.dll",
 			"Type": "DynamicLibrary"
 		},
@@ -3010,6 +3086,18 @@
 			"Type": "RequiredResource"
 		},
 		{
+			"Path": "$(EngineDir)/Plugins/Fab/Binaries/Win64/UnrealEditor-Fab.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Fab/Binaries/Win64/UnrealEditor-Fab.pdb",
+			"Type": "SymbolFile"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Fab/Binaries/Win64/UnrealEditor.modules",
+			"Type": "RequiredResource"
+		},
+		{
 			"Path": "$(EngineDir)/Plugins/FastBuildController/Binaries/Win64/UnrealEditor-FastBuildController.dll",
 			"Type": "DynamicLibrary"
 		},
@@ -3091,74 +3179,6 @@
 		},
 		{
 			"Path": "$(EngineDir)/Plugins/Interchange/Runtime/Binaries/Win64/UnrealEditor.modules",
-			"Type": "RequiredResource"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Marketplace/Developer/RiderLink/Binaries/Win64/UnrealEditor-RD.dll",
-			"Type": "DynamicLibrary"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Marketplace/Developer/RiderLink/Binaries/Win64/UnrealEditor-RD.pdb",
-			"Type": "SymbolFile"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Marketplace/Developer/RiderLink/Binaries/Win64/UnrealEditor-RiderBlueprint.dll",
-			"Type": "DynamicLibrary"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Marketplace/Developer/RiderLink/Binaries/Win64/UnrealEditor-RiderBlueprint.pdb",
-			"Type": "SymbolFile"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Marketplace/Developer/RiderLink/Binaries/Win64/UnrealEditor-RiderDebuggerSupport.dll",
-			"Type": "DynamicLibrary"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Marketplace/Developer/RiderLink/Binaries/Win64/UnrealEditor-RiderDebuggerSupport.pdb",
-			"Type": "SymbolFile"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Marketplace/Developer/RiderLink/Binaries/Win64/UnrealEditor-RiderGameControl.dll",
-			"Type": "DynamicLibrary"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Marketplace/Developer/RiderLink/Binaries/Win64/UnrealEditor-RiderGameControl.pdb",
-			"Type": "SymbolFile"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Marketplace/Developer/RiderLink/Binaries/Win64/UnrealEditor-RiderLC.dll",
-			"Type": "DynamicLibrary"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Marketplace/Developer/RiderLink/Binaries/Win64/UnrealEditor-RiderLC.pdb",
-			"Type": "SymbolFile"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Marketplace/Developer/RiderLink/Binaries/Win64/UnrealEditor-RiderLink.dll",
-			"Type": "DynamicLibrary"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Marketplace/Developer/RiderLink/Binaries/Win64/UnrealEditor-RiderLink.pdb",
-			"Type": "SymbolFile"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Marketplace/Developer/RiderLink/Binaries/Win64/UnrealEditor-RiderLogging.dll",
-			"Type": "DynamicLibrary"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Marketplace/Developer/RiderLink/Binaries/Win64/UnrealEditor-RiderLogging.pdb",
-			"Type": "SymbolFile"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Marketplace/Developer/RiderLink/Binaries/Win64/UnrealEditor-RiderShaderInfo.dll",
-			"Type": "DynamicLibrary"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Marketplace/Developer/RiderLink/Binaries/Win64/UnrealEditor-RiderShaderInfo.pdb",
-			"Type": "SymbolFile"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Marketplace/Developer/RiderLink/Binaries/Win64/UnrealEditor.modules",
 			"Type": "RequiredResource"
 		},
 		{
@@ -3374,6 +3394,14 @@
 			"Type": "RequiredResource"
 		},
 		{
+			"Path": "$(EngineDir)/Plugins/Online/EOSShared/Binaries/Win64/UnrealEditor-EOSShared.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Online/EOSShared/Binaries/Win64/UnrealEditor.modules",
+			"Type": "RequiredResource"
+		},
+		{
 			"Path": "$(EngineDir)/Plugins/Online/OnlineBase/Binaries/Win64/UnrealEditor-OnlineBase.dll",
 			"Type": "DynamicLibrary"
 		},
@@ -3398,11 +3426,15 @@
 			"Type": "RequiredResource"
 		},
 		{
-			"Path": "$(EngineDir)/Plugins/Online/OnlineSubsystemNull/Binaries/Win64/UnrealEditor-OnlineSubsystemNull.dll",
+			"Path": "$(EngineDir)/Plugins/Online/OnlineSubsystemEOS/Binaries/Win64/UnrealEditor-OnlineSubsystemEOS.dll",
 			"Type": "DynamicLibrary"
 		},
 		{
-			"Path": "$(EngineDir)/Plugins/Online/OnlineSubsystemNull/Binaries/Win64/UnrealEditor.modules",
+			"Path": "$(EngineDir)/Plugins/Online/OnlineSubsystemEOS/Binaries/Win64/UnrealEditor-OnlineSubsystemEOSPlus.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Online/OnlineSubsystemEOS/Binaries/Win64/UnrealEditor.modules",
 			"Type": "RequiredResource"
 		},
 		{
@@ -3431,6 +3463,22 @@
 		},
 		{
 			"Path": "$(EngineDir)/Plugins/Online/OnlineSubsystem/Binaries/Win64/UnrealEditor.modules",
+			"Type": "RequiredResource"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Online/SocketSubsystemEOS/Binaries/Win64/UnrealEditor-SocketSubsystemEOS.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Online/SocketSubsystemEOS/Binaries/Win64/UnrealEditor.modules",
+			"Type": "RequiredResource"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Online/VoiceChat/EOSVoiceChat/Binaries/Win64/UnrealEditor-EOSVoiceChat.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Online/VoiceChat/EOSVoiceChat/Binaries/Win64/UnrealEditor.modules",
 			"Type": "RequiredResource"
 		},
 		{
@@ -3996,15 +4044,11 @@
 	],
 	"RuntimeDependencies": [
 		{
-			"Path": "$(ProjectDir)/Plugins/AutoSizeComments/AutoSizeComments.uplugin",
-			"Type": "UFS"
-		},
-		{
 			"Path": "$(ProjectDir)/Plugins/Edgegap/Edgegap.uplugin",
 			"Type": "UFS"
 		},
 		{
-			"Path": "$(ProjectDir)/Plugins/EnginePlugins/Fab/Fab.uplugin",
+			"Path": "$(ProjectDir)/Plugins/ExpressiveText_5.4/ExpressiveText.uplugin",
 			"Type": "UFS"
 		},
 		{
@@ -4028,15 +4072,19 @@
 			"Type": "UFS"
 		},
 		{
+			"Path": "$(ProjectDir)/Plugins/MultiKeyboardInput/MultiKeyboardInput.uplugin",
+			"Type": "UFS"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/NexusUnrealSDK/NexusUnrealSDK.uplugin",
+			"Type": "UFS"
+		},
+		{
 			"Path": "$(ProjectDir)/Plugins/NiagaraUIRenderer/NiagaraUIRenderer.uplugin",
 			"Type": "UFS"
 		},
 		{
 			"Path": "$(ProjectDir)/Plugins/NineSlicer/NineSlicer.uplugin",
-			"Type": "UFS"
-		},
-		{
-			"Path": "$(ProjectDir)/Plugins/Online/OnlineSubsystemPlayFab/OnlineSubsystemPlayFab.uplugin",
 			"Type": "UFS"
 		},
 		{
@@ -4060,6 +4108,10 @@
 			"Type": "UFS"
 		},
 		{
+			"Path": "$(ProjectDir)/Plugins/ScaleShape/ScaleShape.uplugin",
+			"Type": "UFS"
+		},
+		{
 			"Path": "$(ProjectDir)/Plugins/Sentry/Sentry.uplugin",
 			"Type": "UFS"
 		},
@@ -4073,10 +4125,6 @@
 		},
 		{
 			"Path": "$(ProjectDir)/Plugins/SnapNet/SnapNet.uplugin",
-			"Type": "UFS"
-		},
-		{
-			"Path": "$(ProjectDir)/Plugins/VirtualCursor/VirtualCursor.uplugin",
 			"Type": "UFS"
 		},
 		{
@@ -23556,6 +23604,14 @@
 			"Type": "DebugNonUFS"
 		},
 		{
+			"Path": "$(EngineDir)/Binaries/Win64/EOSSDK-Win64-Shipping.dll",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/Win64/EpicWebHelper.exe",
+			"Type": "NonUFS"
+		},
+		{
 			"Path": "$(EngineDir)/Binaries/Win64/OpenColorIO_2_3.dll",
 			"Type": "NonUFS"
 		},
@@ -26856,6 +26912,10 @@
 			"Type": "UFS"
 		},
 		{
+			"Path": "$(EngineDir)/Plugins/Fab/Fab.uplugin",
+			"Type": "UFS"
+		},
+		{
 			"Path": "$(EngineDir)/Plugins/FastBuildController/FastBuildController.uplugin",
 			"Type": "UFS"
 		},
@@ -26869,10 +26929,6 @@
 		},
 		{
 			"Path": "$(EngineDir)/Plugins/Interchange/Runtime/Interchange.uplugin",
-			"Type": "UFS"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Marketplace/Developer/RiderLink/RiderLink.uplugin",
 			"Type": "UFS"
 		},
 		{
@@ -26944,6 +27000,14 @@
 			"Type": "UFS"
 		},
 		{
+			"Path": "$(EngineDir)/Plugins/Online/EOSOverlayInputProvider/EOSOverlayInputProvider.uplugin",
+			"Type": "UFS"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Online/EOSShared/EOSShared.uplugin",
+			"Type": "UFS"
+		},
+		{
 			"Path": "$(EngineDir)/Plugins/Online/IOS/OnlineSubsystemIOS/OnlineSubsystemIOS.uplugin",
 			"Type": "UFS"
 		},
@@ -26956,7 +27020,7 @@
 			"Type": "UFS"
 		},
 		{
-			"Path": "$(EngineDir)/Plugins/Online/OnlineSubsystemNull/OnlineSubsystemNull.uplugin",
+			"Path": "$(EngineDir)/Plugins/Online/OnlineSubsystemEOS/OnlineSubsystemEOS.uplugin",
 			"Type": "UFS"
 		},
 		{
@@ -26969,6 +27033,14 @@
 		},
 		{
 			"Path": "$(EngineDir)/Plugins/Online/OnlineSubsystem/OnlineSubsystem.uplugin",
+			"Type": "UFS"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Online/SocketSubsystemEOS/SocketSubsystemEOS.uplugin",
+			"Type": "UFS"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Online/VoiceChat/EOSVoiceChat/EOSVoiceChat.uplugin",
 			"Type": "UFS"
 		},
 		{
@@ -27187,7 +27259,6 @@
 		"AudioCapture",
 		"AudioSynesthesia",
 		"AudioWidgets",
-		"AutoSizeComments",
 		"AutomationUtils",
 		"AvfMedia",
 		"BackChannel",
@@ -27228,6 +27299,9 @@
 		"Dataflow",
 		"DatasmithContent",
 		"DumpGPUServices",
+		"EOSOverlayInputProvider",
+		"EOSShared",
+		"EOSVoiceChat",
 		"Edgegap",
 		"EditorDebugTools",
 		"EditorScriptingUtilities",
@@ -27235,6 +27309,7 @@
 		"EnhancedInput",
 		"EnvironmentQueryEditor",
 		"ExampleDeviceProfileSelector",
+		"ExpressiveText",
 		"FMODStudio",
 		"FMODStudioNiagara",
 		"Fab",
@@ -27288,6 +27363,7 @@
 		"MsQuic",
 		"MultiKeyboardInput",
 		"N10XSourceCodeAccess",
+		"NexusUnrealSDK",
 		"Niagara",
 		"NiagaraSimCaching",
 		"NiagaraUIRenderer",
@@ -27297,10 +27373,9 @@
 		"OnlineBase",
 		"OnlineServices",
 		"OnlineSubsystem",
+		"OnlineSubsystemEOS",
 		"OnlineSubsystemGooglePlay",
 		"OnlineSubsystemIOS",
-		"OnlineSubsystemNull",
-		"OnlineSubsystemPlayFab",
 		"OnlineSubsystemSteam",
 		"OnlineSubsystemUtils",
 		"OodleNetwork",
@@ -27328,11 +27403,11 @@
 		"RenderGraphInsights",
 		"ResonanceAudio",
 		"RestartEditor",
-		"RiderLink",
 		"RiderSourceCodeAccess",
 		"RigVM",
 		"RivalsStoryEditor",
 		"SQLiteCore",
+		"ScaleShape",
 		"Sentry",
 		"SequencerAnimTools",
 		"SequencerScripting",
@@ -27341,6 +27416,7 @@
 		"SnapNet",
 		"SnapNetSample",
 		"SnapNetSteam",
+		"SocketSubsystemEOS",
 		"SoundFields",
 		"SpeedTreeImporter",
 		"SteamShared",
@@ -27361,7 +27437,6 @@
 		"UdpMessaging",
 		"VariantManager",
 		"VariantManagerContent",
-		"VirtualCursor",
 		"VisualStudioCodeSourceCodeAccess",
 		"VisualStudioSourceCodeAccess",
 		"WaveTable",

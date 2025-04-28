@@ -54,6 +54,9 @@ public:
     void ToggleTimeline();
     
     UFUNCTION(BlueprintCallable)
+    void SortMarkers();
+    
+    UFUNCTION(BlueprintCallable)
     void ShowTimeline();
     
     UFUNCTION(BlueprintCallable)
@@ -70,6 +73,18 @@ public:
     
     UFUNCTION(BlueprintCallable)
     void HideTimeline();
+    
+    UFUNCTION(BlueprintCallable)
+    UTimelineMarker* GetRightmostMarker();
+    
+    UFUNCTION(BlueprintCallable)
+    int32 GetMarkerIndex(UTimelineMarker* Marker);
+    
+    UFUNCTION(BlueprintCallable)
+    UTimelineMarker* GetLeftmostMarker();
+    
+    UFUNCTION(BlueprintCallable)
+    int32 GetKeyframeIndexFromTimeline(UKeyframe* Keyframe);
     
     UFUNCTION(BlueprintCallable)
     UTimelineMarker* CanEditMarker();

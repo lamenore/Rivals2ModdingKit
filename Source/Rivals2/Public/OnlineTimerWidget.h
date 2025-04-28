@@ -40,6 +40,9 @@ public:
     UFUNCTION(BlueprintCallable)
     void UpdateNotice(FText InNotice);
     
+    UFUNCTION(BlueprintCallable)
+    int32 GetDisplayTime();
+    
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BP_OnLowTimeTick();
     

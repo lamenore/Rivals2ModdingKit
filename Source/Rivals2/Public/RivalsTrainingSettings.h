@@ -5,6 +5,7 @@
 #include "RivalsTrainingSettings.generated.h"
 
 class AActor;
+class URivalsArticleData;
 
 UCLASS(Blueprintable, DefaultConfig, Config=Game)
 class RIVALS2_API URivalsTrainingSettings : public UDeveloperSettings {
@@ -12,6 +13,9 @@ class RIVALS2_API URivalsTrainingSettings : public UDeveloperSettings {
 public:
     UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSubclassOf<AActor> TrainingGrid;
+    
+    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TSubclassOf<URivalsArticleData> BreakEyeArticleData;
     
     URivalsTrainingSettings();
 

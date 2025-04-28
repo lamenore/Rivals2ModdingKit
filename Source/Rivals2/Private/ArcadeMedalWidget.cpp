@@ -20,7 +20,7 @@ void UArcadeMedalWidget::SetMedalType(ERivalsArcadeMedalType MedalType) {
 void UArcadeMedalWidget::PlayEntryAnim() {
 }
 
-UTexture2D* UArcadeMedalWidget::GetMedalTexture(ERivalsArcadeMedalType MedalType) {
+UTexture2D* UArcadeMedalWidget::GetMedalTexture(ERivalsArcadeMedalType MedalType) const {
     return NULL;
 }
 

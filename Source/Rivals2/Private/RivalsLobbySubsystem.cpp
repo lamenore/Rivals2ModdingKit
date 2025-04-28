@@ -43,10 +43,6 @@ FString URivalsLobbySubsystem::Oss_GetStringLobbyProperty(FName stringLobbyPrope
     return TEXT("");
 }
 
-bool URivalsLobbySubsystem::Oss_GetShouldTryJoiningAcceptedInvite() const {
-    return false;
-}
-
 TArray<FString> URivalsLobbySubsystem::Oss_GetRegisteredPlayersIds() {
     return TArray<FString>();
 }
@@ -63,15 +59,7 @@ int32 URivalsLobbySubsystem::Oss_GetRegisteredPlayersCount() {
     return 0;
 }
 
-bool URivalsLobbySubsystem::Oss_GetIsSearchingSessions() const {
-    return false;
-}
-
-bool URivalsLobbySubsystem::Oss_GetIsJoiningSession() const {
-    return false;
-}
-
-bool URivalsLobbySubsystem::Oss_GetIsCreatingSession() const {
+bool URivalsLobbySubsystem::Oss_GetIsProcessing() const {
     return false;
 }
 
@@ -79,6 +67,10 @@ void URivalsLobbySubsystem::Oss_CreateSession(int32 Size, bool bUseSearchKeyword
 }
 
 void URivalsLobbySubsystem::JoinAcceptedInviteSession() {
+}
+
+bool URivalsLobbySubsystem::HasAcceptedLobbyInvitationBeforeBoot() const {
+    return false;
 }
 
 TEnumAsByte<RivalsLobbyType> URivalsLobbySubsystem::GetRivalsLobbyType() {

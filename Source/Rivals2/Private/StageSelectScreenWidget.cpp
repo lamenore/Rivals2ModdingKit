@@ -4,6 +4,7 @@ UStageSelectScreenWidget::UStageSelectScreenWidget() {
     this->RPSWidgetInstance = NULL;
     this->StageButtonInstance = NULL;
     this->bIsInitialized = false;
+    this->bIsTourneyModeEnabled = false;
     this->RPSWidget = NULL;
     this->BP_AlertPlayerContainer = NULL;
     this->BP_AlertPlayerNumTextBlock = NULL;

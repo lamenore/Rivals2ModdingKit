@@ -36,10 +36,6 @@ ARivalsCharacterEntity* ARivalsAIController::GetTargetCharacter() {
     return NULL;
 }
 
-ARivalsPlayerEntity* ARivalsAIController::GetRivalsPawn() {
-    return NULL;
-}
-
 ERivalsBufferedInputAction ARivalsAIController::GetInputActionTowardOtherActor(const ARivalsCharacterEntity* CharacterEntity, const AActor* OtherActor) {
     return ERivalsBufferedInputAction::Left;
 }

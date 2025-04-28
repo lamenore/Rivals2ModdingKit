@@ -16,7 +16,6 @@
 #include "PlayFabOssReceivedLobbySettingsUpdateEventDelegate.h"
 #include "RivalsLobbyType.h"
 #include "RivalsPlayFabLobbyInfo.h"
-#include "RivalsPlayFabPlayerInformation.h"
 #include "UpdateLobbySettingsFailedEventDelegate.h"
 #include "UpdateLobbySettingsSuccessEventDelegate.h"
 #include "RivalsLobbySubsystem.generated.h"
@@ -33,9 +32,6 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FRivalsPlayFabLobbyInfo> SearchLobbyResults;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    TMap<FString, FRivalsPlayFabPlayerInformation> PlayerInformations;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bIsSpectatorLobby;
@@ -123,9 +119,6 @@ public:
     UFUNCTION(BlueprintCallable)
     FString Oss_GetStringLobbyProperty(FName stringLobbyPropertyKey);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
-    bool Oss_GetShouldTryJoiningAcceptedInvite() const;
-    
     UFUNCTION(BlueprintCallable)
     TArray<FString> Oss_GetRegisteredPlayersIds();
     
@@ -139,19 +132,16 @@ public:
     int32 Oss_GetRegisteredPlayersCount();
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
-    bool Oss_GetIsSearchingSessions() const;
-    
-    UFUNCTION(BlueprintCallable, BlueprintPure)
-    bool Oss_GetIsJoiningSession() const;
-    
-    UFUNCTION(BlueprintCallable, BlueprintPure)
-    bool Oss_GetIsCreatingSession() const;
+    bool Oss_GetIsProcessing() const;
     
     UFUNCTION(BlueprintCallable)
     void Oss_CreateSession(int32 Size, bool bUseSearchKeyword, TEnumAsByte<RivalsLobbyType> RivalsLobbyType);
     
     UFUNCTION(BlueprintCallable)
     void JoinAcceptedInviteSession();
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    bool HasAcceptedLobbyInvitationBeforeBoot() const;
     
     UFUNCTION(BlueprintCallable)
     TEnumAsByte<RivalsLobbyType> GetRivalsLobbyType();

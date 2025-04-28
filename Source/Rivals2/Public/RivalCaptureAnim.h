@@ -1,6 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "RivalCaptureSFX.h"
+#include "RivalCaptureVFX.h"
+#include "SkeletalMeshEffectData.h"
 #include "RivalCaptureAnim.generated.h"
 
 class UAnimSequence;
@@ -25,7 +27,16 @@ public:
     TArray<FRivalCaptureSFX> SFX;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TArray<FRivalCaptureVFX> VFX;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TArray<FSkeletalMeshEffectData> MeshEffects;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 CurrentFrame;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    int32 LastUncheckedFrame;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float ElapsedTime;

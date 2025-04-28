@@ -4,6 +4,7 @@
 #include "Widgets/Layout/SScaleBox.h"
 #include "Widgets/Layout/SScaleBox.h"
 #include "Blueprint/UserWidget.h"
+#include "EAnimationToPlay.h"
 #include "EDisplayStyle.h"
 #include "EDisplayType.h"
 #include "BetterButtonDisplayer.generated.h"
@@ -14,6 +15,7 @@ class UImage;
 class UScaleBox;
 class USizeBox;
 class UTextBlock;
+class UWidgetAnimation;
 class UWidgetSwitcher;
 
 UCLASS(Blueprintable, EditInlineNew)
@@ -40,6 +42,45 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool ShouldListenForInputChange;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool bPlayAnimation;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool bLoopAnim;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    EAnimationToPlay AnimationToPlay;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    UWidgetAnimation* PlayedAnim;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    UWidgetAnimation* BP_PressAnim;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    UWidgetAnimation* BP_LeftTiltAnim;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    UWidgetAnimation* BP_RightTiltAnim;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    UWidgetAnimation* BP_UpTiltAnim;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    UWidgetAnimation* BP_DownTiltAnim;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    UWidgetAnimation* BP_LeftStrongAnim;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    UWidgetAnimation* BP_RightStrongAnim;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    UWidgetAnimation* BP_UpStrongAnim;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    UWidgetAnimation* BP_DownStrongAnim;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float WidthOverride;
@@ -94,7 +135,7 @@ protected:
     UScaleBox* BP_ScaleBox;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
-    UScaleBox* BP_ButtonIconScaleBox;
+    UCanvasPanel* BP_ButtonIconPanel;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     USizeBox* BP_SizeBox;
@@ -159,6 +200,9 @@ public:
     
     UFUNCTION(BlueprintCallable)
     void SetHeightOverride(float InHeightOverride);
+    
+    UFUNCTION(BlueprintCallable)
+    void SetAnimationToPlay(EAnimationToPlay InAnimationToPlay);
     
     UFUNCTION(BlueprintCallable)
     void DisplayNothing();

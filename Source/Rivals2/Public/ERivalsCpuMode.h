@@ -13,6 +13,7 @@ enum class ERivalsCpuMode : uint8 {
     Attacking,
     Shielding,
     InfiniteShield,
+    Playback,
     TechableHitstun,
     Hitstun,
     OnLedge,

@@ -2,12 +2,12 @@
 
 UPlayerSlotOptionsButtonWidget::UPlayerSlotOptionsButtonWidget() {
     this->UseNavigationDelegate = false;
-    this->ButtonLabel = TEXT("Default Button Label");
-    this->bMultilineTooltip = false;
+    this->ButtonLabel = FText::FromString(TEXT("Default Button Label"));
     this->SliderValue = 100;
     this->DisplayAreaType = EPlayerSlotOptionButtonDisplayAreaType::Any;
     this->DisplayType = EPlayerSlotOptionButtonDisplayType::Any;
     this->ButtonType = EPlayerSlotOptionButtonType::Button;
+    this->IconImage = NULL;
     this->SliderType = EPlayerSlotOptionButtonSliderType::Percent;
     this->BP_Highlight1 = NULL;
     this->BP_Highlight2 = NULL;
@@ -23,6 +23,7 @@ UPlayerSlotOptionsButtonWidget::UPlayerSlotOptionsButtonWidget() {
     this->BP_BindingDisplayerContainer = NULL;
     this->BP_SliderValueContainer = NULL;
     this->BP_IconContainer = NULL;
+    this->BP_IconImage = NULL;
     this->BP_MappingDisplayer0 = NULL;
     this->BP_MappingDisplayer1 = NULL;
     this->BP_MappingDisplayer2 = NULL;

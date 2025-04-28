@@ -5,6 +5,7 @@ UMainMenuOnlineTab::UMainMenuOnlineTab() {
     this->BP_RankedButton = NULL;
     this->BP_CasualButton = NULL;
     this->BP_FriendlyButton = NULL;
+    this->BP_BotMatchButton = NULL;
     this->BP_BackButton = NULL;
     this->SpinnerRef = NULL;
 }
@@ -19,6 +20,9 @@ void UMainMenuOnlineTab::OnFriendlyButtonPressed() {
 }
 
 void UMainMenuOnlineTab::OnCasualButtonPressed() {
+}
+
+void UMainMenuOnlineTab::OnBotMatchButtonPressed() {
 }
 
 void UMainMenuOnlineTab::OnBackButtonReleased() {

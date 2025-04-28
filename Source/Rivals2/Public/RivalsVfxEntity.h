@@ -15,7 +15,7 @@ class URivalsVfxEntityComponent;
 class USceneComponent;
 
 UCLASS(Blueprintable)
-class ARivalsVfxEntity : public AActor, public IEntityComponentOwner {
+class RIVALS2_API ARivalsVfxEntity : public AActor, public IEntityComponentOwner {
     GENERATED_BODY()
 public:
 protected:

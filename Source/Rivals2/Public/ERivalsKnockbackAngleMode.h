@@ -7,5 +7,6 @@ enum class ERivalsKnockbackAngleMode : uint8 {
     SpecifiedAngle,
     AwayFromHostCenter,
     HostVelocityAngle,
+    UseCustomAngle,
 };
 

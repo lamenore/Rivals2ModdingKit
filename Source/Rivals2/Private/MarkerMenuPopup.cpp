@@ -12,6 +12,7 @@ UMarkerMenuPopup::UMarkerMenuPopup() {
     this->BP_FOVText = NULL;
     this->BP_PositionText = NULL;
     this->BP_RotationText = NULL;
+    this->BP_IndexText = NULL;
 }
 
 void UMarkerMenuPopup::ToggleCameraType() {

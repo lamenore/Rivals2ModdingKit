@@ -3,7 +3,9 @@
 #include "GameFramework/Actor.h"
 #include "RivalsPlatformRenderer.generated.h"
 
+class USkeletalMeshComponent;
 class USnapNetEntityRendererComponent;
+class UStaticMeshComponent;
 
 UCLASS(Blueprintable)
 class RIVALS2_API ARivalsPlatformRenderer : public AActor {
@@ -22,8 +24,20 @@ protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 WindowLength;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    TArray<UStaticMeshComponent*> TrainingPlatMeshComponents;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    TArray<UStaticMeshComponent*> PlatMeshComponents;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    TArray<USkeletalMeshComponent*> PlatSkeletalMeshComponents;
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool HasTrainingPlatform;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool bTrainingPlatformVisible;
     
 public:
     ARivalsPlatformRenderer(const FObjectInitializer& ObjectInitializer);
@@ -32,7 +46,20 @@ public:
     void SetTrainingPlatformVisible(bool IsVisible);
     
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
-    void OnTrainingGeometryChanged(bool IsVisible);
+    void OnPlatformVisualsChanged(bool IsVisible);
+    
+protected:
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    bool IsTrainingPlatformVisible();
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    TArray<UStaticMeshComponent*> GetTrainingPlatMeshComponents();
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    TArray<USkeletalMeshComponent*> GetPlatSkeletalMeshComponents();
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    TArray<UStaticMeshComponent*> GetPlatMeshComponents();
     
 };
 

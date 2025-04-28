@@ -12,5 +12,7 @@ enum class ERivalsRank : uint8 {
     Platinum,
     Diamond,
     Master,
+    Grandmaster,
+    Aetherean,
 };
 

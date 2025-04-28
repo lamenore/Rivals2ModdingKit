@@ -7,5 +7,7 @@ FResultsPlayerInfo::FResultsPlayerInfo() {
     this->PlayerRank = 0;
     this->ColorSlot = ERivalsColorSlot::None;
     this->Wins = 0;
+    this->InitialWinStreak = 0;
+    this->CurrentWinStreak = 0;
 }
 

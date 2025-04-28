@@ -8,11 +8,13 @@
 class UEventTrackStoreItem;
 class UHorizontalBox;
 class UImage;
+class UMainMenuButtonWidget;
 class UProgressBar;
 class UScrollBox;
 class UStoreItem;
 class UTextBlock;
 class UUniformGridPanel;
+class UWidgetAnimation;
 
 UCLASS(Blueprintable, EditInlineNew)
 class RIVALS2_API UEventsStoreTab : public UStoreTabInterface {
@@ -32,6 +34,9 @@ protected:
     UHorizontalBox* BP_EventTrackBox;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    UHorizontalBox* BP_CurrentEventText;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UUniformGridPanel* BP_ItemGrid;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
@@ -47,10 +52,22 @@ protected:
     UTextBlock* BP_EventSkinBonusText;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    UTextBlock* BP_TimerTitleText;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UTextBlock* BP_EventSkinBonusText1;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UTextBlock* BP_TimerText;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    UMainMenuButtonWidget* BP_ClaimAllButton;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    UMainMenuButtonWidget* BP_SwitchActiveEventButton;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    UWidgetAnimation* BP_SwitchIn;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FDateTime expirationDateTime;
@@ -58,5 +75,12 @@ protected:
 public:
     UEventsStoreTab();
 
+protected:
+    UFUNCTION(BlueprintCallable)
+    void OnSwitchActiveEventsButtonPressed();
+    
+    UFUNCTION(BlueprintCallable)
+    void OnClaimAllButtonPressed();
+    
 };
 

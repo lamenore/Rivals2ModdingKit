@@ -13,6 +13,9 @@ enum class ERivalsItemType : uint8 {
     Bundle,
     Currency,
     Taunt,
+    EventStore,
+    StageSkin,
+    Stage,
     ItemType_MAX UMETA(Hidden),
 };
 

@@ -1,8 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "UObject/NoExportTypes.h"
-#include "UObject/NoExportTypes.h"
-#include "ArticleCreationData.h"
+#include "SnapNetPropertyInt32.h"
+#include "SnapNetPropertyVector2D.h"
 #include "RivalsArticleEntity.h"
 #include "RivalsTargetWindowData.h"
 #include "RivalsTargetEntity.generated.h"
@@ -12,34 +11,19 @@ class RIVALS2_API ARivalsTargetEntity : public ARivalsArticleEntity {
     GENERATED_BODY()
 public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    int32 TargetWindow;
+    FSnapNetPropertyInt32 TargetIndex;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    int32 TargetWindowTimer;
+    FSnapNetPropertyInt32 TargetWindow;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    FVector2D TargetVelocity;
+    FSnapNetPropertyInt32 TargetWindowTimer;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    FArticleCreationData ArticleCreationData;
+    FSnapNetPropertyVector2D TargetVelocity;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FRivalsTargetWindowData> TargetWindows;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    bool bResetOnEnd;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    bool bIsMovingTarget;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    FVector StartPoint;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    FVector EndPoint;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    float Speed;
     
     ARivalsTargetEntity(const FObjectInitializer& ObjectInitializer);
 

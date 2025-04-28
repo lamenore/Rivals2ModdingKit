@@ -3,7 +3,7 @@
 #include "Rivals2_CameraGradient.generated.h"
 
 UENUM(BlueprintType)
-enum Rivals2_CameraGradient : uint8 {
+enum Rivals2_CameraGradient {
     None,
     LTOR,
     RTOL,

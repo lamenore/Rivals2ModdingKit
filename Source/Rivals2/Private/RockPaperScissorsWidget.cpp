@@ -26,7 +26,7 @@ URockPaperScissorsWidget::URockPaperScissorsWidget() {
     this->MaxRoundTime = 0.00f;
 }
 
-void URockPaperScissorsWidget::BP_OnButtonActionPressed(const RPSGesture GesturePressed, const int32& PlayerIndex) {
+void URockPaperScissorsWidget::BP_OnButtonActionPressed(const TEnumAsByte<RPSGesture> GesturePressed, const int32& PlayerIndex) {
 }
 
 

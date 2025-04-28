@@ -8,5 +8,6 @@ enum RivalsLobbyErrorType {
     SessionDoesNotExistError,
     AlreadyInAnotherLobby,
     YouAreNotTheLobbyOwner,
+    UpdateInProgress,
 };
 

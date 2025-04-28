@@ -2,6 +2,10 @@
 	"BuildId": "33043543",
 	"Modules": 
 	{
-		"Rivals2": "UnrealEditor-Rivals2.dll"
+		"Etalus": "UnrealEditor-Etalus.dll",
+		"Olympia": "UnrealEditor-Olympia.dll",
+		"Rivals2": "UnrealEditor-Rivals2.dll",
+		"StateTreeModule": "UnrealEditor-StateTreeModule.dll",
+		"VirtualCursor": "UnrealEditor-VirtualCursor.dll"
 	}
 }

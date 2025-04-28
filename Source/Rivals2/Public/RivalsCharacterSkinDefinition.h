@@ -31,7 +31,7 @@ public:
     TSoftClassPtr<URivalsCharacterDefinition> CharacterDefinition;
     
     UPROPERTY(AssetRegistrySearchable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    FName CharacterName;
+    FText CharacterDisplayNameOverride;
     
     UPROPERTY(AssetRegistrySearchable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 Coolness;
@@ -97,6 +97,9 @@ public:
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     URivalsColorSlotData* GetColorSlotData(const ERivalsColorSlot ColorSlot) const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    FText GetCharacterName() const;
     
 };
 

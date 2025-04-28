@@ -7,12 +7,15 @@
 #include "ERivalsColorSlot.h"
 #include "ERivalsFacingDirection.h"
 #include "RivalCaptureAnim.h"
+#include "RivalCaptureVFX.h"
+#include "RivalCaptureVFXRenderer.h"
 #include "SkeletalMeshEffectData.h"
 #include "Templates/SubclassOf.h"
 #include "MenuRivalCapture.generated.h"
 
 class ARespawnPlatformRenderer;
 class ARivalsCharacterRenderer;
+class ARivalsVfxRenderer;
 class ASkeletalMeshActor;
 class UAnimSequence;
 class UCameraComponent;
@@ -42,6 +45,9 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     ARespawnPlatformRenderer* PlatformRenderer;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TArray<FRivalCaptureVFXRenderer> VfxRenderers;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<ASkeletalMeshActor*> SkeletalMeshEffectActors;
@@ -87,12 +93,6 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool ShowAllMeshEffects;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    float OutlineThicknessMultiplier;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    FLinearColor OutlineColor;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FLinearColor DirectionalLightVector;
@@ -148,6 +148,9 @@ public:
     bool UpdateCustomColors();
     
     UFUNCTION(BlueprintCallable)
+    bool SpawnVFX(const TSoftClassPtr<ARivalsVfxRenderer> VFXToSpawn);
+    
+    UFUNCTION(BlueprintCallable)
     bool SpawnTestRival();
     
     UFUNCTION(BlueprintCallable)
@@ -166,13 +169,22 @@ public:
     bool PoseRival(UAnimSequence* Animation, float AnimPos);
     
     UFUNCTION(BlueprintCallable)
-    void PlayUniversalSFX(FName SFXName);
+    void PlayVFX(FRivalCaptureVFX VFX);
     
     UFUNCTION(BlueprintCallable)
-    void PlayRivalSFX(FName SFXName);
+    void PlayUniversalSFX(FName SFXName, int32 DurationFrames);
+    
+    UFUNCTION(BlueprintCallable)
+    void PlayRivalSFX(FName SFXName, int32 DurationFrames);
     
     UFUNCTION(BlueprintCallable)
     bool LoadRenderData();
+    
+    UFUNCTION(BlueprintCallable)
+    void ClearVFXSpawns();
+    
+    UFUNCTION(BlueprintCallable)
+    void ClearAllSpawns();
     
     UFUNCTION(BlueprintCallable)
     void Capture();

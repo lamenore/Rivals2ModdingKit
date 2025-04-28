@@ -12,7 +12,10 @@
 #include "EHudMode.h"
 #include "EMenuSoundType.h"
 #include "ERivalsSessionState.h"
+#include "ERivalsTutorialDifficulty.h"
+#include "ERivalsTutorialType.h"
 #include "EShowBuildType.h"
+#include "ETutorialSoundType.h"
 #include "FrameAdvanceEventDelegate.h"
 #include "GameplayAssetsLoadedDelegate.h"
 #include "InputByPlayerDelegate.h"
@@ -43,6 +46,7 @@ class URivalsUserSettings;
 class URivalsVfxDefinitionAsset;
 class URivalsVictorySequenceData;
 class UTexture2D;
+class UTutorialSoundEffectContainer;
 class UWorld;
 
 UCLASS(Blueprintable, NonTransient, Config=Game)
@@ -66,6 +70,9 @@ public:
     
 protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool bIgnoreLobby;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool InPIE;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -76,6 +83,9 @@ protected:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSubclassOf<URivalsUserSettings> UserSettingsClass;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool bFollowPlayerCam;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bCameraLocked;
@@ -117,7 +127,16 @@ protected:
     bool bTargetBreak;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool bTutorialMode;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bArcadeMode;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool bBotMatchMode;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    int32 BotMatchCount;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bReplayMode;
@@ -133,6 +152,9 @@ protected:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bTrainingMode;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool bIsDialogueOpen;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bUseDeterministicRandom;
@@ -170,6 +192,9 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bDidLocalPlayerForfeit;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool bJustLostConnectionToServer;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     ERivalsSessionState PreviousSessionState;
@@ -253,6 +278,9 @@ public:
     URivalsMenuSoundContainer* MenuSoundContainer;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UTutorialSoundEffectContainer* TutorialSoundContainer;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     URivalsSoundEffectContainer* UniversalSfxContainer;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -290,6 +318,9 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bHasViewedStartupSequence;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool bPauseMenuVisible;
     
     UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool TapJumpDefault;
@@ -346,18 +377,21 @@ public:
     TSubclassOf<URivalsArticleData> TargetArticleData;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    TSubclassOf<URivalsArticleData> MovingTargetArticleData;
+    TSubclassOf<URivalsArticleData> SpikeArticleData;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TSubclassOf<URivalsArticleData> OrbyArticleData;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EShowBuildType ShowBuildType;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    FString VersionString;
     
     URivalsGameInstance();
 
     UFUNCTION(BlueprintCallable, BlueprintPure=false)
     void WaitForShaderCompilation() const;
+    
+    UFUNCTION(BlueprintCallable)
+    void UpdateBotMatchLevel(const bool bWonLastMatch);
     
     UFUNCTION(BlueprintCallable)
     void ToggleSnapNetDebugging();
@@ -402,6 +436,12 @@ public:
     void SetIsReconnecting(bool bInIsReconnecting);
     
     UFUNCTION(BlueprintCallable)
+    void SetIsPauseMenuVisible(bool IsVisible);
+    
+    UFUNCTION(BlueprintCallable)
+    void SetIsDialogueOpen(bool NewIsDialogueOpen);
+    
+    UFUNCTION(BlueprintCallable)
     void SetInputDisplay(bool Enabled);
     
     UFUNCTION(BlueprintCallable)
@@ -412,6 +452,9 @@ public:
     
     UFUNCTION(BlueprintCallable)
     void SetFreeCamera(bool FreeCameraEnabled);
+    
+    UFUNCTION(BlueprintCallable)
+    void SetFollowPlayerCam(bool FollowPlayerCam);
     
     UFUNCTION(BlueprintCallable)
     void SetDollyCamera(bool DollyCameraEnabled);
@@ -436,6 +479,9 @@ public:
     
     UFUNCTION(BlueprintCallable)
     void SetCameraLocked(bool LockCamera);
+    
+    UFUNCTION(BlueprintCallable)
+    void SetBotMatchCount(const int32& InMatchCount);
     
 protected:
     UFUNCTION(BlueprintCallable)
@@ -464,7 +510,10 @@ public:
     void ReassignControllerPort(const int32& OldPortNum, const int32& NewPortNum);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
-    void PlayUniversalSFX(const FName& SoundName) const;
+    FFMODEventInstance PlayUniversalSFX(const FName& SoundName) const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure=false)
+    void PlayTutorialSfx(ETutorialSoundType TutorialSoundType, int32 FramePriority) const;
     
     UFUNCTION(BlueprintCallable)
     void PlayReplayFromFile(const FString& Filename);
@@ -476,24 +525,31 @@ public:
     void PlayMenuSound(EMenuSoundType MenuSoundType, int32 FramePriority) const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
-    void PlayCharSfx(const FName& SoundName, const URivalsCharacterDefinition* SkinDefinition) const;
+    FFMODEventInstance PlayCharSfx(const FName& SoundName, const URivalsCharacterDefinition* SkinDefinition) const;
     
     UFUNCTION(BlueprintCallable)
     void OnResultsAnimationFinished();
     
     UFUNCTION(BlueprintCallable)
-    void OnLeaveCSSToMainMenu();
+    void OnLeaveTutorialToMainMenu(ERivalsTutorialDifficulty Difficulty, ERivalsTutorialType TutorialType);
     
-protected:
+    UFUNCTION(BlueprintCallable)
+    void OnLeaveCSSToMainMenu(bool ReturnedFromHeldBackAction);
+    
     UFUNCTION(BlueprintCallable)
     void OnAcceptedInvite();
     
-public:
+    UFUNCTION(BlueprintCallable)
+    bool LoadStateUnpaused(const int32 SaveStateIndex);
+    
     UFUNCTION(BlueprintCallable)
     bool LoadState(const int32 SaveStateIndex);
     
     UFUNCTION(BlueprintCallable)
     void LaunchDedicatedServer(TSoftObjectPtr<UWorld> Map);
+    
+    UFUNCTION(BlueprintCallable)
+    bool IsValidSaveState(const int32 SaveStateIndex);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsUsingTrailerCamera() const;
@@ -502,7 +558,13 @@ public:
     bool IsUsingDeterministicRandom() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
+    bool IsTutorialMode() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsTrainingMode() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    bool IsTrainingGame() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsTargetBreak() const;
@@ -532,7 +594,13 @@ public:
     bool IsRankedSession() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
+    bool IsPlaytest() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsPlayerTagInUse(const FString& PlayerTagName) const;
+    
+    UFUNCTION(BlueprintCallable)
+    bool IsPauseMenuVisible();
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsPaused() const;
@@ -552,6 +620,11 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsLocalPlayer(const int32& PlayerIndex) const;
     
+protected:
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    bool IsInEditor();
+    
+public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsHoldToPauseEnabled() const;
     
@@ -565,10 +638,25 @@ public:
     bool IsFrameAdvanceAllowed() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
+    bool IsFollowPlayerCam() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    bool IsEyeBreakMode() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    bool IsEdgeguardMode() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsDollyCameraEnabled() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
+    bool IsDialogueOpen() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsCameraLocked() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    bool IsBotMatchMode() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsArcadeMode() const;
@@ -581,6 +669,9 @@ public:
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     ERivalsSessionState GetSessionState() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    FText GetSessionName();
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     ESnapNetRenderInterpolationMethod GetRenderInterpolationMethod() const;
@@ -601,7 +692,13 @@ public:
     bool GetInputDisplay() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
+    FText GetHudModeText() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     EHudMode GetHudMode() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    FText GetDebuggingInfoModeText() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     EDebuggingInfoMode GetDebuggingInfoMode() const;
@@ -613,7 +710,13 @@ public:
     FString GetCurrentPlayerTagString(const int32& PlayerIndex);
     
     UFUNCTION(BlueprintCallable)
-    FString GetCurrentGreenScreenTypeString();
+    FText GetCurrentGreenScreenTypeText();
+    
+    UFUNCTION(BlueprintCallable)
+    int32 GetBotMatchLevel();
+    
+    UFUNCTION(BlueprintCallable)
+    int32 GetBotMatchCount() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     TArray<FString> GetAllReplayFilenames() const;
@@ -638,6 +741,9 @@ public:
     
     UFUNCTION(BlueprintCallable)
     void ContinueLocalSession(TSoftObjectPtr<UWorld> Map);
+    
+    UFUNCTION(BlueprintCallable)
+    void ClearSaveStates();
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool CanPause() const;

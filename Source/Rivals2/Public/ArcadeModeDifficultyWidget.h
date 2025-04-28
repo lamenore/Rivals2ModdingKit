@@ -5,7 +5,7 @@
 #include "ArcadeModeDifficultyWidget.generated.h"
 
 class UArcadeMedalWidget;
-class URivalsButtonWidget;
+class UCSSGenericButton;
 class URivalsCharacterDefinition;
 class UTextBlock;
 
@@ -14,10 +14,10 @@ class RIVALS2_API UArcadeModeDifficultyWidget : public UUserWidget {
     GENERATED_BODY()
 public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
-    URivalsButtonWidget* BP_LeftButton;
+    UCSSGenericButton* BP_LeftButton;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
-    URivalsButtonWidget* BP_RightButton;
+    UCSSGenericButton* BP_RightButton;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UTextBlock* BP_DifficultyText;
@@ -54,14 +54,14 @@ public:
     void SetDifficultyText(ERivalsArcadeModeDifficultySetting Difficulty);
     
     UFUNCTION(BlueprintCallable)
-    void OnRightReleased();
+    void OnRightReleased(const int32 UserIndex);
     
     UFUNCTION(BlueprintCallable)
-    void OnLeftReleased();
+    void OnLeftReleased(const int32 UserIndex);
     
 private:
     UFUNCTION(BlueprintCallable)
-    void HideDifficultyButton(URivalsButtonWidget* Button);
+    void HideDifficultyButton(UCSSGenericButton* Button);
     
 };
 

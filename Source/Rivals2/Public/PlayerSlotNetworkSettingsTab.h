@@ -23,6 +23,9 @@ protected:
     UPlayerSlotOptionsButtonWidget* BP_RenderInterpolationButton;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    UPlayerSlotOptionsButtonWidget* BP_ReportServerButton;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UPlayerSlotOptionsButtonWidget* BP_ResetToDefaultButton;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
@@ -36,6 +39,9 @@ public:
     
     UFUNCTION(BlueprintCallable)
     void ResetSettingsToDefault();
+    
+    UFUNCTION(BlueprintCallable)
+    void ReportServer();
     
 };
 

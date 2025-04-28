@@ -13,8 +13,9 @@ FRivalsAdvancedHitboxOnHitProperties::FRivalsAdvancedHitboxOnHitProperties() {
     this->GroundTechable = false;
     this->bIgnoresWeight = false;
     this->bAutoFloorhuggable = false;
-    this->bCanBreakProjectiles = false;
+    this->ProjectileInteraction = ERivalsProjectileInteraction::Default;
     this->bForceKnockbackInKnockdown = false;
+    this->bPreserveFacing = false;
     this->KnockbackAngleMode = ERivalsKnockbackAngleMode::SpecifiedAngle;
     this->HitstunMultiplier = 0.00f;
     this->HitfallHitstunMultiplier = 0.00f;
@@ -28,6 +29,8 @@ FRivalsAdvancedHitboxOnHitProperties::FRivalsAdvancedHitboxOnHitProperties() {
     this->FullChargeDamageMultiplier = 0.00f;
     this->FinalBaseKnockback = 0.00f;
     this->ForceTumble = false;
+    this->IgnoreKnockbackArmor = false;
+    this->PreventChaingrabsOnHit = false;
     this->HitstunAnimationStateOverride = ERivalsCharacterState::None;
 }
 

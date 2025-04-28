@@ -4,12 +4,12 @@
 #include "EntityReference.generated.h"
 
 USTRUCT(BlueprintType)
-struct FEntityReference {
+struct RIVALS2_API FEntityReference {
     GENERATED_BODY()
 public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FSnapNetPropertyEntityIndex EntityIndex;
     
-    RIVALS2_API FEntityReference();
+    FEntityReference();
 };
 

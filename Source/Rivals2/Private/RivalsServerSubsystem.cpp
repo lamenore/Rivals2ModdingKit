@@ -7,7 +7,13 @@ URivalsServerSubsystem::URivalsServerSubsystem() {
 void URivalsServerSubsystem::UnregisterConnectedPlayer(const FString& PlayerPlayFabTitleId) {
 }
 
+void URivalsServerSubsystem::ReportServerForPlayer(ARivalsPlayerEntity* PlayerEntity) {
+}
+
 void URivalsServerSubsystem::RegisterConnectedPlayer(const FString& PlayerPlayFabTitleId) {
+}
+
+void URivalsServerSubsystem::ProcessServerReports() {
 }
 
 ERivalsServerState URivalsServerSubsystem::GetServerState() {

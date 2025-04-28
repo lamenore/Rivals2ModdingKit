@@ -30,7 +30,7 @@ public:
     int32 PlayerPing;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    FString CharacterName;
+    FText CharacterName;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UTexture2D* CharacterPortrait;

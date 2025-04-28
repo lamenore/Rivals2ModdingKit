@@ -1,10 +1,15 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "ClientBehavior.h"
+#include "ERivalsSessionState.h"
 #include "TrainingModeUIBase.generated.h"
 
+class UActionSuccessCounter;
 class UBorder;
+class UImage;
 class URivalsStageData;
+class UTextBlock;
+class UTrainingMenuPopup;
 
 UCLASS(Blueprintable, EditInlineNew)
 class RIVALS2_API UTrainingModeUIBase : public UClientBehavior {
@@ -14,74 +19,41 @@ public:
     FName CurrentStageName;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    UTrainingMenuPopup* TrainingMenu;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UBorder* BP_InputsBox;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    UActionSuccessCounter* BP_SuccessCounter;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    UTextBlock* BP_DpadRight;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    UTextBlock* BP_DpadLeft;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    UTextBlock* BP_DpadDown;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    UImage* BP_DownImage;
     
 protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bMenuOpen;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    bool bGridVisible;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    bool bGeometryVisible;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    FName CurrentTrainingStage;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    FName PrevTrainingStage;
-    
 public:
     UTrainingModeUIBase();
 
     UFUNCTION(BlueprintCallable)
-    void TrainingPlatformSetup(FName StageName);
-    
-    UFUNCTION(BlueprintCallable)
-    void ShowTraining(int32 Linkage);
-    
-    UFUNCTION(BlueprintCallable)
-    void ShowStage(int32 Linkage);
-    
-    UFUNCTION(BlueprintCallable)
-    void ShowResults(int32 Linkage);
-    
-    UFUNCTION(BlueprintCallable)
-    void ShowEnvironment(int32 Linkage);
-    
-    UFUNCTION(BlueprintCallable)
-    void SetTrainingStage(FName StageName);
-    
-    UFUNCTION(BlueprintCallable)
-    void SetTrainingPlatformsVisible(bool IsVisible);
-    
-    UFUNCTION(BlueprintCallable)
-    void SetTrainingGridVisible(bool IsVisible);
+    void UpdateActionCount();
     
     UFUNCTION(BlueprintCallable)
     void SetMenuOpen(bool IsOpen);
     
     UFUNCTION(BlueprintCallable)
-    void LoadTrainingLevel(FName StageName);
-    
-    UFUNCTION(BlueprintCallable, BlueprintPure)
-    bool IsTrainingGridVisible();
-    
-    UFUNCTION(BlueprintCallable, BlueprintPure)
-    bool IsTrainingGeometryVisible();
-    
-    UFUNCTION(BlueprintCallable)
-    void HideTraining(int32 Linkage);
-    
-    UFUNCTION(BlueprintCallable)
-    void HideStage(int32 Linkage);
-    
-    UFUNCTION(BlueprintCallable)
-    void HideResults(int32 Linkage);
-    
-    UFUNCTION(BlueprintCallable)
-    void HideEnvironment(int32 Linkage);
+    void OnMatchRestarted(ERivalsSessionState SessionState);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     URivalsStageData* GetCurrentStageData();

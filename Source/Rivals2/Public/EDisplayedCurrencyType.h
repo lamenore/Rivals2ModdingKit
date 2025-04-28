@@ -7,5 +7,6 @@ enum class EDisplayedCurrencyType : uint8 {
     Bucks,
     Coins,
     BetaCoins,
+    RankedMedals,
 };
 

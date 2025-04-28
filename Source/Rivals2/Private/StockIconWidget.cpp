@@ -6,7 +6,10 @@ UStockIconWidget::UStockIconWidget() : UUserWidget(FObjectInitializer::Get()) {
     this->BP_IconImage = NULL;
 }
 
-UMaterialInterface* UStockIconWidget::GetStockIconMaterial() const {
+void UStockIconWidget::SetStockIconMaterialWithColorSlotData(URivalsColorSlotData* InColorSlotData, bool Sync) {
+}
+
+UMaterialInterface* UStockIconWidget::GetStockIconMaterial(bool Sync) const {
     return NULL;
 }
 

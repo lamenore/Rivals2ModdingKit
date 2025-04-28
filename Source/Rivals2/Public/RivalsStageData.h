@@ -1,22 +1,23 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
-#include "Engine/DataAsset.h"
+#include "UObject/NoExportTypes.h"
+#include "EStagePickType.h"
 #include "EStageType.h"
+#include "EquipmentItemAsset.h"
 #include "RivalsPlatformData.h"
 #include "Templates/SubclassOf.h"
 #include "RivalsStageData.generated.h"
 
+class UObject;
 class URivalsStageData;
 class URivalsStageSkinData;
+class UTexture2D;
 
 UCLASS(Blueprintable)
-class RIVALS2_API URivalsStageData : public UPrimaryDataAsset {
+class RIVALS2_API URivalsStageData : public UEquipmentItemAsset {
     GENERATED_BODY()
 public:
-    UPROPERTY(AssetRegistrySearchable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    bool ExcludeFromBuild;
-    
     UPROPERTY(AssetRegistrySearchable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FName StageName;
     
@@ -44,6 +45,15 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FVector2D FallbackSpawnLocation;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool bIsTourneyModeAuxPage;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool bIsDoublesStage;
+    
+    UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
+    EStagePickType StagePickType;
+    
     UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
     EStageType StageType;
     
@@ -60,6 +70,12 @@ public:
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetSideBlastzoneDistance() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    FVector2D GetPrimaryPlatformAlignment() const;
+    
+    UFUNCTION(BlueprintCallable, meta=(WorldContext="WorldContextObj"))
+    UTexture2D* GetBoundsPreviewTexture(UObject* WorldContextObj, FLinearColor LineColor, int32 LineThickness, int32 ScaleFactor);
     
 };
 

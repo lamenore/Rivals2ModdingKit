@@ -16,6 +16,9 @@ public:
     USettingsMenuRow* BP_SettingsMenuRow_MaxFPS;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    USettingsMenuRow* BP_SettingsMenuRow_MenuFPS;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     USettingsMenuRow* BP_SettingsMenuRow_TextureQuality;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
@@ -44,8 +47,5 @@ public:
     
     USettingsMenuGraphics();
 
-    UFUNCTION(BlueprintCallable)
-    int32 GetMaxFPS();
-    
 };
 

@@ -5,6 +5,7 @@
 #include "PurchaseCurrencyPopup.generated.h"
 
 class UMenuButtonWidget;
+class URivalsMenuButtonWidget;
 class UStoreItem;
 class UTextBlock;
 class UUniformGridPanel;
@@ -28,6 +29,9 @@ protected:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UMenuButtonWidget* BP_CloseButton;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    URivalsMenuButtonWidget* BP_CreatorSupportButton;
     
 public:
     UPurchaseCurrencyPopup();

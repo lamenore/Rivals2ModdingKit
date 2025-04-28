@@ -9,6 +9,7 @@ class UEquipmentItemAsset;
 class URivalsMenuButtonWidget;
 class UTextBlock;
 class UWidgetAnimation;
+class UWidgetSwitcher;
 
 UCLASS(Blueprintable, EditInlineNew)
 class RIVALS2_API UUnlockedItemPopupWidget : public UBasePopupWidget {
@@ -17,6 +18,9 @@ public:
 protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     URivalsMenuButtonWidget* BP_NextButton;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    URivalsMenuButtonWidget* BP_MedalNextButton;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     URivalsMenuButtonWidget* BP_CancelButton;
@@ -38,6 +42,21 @@ protected:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     UWidgetAnimation* BP_RewardEntryAnim;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    UWidgetAnimation* BP_ExcitingRewardEntryAnim;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    UWidgetAnimation* BP_GainRankedMedalsAnim;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    UWidgetSwitcher* BP_WidgetSwitcher;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    UTextBlock* BP_CurrencyTotal;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    UTextBlock* BP_DeltaCurrencyTotalText;
     
 private:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
