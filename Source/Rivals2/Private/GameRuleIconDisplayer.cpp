@@ -6,6 +6,8 @@ UGameRuleIconDisplayer::UGameRuleIconDisplayer() : UUserWidget(FObjectInitialize
     this->IconSize = 0.00f;
     this->BP_ImageSizeBox = NULL;
     this->BP_IconImage = NULL;
+    this->BP_HoverBanner = NULL;
+    this->BP_HoverBaseColor = NULL;
     this->BP_TextScaleBox = NULL;
     this->BP_TextBox = NULL;
     this->BP_OnHoverAnim = NULL;

@@ -17,6 +17,12 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TMap<TSoftClassPtr<UBaseScreenWidget>, TSubclassOf<UBaseScreenWidget>> ScreenMap;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    TArray<UBaseScreenWidget*> Test;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TArray<TSoftClassPtr<UBaseScreenWidget>> Test1;
+    
     UUIMaps();
 
 };

@@ -54,7 +54,7 @@ private:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FStateTreeTransitionIdToIndex> IDToTransitionMappings;
-
+    
     FInstancedPropertyBag Parameters;
     
     UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))

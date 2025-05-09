@@ -19,7 +19,8 @@
 				"OnlineSubsystem",
 				"OnlineSubsystemSteam",
 				"OnlineSubsystemEOS",
-				"OnlineSubsystemEOSPlus"
+				"OnlineSubsystemEOSPlus",
+				"SnapNetSteam"
 			]
 		},
 		{
@@ -157,8 +158,8 @@
 			"Enabled": false
 		},
 		{
-			"Name": "JsonAsAsset",
-			"Enabled": false
+			"Name": "SnapNetSteam",
+			"Enabled": true
 		}
 	]
 }

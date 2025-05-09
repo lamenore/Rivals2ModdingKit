@@ -6,6 +6,7 @@ URankedMatchmakingQueueButton::URankedMatchmakingQueueButton() {
     this->BP_AetherianLeaderboardText = NULL;
     this->BP_BonusMedalPanel = NULL;
     this->BP_WeeklyWinBonusMedalPanel = NULL;
+    this->BP_WinStreakDisplay = NULL;
 }
 
 

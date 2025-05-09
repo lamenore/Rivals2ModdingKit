@@ -4,11 +4,9 @@
 #include "ControllerButtonIconDataList.h"
 #include "EInputDevice.h"
 #include "PrimaryAssetObject.h"
-#include "RivalsMenuMusicData.h"
 #include "Templates/SubclassOf.h"
 #include "UIAssetMaps.generated.h"
 
-class UBaseScreenWidget;
 class UMaterial;
 class UMovieRenderDebugWidget;
 class UTexture2D;
@@ -20,9 +18,6 @@ class RIVALS2_API UUIAssetMaps : public UPrimaryAssetObject {
 public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<TSoftObjectPtr<UWorld>> MapHackScreens;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    TMap<TSoftClassPtr<UBaseScreenWidget>, FRivalsMenuMusicData> MenuMusicMap;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSubclassOf<UMovieRenderDebugWidget> RenderDebugWidget;

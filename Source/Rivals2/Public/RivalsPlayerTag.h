@@ -1,5 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "UObject/NoExportTypes.h"
 #include "RivalsControlSettings.h"
 #include "RivalsCosmeticSettings.h"
 #include "RivalsRandomCharacterSettings.h"
@@ -26,6 +27,9 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FRivalsCosmeticSettings CosmeticSettings;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FDateTime LastUsed;
     
     FRivalsPlayerTag();
 };

@@ -4,6 +4,7 @@ UEmailEntryPopup::UEmailEntryPopup() {
     this->BP_TabSwitcher = NULL;
     this->BP_ErrorPanel = NULL;
     this->BP_ErrorTextBlock = NULL;
+    this->BP_SwitchTabAnim = NULL;
     this->BP_PickLinkButton = NULL;
     this->BP_PickCreateButton = NULL;
     this->BP_PickCloseButton = NULL;

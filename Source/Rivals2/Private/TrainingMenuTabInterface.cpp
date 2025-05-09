@@ -1,7 +1,9 @@
 #include "TrainingMenuTabInterface.h"
 
 UTrainingMenuTabInterface::UTrainingMenuTabInterface() : UUserWidget(FObjectInitializer::Get()) {
-    this->TrainingMenuParent = NULL;
+    this->BP_RowContainer = NULL;
+    this->TrainingMenu = NULL;
+    this->FocusedRow = NULL;
     this->CurrentController = NULL;
 }
 

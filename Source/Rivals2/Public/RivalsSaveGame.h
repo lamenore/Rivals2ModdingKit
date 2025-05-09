@@ -48,6 +48,9 @@ public:
     FString StarterPackLastRefreshGameVersionValue;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool SkipWifiNotice;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     uint8 ConnectionLeniencyPresetIndex;
     
     URivalsSaveGame();

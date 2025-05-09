@@ -7,6 +7,7 @@
 #include "Templates/SubclassOf.h"
 #include "StageSelectScreen.generated.h"
 
+class ARivalsPlayerController;
 class ARivalsPlayerEntity;
 class UBetterButtonDisplayer;
 class UBorder;
@@ -40,6 +41,9 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSubclassOf<UStageSkinButton> StageSelectSkinButtonClass;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    ARivalsPlayerController* HoldingBackPlayer;
     
 protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))

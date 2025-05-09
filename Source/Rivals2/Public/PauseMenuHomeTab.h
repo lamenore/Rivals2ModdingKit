@@ -13,25 +13,13 @@ public:
     UPauseMenuButton* BP_ResumeButton;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
-    UPauseMenuButton* BP_SaveStatesMenuButton;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
-    UPauseMenuButton* BP_FrameAdvanceButton;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
-    UPauseMenuButton* BP_TrainingMenuButton;
+    UPauseMenuButton* BP_FreeCameraButton;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UPauseMenuButton* BP_HUDOptionsButton;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UPauseMenuButton* BP_DebugModeButton;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
-    UPauseMenuButton* BP_GreenScreenButton;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
-    UPauseMenuButton* BP_FreeCameraButton;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UPauseMenuButton* BP_RestartButton;

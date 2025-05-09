@@ -16,6 +16,9 @@ public:
     FSnapNetPropertyBoolean bHasAirDodge;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FSnapNetPropertyBoolean bHasWallCling;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FSnapNetPropertyInt32 DoubleJumpsPerformed;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))

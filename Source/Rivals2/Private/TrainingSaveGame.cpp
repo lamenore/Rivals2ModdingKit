@@ -1,6 +1,8 @@
 #include "TrainingSaveGame.h"
 
 UTrainingSaveGame::UTrainingSaveGame() {
+    this->LastVisitedTabIndex = 0;
+    this->LastVisitedRowIndex = 0;
     this->InfiniteShield = false;
     this->CPUPercent = 0;
     this->CpuDiMode = ERivalsCpuDiMode::Random;
@@ -24,11 +26,6 @@ UTrainingSaveGame::UTrainingSaveGame() {
     this->Side = ERivalsFacingDirection::Left;
     this->Height = EEdgeguardHeight::Random;
     this->PlayerPercent = 0;
-    this->PlaybackMode = ERivalsCpuPlaybackMode::Disabled;
-    this->RecordingSlot = 0;
-    this->PlaybackSlot = 0;
-    this->LoopPlayback = true;
-    this->AutoRestore = false;
 }
 
 

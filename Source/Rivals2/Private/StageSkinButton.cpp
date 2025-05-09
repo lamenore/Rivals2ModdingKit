@@ -11,7 +11,6 @@ UStageSkinButton::UStageSkinButton() : UUserWidget(FObjectInitializer::Get()) {
     this->BP_OnPressAnim = NULL;
     this->BP_OnReleaseAnim = NULL;
     this->ParentStageSelect = NULL;
-    this->StageSkinData = NULL;
 }
 
 void UStageSkinButton::OnUnhoveredByPlayer(const int32 UserIndex) {

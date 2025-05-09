@@ -4,6 +4,7 @@
 #include "GameRuleIconDisplayer.generated.h"
 
 class UImage;
+class URetainerBox;
 class URivalsButtonWidget;
 class UScaleBox;
 class USizeBox;
@@ -33,6 +34,12 @@ protected:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UImage* BP_IconImage;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    URetainerBox* BP_HoverBanner;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    UImage* BP_HoverBaseColor;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UScaleBox* BP_TextScaleBox;

@@ -9,7 +9,7 @@
 #include "ERivalsSessionState.h"
 #include "ETrainingGameMode.h"
 #include "ETrainingSublevel.h"
-#include "RivalsInputQueue.h"
+#include "PlaybackSequence.h"
 #include "TrainingSubsystem.generated.h"
 
 class AActor;
@@ -54,16 +54,31 @@ public:
     bool bRecordingInputs;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    bool bLoopPlayback;
+    bool bAutoRestoreCpu;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    bool bAutoRestore;
+    bool bAutoRestorePlayer;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool bLoopPlayback;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 CurrentRecordingFrame;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    uint8 CpuRecordingIndex;
+    int32 RecordingStartFrame;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    int32 CurrentRecordingSlot;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    int32 CurrentPlayerIndex;
+    
+    UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
+    int8 CpuRecordingIndex;
+    
+    UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
+    int8 CpuPlaybackIndex;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FVector CpuRecordingStartPos;
@@ -75,7 +90,13 @@ public:
     ERivalsCpuPlaybackMode CpuPlaybackMode;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    TArray<FRivalsInputQueue> RecordedInputs;
+    TArray<FPlaybackSequence> PlaybackSequences;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    int32 RecordedSlots;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    int32 PlaybackSlots;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     AActor* TrainingGrid;

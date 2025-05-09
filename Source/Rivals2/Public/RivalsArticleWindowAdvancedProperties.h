@@ -34,6 +34,9 @@ public:
     bool bCanBeHitByHitboxesThatCantHitProjectiles;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool bDestroyProjectilesThatHitMe;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bCreateDestroyVfxAtEndOfWindow;
     
     RIVALS2_API FRivalsArticleWindowAdvancedProperties();

@@ -18,7 +18,6 @@ URivalsArticleData::URivalsArticleData() {
     this->bCanHitOwner = false;
     this->bCanBeDetectedByOwner = false;
     this->bCanDetectOwner = false;
-    this->bDestroyProjectilesThatHitMe = true;
     this->EcbType = EArticleEcbType::None;
     this->EcbRadius = 0.00f;
     this->ShouldGetOutOfGroundOnSpawn = true;

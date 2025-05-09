@@ -38,7 +38,7 @@ void URivalsMatchmakingSubsystem::QueueForMatchmaking(const TArray<FString>& Que
 void URivalsMatchmakingSubsystem::ProcessBeaconResponse(const FPingQoSInfo& Result) {
 }
 
-void URivalsMatchmakingSubsystem::PollServerConnection(const FString& ConnectionString) {
+void URivalsMatchmakingSubsystem::PollServerConnection(const FString& ConnectionString, const bool bConnectToP2PListenServer) {
 }
 
 void URivalsMatchmakingSubsystem::PollMatchUserData(const FString& MatchID) {
@@ -183,7 +183,7 @@ bool URivalsMatchmakingSubsystem::CouldAttemptReconnection() {
     return false;
 }
 
-void URivalsMatchmakingSubsystem::ConnectToServer(const FString& ConnectionString) {
+void URivalsMatchmakingSubsystem::ConnectToServer(const FString& ConnectionString, const bool bConnectToP2PListenServer) {
 }
 
 void URivalsMatchmakingSubsystem::CloseMatchAcceptDenyModal() {

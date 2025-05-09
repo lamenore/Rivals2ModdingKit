@@ -14,12 +14,15 @@ UStageSelectButton::UStageSelectButton() : UUserWidget(FObjectInitializer::Get()
     this->BP_LockIconBorder = NULL;
     this->BP_StageBanDisplayer = NULL;
     this->BP_StageBannedBorder = NULL;
+    this->BP_StagePermaBannedBorder = NULL;
     this->BP_ButtonInteract = NULL;
     this->BP_OnHoverAnim = NULL;
     this->BP_OnUnHoverAnim = NULL;
     this->BP_OnReleaseAnim = NULL;
     this->BP_BanAnim = NULL;
     this->BP_UnBanAnim = NULL;
+    this->BP_StrikeAnim = NULL;
+    this->BP_UnStrikeAnim = NULL;
     this->ParentStageSelect = NULL;
     this->StageData = NULL;
 }

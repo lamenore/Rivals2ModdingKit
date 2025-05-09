@@ -6,6 +6,7 @@ ARivalsCharacterEntity::ARivalsCharacterEntity(const FObjectInitializer& ObjectI
     this->TakingInputs = true;
     this->CharacterMeshComponent = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("CharacterMeshComponent"));
     this->entityComponent = CreateDefaultSubobject<URivalsCharacterEntityComponent>(TEXT("SnapNetEntityComponent"));
+    this->bInfiniteShield = false;
     this->CachedCharacterDefinition = NULL;
     this->CharacterMeshComponent->SetupAttachment(RootComponent);
 }

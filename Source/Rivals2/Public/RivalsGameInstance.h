@@ -41,7 +41,6 @@ class URivalsMenuSoundContainer;
 class URivalsReconnectMessage;
 class URivalsSoundEffectContainer;
 class URivalsStoryTargetBreakMap;
-class URivalsUIManager;
 class URivalsUserSettings;
 class URivalsVfxDefinitionAsset;
 class URivalsVictorySequenceData;
@@ -68,18 +67,11 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FLinearColor WhiteScreenColor;
     
-protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bIgnoreLobby;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool InPIE;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    URivalsUIManager* UIManager;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    TSubclassOf<URivalsUIManager> UIManagerClass;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSubclassOf<URivalsUserSettings> UserSettingsClass;
@@ -97,7 +89,7 @@ protected:
     FRivalsDebugDrawSettings DebugDrawSettings;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    bool bSnapNetDebugging;
+    bool bShouldShowSnapNetDebuggingWhenPossible;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EDebuggingInfoMode DebuggingInfoMode;
@@ -110,6 +102,9 @@ protected:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bPaused;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool bSkipWifiNotice;
     
     UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bHoldToPause;
@@ -180,7 +175,6 @@ protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<AActor*> TempVfxActors;
     
-public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bPlayingResultsScreenAnimation;
     
@@ -417,6 +411,9 @@ public:
     UFUNCTION(BlueprintCallable, Exec)
     void SpawnBot();
     
+    UFUNCTION(BlueprintCallable)
+    bool ShouldShowWifiNotice();
+    
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool ShouldDrawTeamOutlines() const;
     
@@ -425,6 +422,9 @@ public:
     
     UFUNCTION(BlueprintCallable)
     bool SetPlayerTag(const FString& PlayerTagName, const int32& PlayerIndex, bool ForceSetToDefaultTag);
+    
+    UFUNCTION(BlueprintCallable)
+    void SetPausedPlayer(ARivalsPlayerController* Controller);
     
     UFUNCTION(BlueprintCallable)
     void SetPaused(const bool Enabled);
@@ -483,11 +483,9 @@ public:
     UFUNCTION(BlueprintCallable)
     void SetBotMatchCount(const int32& InMatchCount);
     
-protected:
     UFUNCTION(BlueprintCallable)
     void SendReadyToStartMatchMessage();
     
-public:
     UFUNCTION(BlueprintCallable)
     bool SaveState(const int32 SaveStateIndex);
     
@@ -620,13 +618,11 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsLocalPlayer(const int32& PlayerIndex) const;
     
-protected:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsInEditor();
     
-public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
-    bool IsHoldToPauseEnabled() const;
+    bool IsHoldToPauseEnabled();
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsFreeCameraEnabled() const;
@@ -665,9 +661,6 @@ public:
     void InitResultsScreen();
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
-    URivalsUIManager* GetUIManager() const;
-    
-    UFUNCTION(BlueprintCallable, BlueprintPure)
     ERivalsSessionState GetSessionState() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
@@ -675,6 +668,9 @@ public:
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     ESnapNetRenderInterpolationMethod GetRenderInterpolationMethod() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    ARivalsPlayerController* GetPausedPlayer();
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     TArray<FRivalsPlayerTag> GetNonTempPlayerTags() const;
@@ -732,6 +728,9 @@ public:
     
     UFUNCTION(BlueprintCallable)
     void EndSession(TSoftObjectPtr<UWorld> Map, TSoftClassPtr<UBasePopupWidget> NextDialogueToOpen);
+    
+    UFUNCTION(BlueprintCallable)
+    bool EnableSkipWifiNotice(bool bSave);
     
     UFUNCTION(BlueprintCallable)
     bool DeleteTag(const FString& PlayerTagName);

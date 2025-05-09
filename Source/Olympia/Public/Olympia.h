@@ -3,6 +3,7 @@
 #include "RivalsCharacterEntity.h"
 #include "SnapNetPropertyBoolean.h"
 #include "SnapNetPropertyEntityIndex.h"
+#include "SnapNetPropertyInt32.h"
 #include "Olympia.generated.h"
 
 UCLASS(Blueprintable)
@@ -11,6 +12,12 @@ class OLYMPIA_API AOlympia : public ARivalsCharacterEntity {
 public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FSnapNetPropertyBoolean bCanDspecialCancel;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FSnapNetPropertyInt32 DspecialCancelsPerAirtime;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FSnapNetPropertyBoolean bHasDspecialArmor;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FSnapNetPropertyBoolean HasFspecialResource;

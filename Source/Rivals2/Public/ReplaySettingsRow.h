@@ -61,13 +61,13 @@ public:
     UMaterialInstance* DefaultMaterial;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    FString Name;
+    FText Name;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    FString TrueValueText;
+    FText TrueValueText;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    FString FalseValueText;
+    FText FalseValueText;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 DefaultIndex;
@@ -76,7 +76,7 @@ public:
     EReplaySettingsType Type;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    TArray<FString> StringOptions;
+    TArray<FText> StringOptions;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float NumberValue;
@@ -161,7 +161,7 @@ public:
     bool HasFocus();
     
     UFUNCTION(BlueprintCallable)
-    FString GetCurrentStringValue();
+    FText GetCurrentStringValue();
     
     UFUNCTION(BlueprintCallable)
     float GetCurrentNumberValue();

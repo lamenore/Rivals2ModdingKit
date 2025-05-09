@@ -3,7 +3,7 @@
 URivalsUIManagerHelpers::URivalsUIManagerHelpers() {
 }
 
-UTrainingMenuPopup* URivalsUIManagerHelpers::OpenTrainingMenuPopup(const UObject* WorldContextObject) {
+UTrainingMenu* URivalsUIManagerHelpers::OpenTrainingMenu(const UObject* WorldContextObject) {
     return NULL;
 }
 

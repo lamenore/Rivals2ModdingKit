@@ -4,6 +4,7 @@
 #include "RankedMatchmakingQueueButton.generated.h"
 
 class UCanvasPanel;
+class UPlayerWinStreakWidget;
 class UTextBlock;
 
 UCLASS(Blueprintable, EditInlineNew)
@@ -24,6 +25,9 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UCanvasPanel* BP_WeeklyWinBonusMedalPanel;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    UPlayerWinStreakWidget* BP_WinStreakDisplay;
     
     URankedMatchmakingQueueButton();
 

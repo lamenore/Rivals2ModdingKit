@@ -8,7 +8,9 @@
 #include "Templates/SubclassOf.h"
 #include "BaseScreenWidget.generated.h"
 
+class UBasePopupWidget;
 class UBaseScreenCursor;
+class UBaseScreenWidget;
 class UBaseTopBar;
 class UWidget;
 
@@ -16,6 +18,12 @@ UCLASS(Blueprintable, EditInlineNew)
 class RIVALS2_API UBaseScreenWidget : public UClientBehavior {
     GENERATED_BODY()
 public:
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TArray<TSoftClassPtr<UBaseScreenWidget>> ScreensToKeepLoaded;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TArray<TSoftClassPtr<UBasePopupWidget>> PopupsToKeepLoaded;
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 InputBlockAmount;
     

@@ -8,6 +8,7 @@
 #include "SnapNetPropertySoftObjectPath.h"
 #include "SnapNetPropertyString.h"
 #include "OnGameplayStateDynamicDelegateDelegate.h"
+#include "RPStateInfo.h"
 #include "RivalsGameplaySession.h"
 #include "RivalsOnlineSession.h"
 #include "RivalsServerMatchInfo.h"
@@ -116,6 +117,9 @@ protected:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FSnapNetPropertyInt32 TotalPermittedStageStatuses;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FRPStateInfo RPSState;
     
 public:
     ARivalsGameStateEntity(const FObjectInitializer& ObjectInitializer);

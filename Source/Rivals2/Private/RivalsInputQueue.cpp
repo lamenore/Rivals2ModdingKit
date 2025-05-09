@@ -3,6 +3,5 @@
 FRivalsInputQueue::FRivalsInputQueue() {
     this->LatestInputIndex = 0;
     this->StartFrame = 0;
-    this->QueueLength = 0;
 }
 

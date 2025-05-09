@@ -3,17 +3,16 @@
 URivalsGameInstance::URivalsGameInstance() {
     this->bIgnoreLobby = false;
     this->InPIE = false;
-    this->UIManager = NULL;
-    this->UIManagerClass = NULL;
     this->UserSettingsClass = NULL;
     this->bFollowPlayerCam = false;
     this->bCameraLocked = false;
     this->DebugCameraMode = EDebugCameraMode::None;
-    this->bSnapNetDebugging = false;
+    this->bShouldShowSnapNetDebuggingWhenPossible = false;
     this->DebuggingInfoMode = EDebuggingInfoMode::FullInfo;
     this->HudMode = EHudMode::ShowAll;
     this->InputDisplay = false;
     this->bPaused = false;
+    this->bSkipWifiNotice = false;
     this->bHoldToPause = false;
     this->bFrameAdvancing = false;
     this->bFreeCameraEnabled = false;
@@ -111,6 +110,10 @@ void URivalsGameInstance::StartGameplayMapLoad(const FName& LevelName, bool bIsS
 void URivalsGameInstance::SpawnBot() {
 }
 
+bool URivalsGameInstance::ShouldShowWifiNotice() {
+    return false;
+}
+
 bool URivalsGameInstance::ShouldDrawTeamOutlines() const {
     return false;
 }
@@ -120,6 +123,9 @@ void URivalsGameInstance::ShakeCamera(const int32& GameplayFrame, const float& I
 
 bool URivalsGameInstance::SetPlayerTag(const FString& PlayerTagName, const int32& PlayerIndex, bool ForceSetToDefaultTag) {
     return false;
+}
+
+void URivalsGameInstance::SetPausedPlayer(ARivalsPlayerController* Controller) {
 }
 
 void URivalsGameInstance::SetPaused(const bool Enabled) {
@@ -351,7 +357,7 @@ bool URivalsGameInstance::IsInEditor() {
     return false;
 }
 
-bool URivalsGameInstance::IsHoldToPauseEnabled() const {
+bool URivalsGameInstance::IsHoldToPauseEnabled() {
     return false;
 }
 
@@ -402,10 +408,6 @@ bool URivalsGameInstance::IsArcadeMode() const {
 void URivalsGameInstance::InitResultsScreen() {
 }
 
-URivalsUIManager* URivalsGameInstance::GetUIManager() const {
-    return NULL;
-}
-
 ERivalsSessionState URivalsGameInstance::GetSessionState() const {
     return ERivalsSessionState::None;
 }
@@ -416,6 +418,10 @@ FText URivalsGameInstance::GetSessionName() {
 
 ESnapNetRenderInterpolationMethod URivalsGameInstance::GetRenderInterpolationMethod() const {
     return ESnapNetRenderInterpolationMethod::PartialTick;
+}
+
+ARivalsPlayerController* URivalsGameInstance::GetPausedPlayer() {
+    return NULL;
 }
 
 TArray<FRivalsPlayerTag> URivalsGameInstance::GetNonTempPlayerTags() const {
@@ -489,6 +495,10 @@ void URivalsGameInstance::EndSessionDirect(TSoftObjectPtr<UWorld> Map) {
 }
 
 void URivalsGameInstance::EndSession(TSoftObjectPtr<UWorld> Map, TSoftClassPtr<UBasePopupWidget> NextDialogueToOpen) {
+}
+
+bool URivalsGameInstance::EnableSkipWifiNotice(bool bSave) {
+    return false;
 }
 
 bool URivalsGameInstance::DeleteTag(const FString& PlayerTagName) {

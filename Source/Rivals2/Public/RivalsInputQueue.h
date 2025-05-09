@@ -13,9 +13,6 @@ private:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 StartFrame;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    int32 QueueLength;
-    
 public:
     RIVALS2_API FRivalsInputQueue();
 };

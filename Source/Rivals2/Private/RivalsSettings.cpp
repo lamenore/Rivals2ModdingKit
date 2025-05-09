@@ -25,7 +25,7 @@ URivalsSettings::URivalsSettings() {
     this->RankedColorsDark.AddDefaulted(10);
     this->GamecubeControllerDeadzone = 0.05f;
     this->GamecubeControllerSensitivity = 1.30f;
-    this->PlayFabItemTags.AddDefaulted(13);
+    this->PlayFabItemTags.AddDefaulted(12);
     this->DisableFidgetsInEditor = false;
     this->SpawnDebugCharactersInGameplayMaps = true;
     this->DebugView = true;

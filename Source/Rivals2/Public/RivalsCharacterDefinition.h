@@ -55,6 +55,9 @@ public:
     FWidgetTransform CharacterSelectPlayerSlotTransform;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FWidgetTransform RPSTransform;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FWidgetTransform CharacterProgressionEntryTransform;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))

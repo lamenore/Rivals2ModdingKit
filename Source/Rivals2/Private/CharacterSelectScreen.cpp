@@ -19,11 +19,11 @@ UCharacterSelectScreen::UCharacterSelectScreen() {
     this->BP_RightSideRow3 = NULL;
     this->BP_MidScreenBGImage = NULL;
     this->BP_MidScreenText = NULL;
-    this->BP_PlayerSlot0 = NULL;
     this->BP_BotMatchDetails_ScaleBox = NULL;
     this->BP_BotMatchDetails = NULL;
     this->BP_CssChat_ScaleBox = NULL;
     this->BP_CSS_Chat = NULL;
+    this->BP_PlayerSlot0 = NULL;
     this->BP_PlayerSlot1 = NULL;
     this->BP_PlayerSlot2 = NULL;
     this->BP_PlayerSlot3 = NULL;

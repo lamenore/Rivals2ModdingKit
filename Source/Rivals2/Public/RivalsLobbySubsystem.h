@@ -140,6 +140,9 @@ public:
     UFUNCTION(BlueprintCallable)
     void JoinAcceptedInviteSession();
     
+    UFUNCTION(BlueprintCallable)
+    void InitiateListenServer();
+    
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool HasAcceptedLobbyInvitationBeforeBoot() const;
     

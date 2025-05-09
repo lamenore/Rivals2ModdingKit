@@ -9,7 +9,6 @@ class UBorder;
 class UImage;
 class URivalsButtonWidget;
 class URivalsStageData;
-class URivalsStageSkinData;
 class UStageSelectScreen;
 class UWidgetAnimation;
 
@@ -58,6 +57,9 @@ protected:
     UBorder* BP_StageBannedBorder;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    UBorder* BP_StagePermaBannedBorder;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     URivalsButtonWidget* BP_ButtonInteract;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
@@ -75,18 +77,18 @@ protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     UWidgetAnimation* BP_UnBanAnim;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    UWidgetAnimation* BP_StrikeAnim;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    UWidgetAnimation* BP_UnStrikeAnim;
+    
 private:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UStageSelectScreen* ParentStageSelect;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     URivalsStageData* StageData;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    TMap<FString, URivalsStageSkinData*> StageSkins;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    TMap<FString, URivalsStageSkinData*> AllStageSkins;
     
 public:
     UStageSelectButton();

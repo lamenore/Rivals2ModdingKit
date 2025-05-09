@@ -6,7 +6,6 @@
 class UBetterImage;
 class UBorder;
 class URivalsButtonWidget;
-class URivalsStageSkinData;
 class UStageSelectScreen;
 class UWidgetAnimation;
 
@@ -44,9 +43,6 @@ public:
 private:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UStageSelectScreen* ParentStageSelect;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    URivalsStageSkinData* StageSkinData;
     
 public:
     UStageSkinButton();

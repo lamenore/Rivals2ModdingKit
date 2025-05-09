@@ -202,6 +202,10 @@
 !/Binaries/Win64/Rivals2Editor.target
 !/Binaries/Win64/UnrealEditor.modules
 !/Binaries/Win64/UnrealEditor-Rivals2.dll
+!/Binaries/Win64/UnrealEditor-Etalus.dll
+!/Binaries/Win64/UnrealEditor-Olympia.dll
+!/Binaries/Win64/UnrealEditor-StateTreeModule.dll
+!/Binaries/Win64/UnrealEditor-VirtualCursor.dll
 !/Plugins/*/Binaries/Win64/*
 !/Plugins/*/*/Binaries/Win64/*
 !/Plugins/*/*/*/Binaries/Win64/*

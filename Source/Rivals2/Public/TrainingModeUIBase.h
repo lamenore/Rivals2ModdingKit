@@ -5,11 +5,12 @@
 #include "TrainingModeUIBase.generated.h"
 
 class UActionSuccessCounter;
+class UBetterButtonDisplayer;
 class UBorder;
-class UImage;
+class URecordingIndicatorWidget;
 class URivalsStageData;
 class UTextBlock;
-class UTrainingMenuPopup;
+class UTrainingMenu;
 
 UCLASS(Blueprintable, EditInlineNew)
 class RIVALS2_API UTrainingModeUIBase : public UClientBehavior {
@@ -19,13 +20,16 @@ public:
     FName CurrentStageName;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
-    UTrainingMenuPopup* TrainingMenu;
+    UTrainingMenu* TrainingMenu;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UBorder* BP_InputsBox;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UActionSuccessCounter* BP_SuccessCounter;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    URecordingIndicatorWidget* BP_RecordingIndicator;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UTextBlock* BP_DpadRight;
@@ -37,7 +41,13 @@ public:
     UTextBlock* BP_DpadDown;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
-    UImage* BP_DownImage;
+    UBetterButtonDisplayer* BP_RightDisplayer;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    UBetterButtonDisplayer* BP_LeftDisplayer;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    UBetterButtonDisplayer* BP_DownDisplayer;
     
 protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))

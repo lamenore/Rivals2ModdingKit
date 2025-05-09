@@ -8,7 +8,7 @@ URivalsCharacterAttackData::URivalsCharacterAttackData() {
     this->LandingLagAnimation = NULL;
     this->RootedType = ERootedType::None;
     this->BReverseType = EBReverseType::None;
-    this->StayCrouchedAfterDtilt = true;
+    this->EndInCrouchWhenGrounded = false;
 }
 
 

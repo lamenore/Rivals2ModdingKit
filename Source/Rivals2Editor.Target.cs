@@ -6,7 +6,11 @@ public class Rivals2EditorTarget : TargetRules {
 		bOverrideBuildEnvironment = true;
 		DefaultBuildSettings = BuildSettingsVersion.V5;
 		ExtraModuleNames.AddRange(new string[] {
-			"Rivals2"
+			"Etalus",
+			"Olympia",
+			"Rivals2",
+			"StateTreeModule",
+			"VirtualCursor",
 		});
 	}
 }

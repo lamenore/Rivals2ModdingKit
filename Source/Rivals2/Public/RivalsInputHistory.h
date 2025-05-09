@@ -16,7 +16,7 @@ private:
     FSnapNetPropertyInt32 InputsPressed[6];
     
     UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
-    FSnapNetPropertyVector2D JoystickHistory[4];
+    FSnapNetPropertyVector2D JoystickHistory[6];
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FSnapNetPropertyInt32 InputsLocked;

@@ -113,7 +113,7 @@ public:
     void ProcessBeaconResponse(const FPingQoSInfo& Result);
     
     UFUNCTION(BlueprintCallable)
-    void PollServerConnection(const FString& ConnectionString);
+    void PollServerConnection(const FString& ConnectionString, const bool bConnectToP2PListenServer);
     
     UFUNCTION(BlueprintCallable)
     void PollMatchUserData(const FString& MatchID);
@@ -235,7 +235,7 @@ public:
     bool CouldAttemptReconnection();
     
     UFUNCTION(BlueprintCallable)
-    void ConnectToServer(const FString& ConnectionString);
+    void ConnectToServer(const FString& ConnectionString, const bool bConnectToP2PListenServer);
     
 protected:
     UFUNCTION(BlueprintCallable)

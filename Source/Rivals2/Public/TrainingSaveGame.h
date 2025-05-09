@@ -7,7 +7,6 @@
 #include "ERivalsCpuGetupOption.h"
 #include "ERivalsCpuLedgeOption.h"
 #include "ERivalsCpuMode.h"
-#include "ERivalsCpuPlaybackMode.h"
 #include "ERivalsCpuPummelOption.h"
 #include "ERivalsCpuTechOption.h"
 #include "ERivalsCpuThrowOption.h"
@@ -18,6 +17,12 @@ UCLASS(Blueprintable)
 class RIVALS2_API UTrainingSaveGame : public USaveGame {
     GENERATED_BODY()
 public:
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    uint8 LastVisitedTabIndex;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    uint8 LastVisitedRowIndex;
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool InfiniteShield;
     
@@ -86,21 +91,6 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 PlayerPercent;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    ERivalsCpuPlaybackMode PlaybackMode;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    uint8 RecordingSlot;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    uint8 PlaybackSlot;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    bool LoopPlayback;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    bool AutoRestore;
     
     UTrainingSaveGame();
 

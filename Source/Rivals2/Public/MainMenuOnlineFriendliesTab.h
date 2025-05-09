@@ -27,6 +27,18 @@ private:
     UMainMenuButtonWidget* BP_JoinPrivateButton;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    UMainMenuButtonWidget* BP_CreatePublicWorkshopButton;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    UMainMenuButtonWidget* BP_CreatePrivateWorkshopButton;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    UMainMenuButtonWidget* BP_JoinPublicWorkshopButton;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    UMainMenuButtonWidget* BP_JoinPrivateWorkshopButton;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UMainMenuButtonWidget* BP_BackButton;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
@@ -39,7 +51,13 @@ public:
     UMainMenuOnlineFriendliesTab();
 
     UFUNCTION(BlueprintCallable)
+    void OnJoinPublicWorkshopButtonPressed();
+    
+    UFUNCTION(BlueprintCallable)
     void OnJoinPublicButtonPressed();
+    
+    UFUNCTION(BlueprintCallable)
+    void OnJoinPrivateWorkshopButtonPressed();
     
     UFUNCTION(BlueprintCallable)
     void OnJoinPrivateButtonPressed();
@@ -59,7 +77,13 @@ protected:
     
 public:
     UFUNCTION(BlueprintCallable)
+    void OnCreatePublicWorkshopButtonPressed();
+    
+    UFUNCTION(BlueprintCallable)
     void OnCreatePublicButtonPressed();
+    
+    UFUNCTION(BlueprintCallable)
+    void OnCreatePrivateWorkshopButtonPressed();
     
     UFUNCTION(BlueprintCallable)
     void OnCreatePrivateButtonPressed();

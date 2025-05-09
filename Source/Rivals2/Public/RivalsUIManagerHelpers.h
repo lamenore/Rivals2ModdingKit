@@ -7,7 +7,7 @@ class UMainMenuScreenWidget;
 class UReplaySettingsPopup;
 class USettingsMenuWidget;
 class UTitleScreenWidget;
-class UTrainingMenuPopup;
+class UTrainingMenu;
 
 UCLASS(Blueprintable)
 class RIVALS2_API URivalsUIManagerHelpers : public UObject {
@@ -16,7 +16,7 @@ public:
     URivalsUIManagerHelpers();
 
     UFUNCTION(BlueprintCallable, meta=(WorldContext="WorldContextObject"))
-    static UTrainingMenuPopup* OpenTrainingMenuPopup(const UObject* WorldContextObject);
+    static UTrainingMenu* OpenTrainingMenu(const UObject* WorldContextObject);
     
     UFUNCTION(BlueprintCallable, meta=(WorldContext="WorldContextObject"))
     static UTitleScreenWidget* OpenTitleScreen(const UObject* WorldContextObject);

@@ -1,15 +1,21 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "UObject/NoExportTypes.h"
+#include "Types/SlateEnums.h"
 #include "Blueprint/UserWidget.h"
 #include "EValueType.h"
 #include "TrainingMenuRow.generated.h"
 
-class ARivalsPlayerController;
 class UBorder;
+class UHorizontalBox;
 class UImage;
 class UMaterialInstance;
 class URivalsButtonWidget;
+class UScaleBox;
 class UTextBlock;
+class UTrainingMenuTabInterface;
+class UWidget;
+class UWidgetAnimation;
 
 UCLASS(Blueprintable, EditInlineNew)
 class RIVALS2_API UTrainingMenuRow : public UUserWidget {
@@ -39,6 +45,15 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     URivalsButtonWidget* BP_ButtonInteract;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    UScaleBox* BP_RightArrowBox;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    UScaleBox* BP_LeftArrowBox;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    UHorizontalBox* BP_LRBox;
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     UMaterialInstance* HoveredMaterial;
     
@@ -49,26 +64,49 @@ public:
     FText Name;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FText TrueValueText;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FText FalseValueText;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 DefaultIndex;
     
     UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
     EValueType Type;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    TArray<FText> Options;
+    TArray<FText> StringOptions;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float NumberValue;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    float MinNumberValue;
+    float MinValue;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    float MaxNumberValue;
+    float MaxValue;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool BoolValue;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool Disabled;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TArray<FIntPoint> IntPointOptions;
+    
+protected:
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    UTrainingMenuTabInterface* ParentTab;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    UWidgetAnimation* BP_Activate;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    UWidgetAnimation* BP_Deactivate;
+    
+public:
     UTrainingMenuRow();
 
 private:
@@ -77,10 +115,10 @@ private:
     
 public:
     UFUNCTION(BlueprintCallable)
-    void SetNumberValue(float Value);
+    void SetParentMenu(UTrainingMenuTabInterface* InParentMenu);
     
     UFUNCTION(BlueprintCallable)
-    void SetFocused(bool NewHasFocus);
+    void SetNumberValue(float Value);
     
     UFUNCTION(BlueprintCallable)
     void SetCurrentIndex(int32 Index);
@@ -93,24 +131,33 @@ private:
     void SelectNextOption();
     
     UFUNCTION(BlueprintCallable)
+    void OnUnhoveredByPlayer(const int32 UserIndex);
+    
+    UFUNCTION(BlueprintCallable)
     void OnRightArrowReleased(const int32 UserIndex);
     
     UFUNCTION(BlueprintCallable)
     void OnReleasedByPlayer(const int32 UserIndex);
     
     UFUNCTION(BlueprintCallable)
+    UWidget* OnNavigate(EUINavigation Direction);
+    
+    UFUNCTION(BlueprintCallable)
     void OnLostFocusByPlayer(const int32 UserIndex);
     
 public:
     UFUNCTION(BlueprintCallable)
-    void OnLeftStickRight(ARivalsPlayerController* Controller);
+    void OnLeftStickRight(float Value);
     
     UFUNCTION(BlueprintCallable)
-    void OnLeftStickLeft(ARivalsPlayerController* Controller);
+    void OnLeftStickLeft(float Value);
     
 private:
     UFUNCTION(BlueprintCallable)
     void OnLeftArrowReleased(const int32 UserIndex);
+    
+    UFUNCTION(BlueprintCallable)
+    void OnHoveredByPlayer(const int32 UserIndex);
     
     UFUNCTION(BlueprintCallable)
     void OnFocusedByPlayer(const int32 UserIndex);
@@ -121,9 +168,6 @@ private:
 public:
     UFUNCTION(BlueprintCallable)
     bool HasFocus();
-    
-    UFUNCTION(BlueprintCallable)
-    FText GetDefaultValue();
     
     UFUNCTION(BlueprintCallable)
     FString GetCurrentStringValue();

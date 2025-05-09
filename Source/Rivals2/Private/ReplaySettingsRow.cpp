@@ -14,8 +14,8 @@ UReplaySettingsRow::UReplaySettingsRow() : UUserWidget(FObjectInitializer::Get()
     this->BP_LRBox = NULL;
     this->HoveredMaterial = NULL;
     this->DefaultMaterial = NULL;
-    this->TrueValueText = TEXT("True");
-    this->FalseValueText = TEXT("False");
+    this->TrueValueText = FText::FromString(TEXT("True"));
+    this->FalseValueText = FText::FromString(TEXT("False"));
     this->DefaultIndex = 0;
     this->Type = EReplaySettingsType::String;
     this->NumberValue = 0.00f;
@@ -81,8 +81,8 @@ bool UReplaySettingsRow::HasFocus() {
     return false;
 }
 
-FString UReplaySettingsRow::GetCurrentStringValue() {
-    return TEXT("");
+FText UReplaySettingsRow::GetCurrentStringValue() {
+    return FText::GetEmpty();
 }
 
 float UReplaySettingsRow::GetCurrentNumberValue() {

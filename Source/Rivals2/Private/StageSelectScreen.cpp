@@ -5,6 +5,7 @@ UStageSelectScreen::UStageSelectScreen() {
     this->MaxBackPressTime = 0.75f;
     this->StageSelectPageClass = NULL;
     this->StageSelectSkinButtonClass = NULL;
+    this->HoldingBackPlayer = NULL;
     this->BP_StageBoundBorder = NULL;
     this->BP_StageBoundCanvas = NULL;
     this->BP_StageSelectedBoundCanvas = NULL;

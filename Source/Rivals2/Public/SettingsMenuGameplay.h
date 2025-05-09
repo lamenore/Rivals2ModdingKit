@@ -14,6 +14,9 @@ protected:
     USettingsMenuRow* BP_SettingsMenuRow_SetControls;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    USettingsMenuRow* BP_SettingsMenuRow_CursorSpeedMultiplier;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     USettingsMenuRow* BP_SettingsMenuRow_ScreenShake;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))

@@ -11,6 +11,7 @@ class UObject;
 class URivalsMenuButtonWidget;
 class UScaleBox;
 class UTextBlock;
+class UWidgetAnimation;
 class UWidgetSwitcher;
 
 UCLASS(Blueprintable, EditInlineNew)
@@ -26,6 +27,9 @@ protected:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UTextBlock* BP_ErrorTextBlock;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    UWidgetAnimation* BP_SwitchTabAnim;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     URivalsMenuButtonWidget* BP_PickLinkButton;

@@ -8,8 +8,12 @@
 #include "RivalsServerMatchInfo.h"
 #include "MatchHUDWidget.generated.h"
 
+class ARivalsPlayerController;
+class UBasePopupWidget;
+class UCanvasPanel;
+class UFreeCamWidget;
 class UHordeStockDisplayWidget;
-class UPauseMenuWidget;
+class UOverlay;
 class UWidgetAnimation;
 
 UCLASS(Blueprintable, EditInlineNew)
@@ -32,10 +36,37 @@ public:
     UWidgetAnimation* BP_LetterBox_CloseFromFocus;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    UFreeCamWidget* BP_FreeCamOverlay;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    UCanvasPanel* BP_ClientStats;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    UCanvasPanel* BP_ServerStats;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    UOverlay* BP_HoldToPauseContainer;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UHordeStockDisplayWidget* BP_HordeStockDisplay;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bHasProcessedMatchStart;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool bIsStartDown;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    ARivalsPlayerController* HoldToPauseController;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    float StartHeldTime;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool bPaused;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    UBasePopupWidget* PauseMenuPopup;
     
     UMatchHUDWidget();
 
@@ -54,17 +85,14 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnLevelTransition();
     
-    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
-    bool IsPauseMenuVisible();
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    bool IsPauseMenuOpen() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     FRivalsServerMatchInfo GetServerMatchInfo();
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetScale(FGeometry Geometry) const;
-    
-    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
-    UPauseMenuWidget* GetPauseMenuWidget();
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetGameplayFrame() const;

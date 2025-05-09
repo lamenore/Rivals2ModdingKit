@@ -69,6 +69,9 @@ void URivalsLobbySubsystem::Oss_CreateSession(int32 Size, bool bUseSearchKeyword
 void URivalsLobbySubsystem::JoinAcceptedInviteSession() {
 }
 
+void URivalsLobbySubsystem::InitiateListenServer() {
+}
+
 bool URivalsLobbySubsystem::HasAcceptedLobbyInvitationBeforeBoot() const {
     return false;
 }

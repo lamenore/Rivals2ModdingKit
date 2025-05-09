@@ -10,6 +10,7 @@ FRivalsArticleWindowAdvancedProperties::FRivalsArticleWindowAdvancedProperties()
     this->FrictionAir = 0.00f;
     this->bCanFallThroughPlatforms = false;
     this->bCanBeHitByHitboxesThatCantHitProjectiles = false;
+    this->bDestroyProjectilesThatHitMe = false;
     this->bCreateDestroyVfxAtEndOfWindow = false;
 }
 

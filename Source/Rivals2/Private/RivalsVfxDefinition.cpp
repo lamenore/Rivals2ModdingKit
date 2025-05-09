@@ -3,6 +3,7 @@
 FRivalsVfxDefinition::FRivalsVfxDefinition() {
     this->EffectDuration = 0;
     this->bRotateWithHostBone = false;
+    this->bScaleWithHostBone = false;
     this->DetachOnFrame = 0;
     this->bRotateWithHostVelocity = false;
     this->bCanHaveHitpause = false;

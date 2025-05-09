@@ -6,8 +6,8 @@
 
 class UBasePopupWidget;
 class UBaseScreenWidget;
+class UMatchHUDWidget;
 class UUIAssetMaps;
-class UUIMaps;
 class UWidget;
 
 UCLASS(Blueprintable)
@@ -24,9 +24,6 @@ private:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UUIAssetMaps* AssetMaps;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    UUIMaps* UIMaps;
-    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     TArray<UBasePopupWidget*> OpenDialogs;
     
@@ -42,6 +39,12 @@ private:
 public:
     URivalsUIManagerSubsystem();
 
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UMatchHUDWidget* GetHUDIfActive();
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UBasePopupWidget* GetCurrentPopup();
+    
     UFUNCTION(BlueprintCallable, BlueprintPure)
     ERivalsMenuState GetCurrentMenuState() const;
     

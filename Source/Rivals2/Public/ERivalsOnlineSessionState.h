@@ -16,5 +16,7 @@ enum class ERivalsOnlineSessionState : uint8 {
     MatchEnd,
     Cancelled,
     Forfeited,
+    RPS,
+    RPSCleanUp,
 };
 

@@ -121,7 +121,7 @@ protected:
     
 public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    FSnapNetPropertyFloat IncomingKnockbackMultiplier;
+    FSnapNetPropertyFloat IncomingKnockbackMultiplierMinusOne;
     
 protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
@@ -230,6 +230,9 @@ protected:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FSnapNetPropertyBoolean bWasParried;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool bInfiniteShield;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     URivalsCharacterDefinition* CachedCharacterDefinition;
